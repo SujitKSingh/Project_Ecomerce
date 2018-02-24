@@ -4,15 +4,10 @@
 
 <h3 align="center">Product Page</h3>
 
-<table >
-	<tr bgcolor="pink">
-		<td rowspan="6">
-		<img src="<c:url value="/resources/images/${ProductInfo.productId}.jpg"/>" width="200" height="200"/>
-		</td>
-		<td>Product ID</td>
-		<td>${ProductInfo.productId}</td>
-	</tr>
-	<tr bgcolor="pink">
+<table  align="center" width="40%" height="40%" border="2" >
+	<tr align="center" bgcolor="#7e57c2" >
+		<td colspan="2" >Product Details</td></tr>
+	<tr bgcolor="cyan">
 		<td>Price</td>
 		<td>${ProductInfo.price}</td>
 	</tr>
@@ -49,5 +44,3 @@
 
 </body>
 </html>
-
-

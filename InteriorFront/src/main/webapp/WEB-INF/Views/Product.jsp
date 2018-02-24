@@ -1,58 +1,64 @@
 <%@include file="Header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
 <h3 align="center">Product Page</h3>
 
-<form:form method="post" action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
-	<tr>
-		<td>Product Image</td>
-		<td><form:input type="file" path="pimage"/></td>
-	</tr>
+
+
+
+<form:form action="InsertProduct" method="post" commandName="product">
+	<table align="center">
+		
+		<tr>
+			<td>Product Name</td><td><form:input path="productName"/></td>
+		</tr>
+		<tr>
+			<td>Product Price</td><td><form:input path="productPrice"/></td>
+		</tr>
+		<tr>
+		<td>Product Desc</td><td><form:input path="productDesc"/></td>
+		</tr>
+		<tr>
+			<div><td colspan="2"><input type="submit" value="SUBMIT" /> <input type="reset" value="RESET" /></div></td>
+		</tr>
+	</table>
 </form:form>
 
-<table >
-	<tr bgcolor="pink">
-		<td rowspan="6">
-		<img src="<c:url value="/resources/images/${ProductInfo.productId}.jpg"/>" width="200" height="200"/>
-		</td>
-		<td>Product ID</td>
-		<td>${ProductInfo.productId}</td>
-	</tr>
-	<tr bgcolor="pink">
-		<td>Price</td>
-		<td>${ProductInfo.price}</td>
-	</tr>
-	<tr bgcolor="pink">
-		<td>Product Name</td>
-		<td>${ProductInfo.productName}</td>
-	</tr>
-	<tr bgcolor="pink">
-		<td>Category ID</td>
-		<td>${categoryName}</td>
-	</tr>
-	<tr bgcolor="pink">
-		<td>Supplier ID</td>
-		<td>${ProductInfo.supplierId}</td>
-	</tr>
-	<tr bgcolor="pink">
-		<td>Product Description</td>
-		<td>${ProductInfo.prodDesc}</td>
-	</tr>
+<table align="center" border="2" >
 	<tr>
-		<td>Quantity</td>
-		<td>
-		<select name="quantity">
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-		</select>
-		</td>
+		<td>Product ID</td> 
+		<td>Product Name</td> 
+		<td>Product Price</td>
+		<td>Product Desc</td> 
+		<td>Operation</td> 
 	</tr>
-</table>
+	<c:forEach items="${listProducts}" var="product">
+		<tr>
+			<td>${product.productId}</td>
+			<td>${product.productName}</td>
+			<td>${product.productPrice}</td>
+			<td>${product.productDesc}</td>
+			<td><a href="<c:url value="/updateProduct/${product.productId}"/>">Update</a>/
+				<a href="<c:url value="/deleteProduct/${product.productId}"/>">Delete</a>
+			</td>
+		</tr>
+	</c:forEach>
 
+</table>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -53,4 +53,10 @@ public class Product
 	public int getCategoryId() {
 		return 0;
 	}
+	public int getProductPrice() {
+		return productPrice;
+	}
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
+	}
 }

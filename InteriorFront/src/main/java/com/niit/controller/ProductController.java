@@ -5,20 +5,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.ProductDAO;
+import com.niit.model.Category;
 import com.niit.model.Product;
-
 
 @Controller
 public class ProductController 
 {
 	@Autowired
 	CategoryDAO categoryDAO;
+	
+	boolean flag = true;
 	
 	@Autowired
 	ProductDAO productDAO;
@@ -27,12 +31,58 @@ public class ProductController
 	public String showProductPage(Model m)
 	{
 		Product product=new Product();
-		m.addAttribute(product);
-		m.addAttribute("catlist",this.listCategories());
+		m.addAttribute("product",product);
+		List<Product> listProducts = productDAO.getProducts();
+		m.addAttribute("listProducts", listProducts);
+		for (Product nproduct : productDAO.getProducts()) {
+			System.out.println(nproduct.getproductName() + ",");
+		}
 		return "Product";	
 	}
 	
+	@RequestMapping(value = "/InsertProduct", method = RequestMethod.POST)
+	public String insertProductData(@ModelAttribute("product")Product product,Model m) {
+		productDAO.addProduct(product);
+		List<Product> listProducts = productDAO.getProducts();
+		m.addAttribute("listProducts", listProducts);
+		flag = false;
+		return "Product";
+	}
 	
+	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
+	public String deleteProduct(@PathVariable("product") int product,Model m)
+	{
+		
+		productDAO.deleteProduct(productDAO.getProduct(product));
+		List<Product> listProducts=productDAO.getProducts();
+		m.addAttribute("listProduct",listProducts);
+		flag=false;
+		return "Product";
+	}
+
+	@RequestMapping(value = "/updateProduct", method = RequestMethod.GET)
+	public String updateProduct(@PathVariable("product") int product,Model m)
+	{
+		productDAO.getProduct(product);
+		List<Product> listProducts=productDAO.getProducts();
+		m.addAttribute("listProducts",listProducts);
+		m.addAttribute("productInfo",product);
+		
+		return "UpdateProducts";
+	}
+	
+	@RequestMapping(value = "/updateProduct/{pid}", method = RequestMethod.GET)
+	public String updateProductpost(@PathVariable("pid") int prodId,Model m)
+	{
+		Product product=productDAO.getProduct(prodId);
+		
+		productDAO.updateProduct(product);
+		
+		List<Product> listProducts=productDAO.getProducts();
+		m.addAttribute("listProducts",listProducts);
+		
+		return "Product";
+	}
 	private Object listCategories() {
 		return null;
 	}
@@ -50,11 +100,12 @@ public class ProductController
 	public String showProductDesc(@PathVariable("productId")int productId,Model m)
 	{
 		Product product=productDAO.getProduct(productId);
-		String categoryName=categoryDAO.getCategory(product.getCategoryId()).getCategoryName();
+		String productName=productDAO.getProduct(product.getproductId()).getproductName();
 		m.addAttribute("ProductInfo",product);
-		m.addAttribute("categoryName",categoryName);
+		m.addAttribute("ProductName",productName);
 		return "ProductDesc";
 	}
-
+	
+	
 }
 
