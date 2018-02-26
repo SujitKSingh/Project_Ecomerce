@@ -49,46 +49,63 @@ public class ProductController
 		return "Product";
 	}
 	
-	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
+	@RequestMapping(value = "/deleteProduct/{product}", method = RequestMethod.GET)
 	public String deleteProduct(@PathVariable("product") int product,Model m)
 	{
 		
 		productDAO.deleteProduct(productDAO.getProduct(product));
 		List<Product> listProducts=productDAO.getProducts();
 		m.addAttribute("listProduct",listProducts);
+		m.addAttribute("product", new Product());
 		flag=false;
 		return "Product";
 	}
 
-	@RequestMapping(value = "/updateProduct", method = RequestMethod.GET)
-	public String updateProduct(@PathVariable("product") int product,Model m)
-	{
-		productDAO.getProduct(product);
-		List<Product> listProducts=productDAO.getProducts();
-		m.addAttribute("listProducts",listProducts);
-		m.addAttribute("productInfo",product);
-		
-		return "UpdateProducts";
-	}
 	
-	@RequestMapping(value = "/updateProduct/{pid}", method = RequestMethod.GET)
-	public String updateProductpost(@PathVariable("pid") int prodId,Model m)
+	
+	/*@RequestMapping(value = "/updateProduct/{pid}", method = RequestMethod.GET)
+	public String updateProductcall(@PathVariable("pid") int prodId,Model m)
 	{
 		Product product=productDAO.getProduct(prodId);
 		
-		productDAO.updateProduct(product);
+		
 		
 		List<Product> listProducts=productDAO.getProducts();
 		m.addAttribute("listProducts",listProducts);
-		
+		m.addAttribute("product",product);
 		return "Product";
 	}
+	*/
+	
+	/*@RequestMapping(value = "/updateProduct/InsertProduct", method = RequestMethod.POST)
+	public String updateProductpost(@ModelAttribute("product")Product product,Model m)
+	{
+		
+		try {
+		if(productDAO.updateProduct(product))
+		{
+		List<Product> listProducts=productDAO.getProducts();
+		m.addAttribute("listProducts",listProducts);
+		m.addAttribute("product",new Product());
+		}
+		else
+		{
+			System.out.println("\n\n\n\n\n\n\\t\t\terror");
+			
+		}
+		}
+		catch(Exception ex){
+			System.out.println("ex here="+ex);
+		}
+		return "Product";
+	}*/
+
 	private Object listCategories() {
 		return null;
 	}
 
 
-	@RequestMapping(value="/productPage",method=RequestMethod.GET)
+	@RequestMapping(value="/productpage",method=RequestMethod.GET)
 	public String showProductsPage(Model m)
 	{
 		List<Product> listProducts=productDAO.getProducts();
@@ -96,16 +113,15 @@ public class ProductController
 		return "ProductPage";
 	}
 	
+	
 	@RequestMapping(value="/productDesc/{productId}",method=RequestMethod.GET)
 	public String showProductDesc(@PathVariable("productId")int productId,Model m)
 	{
 		Product product=productDAO.getProduct(productId);
-		String productName=productDAO.getProduct(product.getproductId()).getproductName();
+		String categoryName=categoryDAO.getCategory(product.getCategoryId()).getCategoryName();
 		m.addAttribute("ProductInfo",product);
-		m.addAttribute("ProductName",productName);
+		m.addAttribute("categoryName",categoryName);
 		return "ProductDesc";
 	}
-	
-	
 }
 

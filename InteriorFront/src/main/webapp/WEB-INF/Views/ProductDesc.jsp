@@ -9,7 +9,7 @@
 		<td colspan="2" >Product Details</td></tr>
 	<tr bgcolor="cyan">
 		<td>Price</td>
-		<td>${ProductInfo.price}</td>
+		<td>${ProductInfo.productPrice}</td>
 	</tr>
 	<tr bgcolor="pink">
 		<td>Product Name</td>

@@ -15,7 +15,7 @@ public class Product
 	private int  productPrice;
 	private String productName;
 	private String productDesc;
-	
+	private int categoryId;
 	public int getproductId() 
 	{
 		return productId;
@@ -50,13 +50,17 @@ public class Product
 	{
 		this.productId = productId;
 	}
-	public int getCategoryId() {
-		return 0;
-	}
+	
 	public int getProductPrice() {
 		return productPrice;
 	}
 	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
+	}
+	public int getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 }

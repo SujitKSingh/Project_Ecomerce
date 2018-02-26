@@ -26,7 +26,7 @@ public class ProductUnitTest
 		productDAO=(ProductDAO)context.getBean("productDAO");
 	}
 	
-	@Test
+	/*@Test
 	public void addProductTest()
 	{
 		Product product=new Product();
@@ -42,7 +42,7 @@ public class ProductUnitTest
 		product.setproductDesc("All the Board Types");
 		assertTrue("Problem in Category Insertion",productDAO.addProduct(product));
 	}
-
+*/
 	/*
 	@Test
 	public void getProductTest()
