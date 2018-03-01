@@ -1,18 +1,18 @@
 package com.niit.test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.SuplierDAO;
-import com.niit.dao.UserDAO;
 import com.niit.model.Category;
 import com.niit.model.Product;
 import com.niit.model.Suplier;
-import com.niit.model.User;
 
 
 public class DemoTest 
 {
+	@SuppressWarnings("resource")
 	public static void main(String arg[])
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
@@ -37,8 +37,7 @@ public class DemoTest
 		product.setproductName("P1");
 		product.setproductDesc("First Product");
 		productDAO.addProduct(product);
-		
-		
+				
 	}
 }
 

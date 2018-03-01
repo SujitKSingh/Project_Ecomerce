@@ -1,14 +1,19 @@
 package com.niit.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table
 public class Product 
 {
+
 	@Id
 	@GeneratedValue
 	private int productId;
@@ -16,6 +21,17 @@ public class Product
 	private String productName;
 	private String productDesc;
 	private int categoryId;
+	/*private int suplierId;*/
+	
+	@Transient
+	MultipartFile pimage;
+	
+	public MultipartFile getPimage() {
+		return pimage;
+	}
+	public void setPimage(MultipartFile pimage) {
+		this.pimage = pimage;
+	}
 	public int getproductId() 
 	{
 		return productId;
@@ -63,4 +79,10 @@ public class Product
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
+	/*public int getSuplierId() {
+		return suplierId;
+	}
+	public void setSuplierId(int suplierId) {
+		this.suplierId = suplierId;
+	}*/
 }

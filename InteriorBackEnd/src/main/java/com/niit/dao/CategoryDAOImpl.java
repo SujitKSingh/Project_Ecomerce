@@ -1,6 +1,8 @@
 package com.niit.dao;
 import java.util.List;
+
 import javax.transaction.Transactional;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -81,6 +83,7 @@ public class CategoryDAOImpl implements CategoryDAO
 	}
 
 	//listCategories()	
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Category> getCategories() 
 	{

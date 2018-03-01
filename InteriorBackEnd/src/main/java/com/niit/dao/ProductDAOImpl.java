@@ -78,6 +78,7 @@ public class ProductDAOImpl implements ProductDAO
 		}
 
 		//listCategories()	
+		@SuppressWarnings("unchecked")
 		@Override
 		public List<Product> getProducts() 
 		{

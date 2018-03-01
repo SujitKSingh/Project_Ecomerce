@@ -1,5 +1,4 @@
 package com.niit.test;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
@@ -9,12 +8,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.niit.dao.CategoryDAO;
 import com.niit.model.Category;
 
-import antlr.collections.List;
-
 public class CategoryUnitTest 
 {
 	static CategoryDAO categoryDAO;
 
+	@SuppressWarnings("resource")
 	@BeforeClass
 	public static void executeFirst()
 	{

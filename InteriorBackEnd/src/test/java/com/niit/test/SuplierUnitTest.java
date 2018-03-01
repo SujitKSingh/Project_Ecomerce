@@ -1,21 +1,19 @@
 package com.niit.test;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-
 import com.niit.dao.SuplierDAO;
 import com.niit.model.Suplier;
-import antlr.collections.List;
 
 
 public class SuplierUnitTest 
 {
 	static SuplierDAO suplierDAO;
 
+	@SuppressWarnings("resource")
 	@BeforeClass
 	public static void executeFirst()
 	{

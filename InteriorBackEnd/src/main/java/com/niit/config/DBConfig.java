@@ -31,18 +31,20 @@ import com.niit.model.User;
 @EnableTransactionManagement
 public class DBConfig 
 {
+	@Bean(name="dataSource")
 	public DataSource getH2DataSource()
 	{
 		DriverManagerDataSource dataSource=new DriverManagerDataSource();
 		
 		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:~/test");
-		dataSource.setUsername("dteja");
-		dataSource.setPassword("dteja");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
+		dataSource.setUsername("sa");
+		dataSource.setPassword("");
 		
 		System.out.println("---Data Source Created---");
 		return dataSource;
 	}
+	
 	
 	@Bean(name="sessionFactory")
 	public SessionFactory getSessionFactory()

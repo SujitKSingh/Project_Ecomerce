@@ -80,12 +80,13 @@ public class SuplierDAOImpl implements SuplierDAO
 	}
 
 	//listCategories()	
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Suplier> getsupliers() 
 	{
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from Suplier");
 		List<Suplier> listSupliers=(List<Suplier>)query.list();
-		return getsupliers();
+		return listSupliers;
 	}
 }
