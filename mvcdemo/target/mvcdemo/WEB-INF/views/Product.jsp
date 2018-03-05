@@ -22,10 +22,12 @@
 		<tr><td>
 			Category
 		</td>
-		<td><form:select path="categoryId">
+		<td><form:input path="categoryId"/>
+		
+		<%-- <form:select path="categoryId">
 			<form:option value="0" label="--Select--"/>
 			<form:options items="${catlist}" itemValue="categoryId" itemLabel="categoryName"/>
-		</form:select></td><!-- check -->
+		</form:select> --%></td><!-- check -->
 		</tr>
 		<tr><td>
 			Suplier

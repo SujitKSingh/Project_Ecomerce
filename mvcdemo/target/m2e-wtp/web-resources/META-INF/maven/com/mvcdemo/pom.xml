@@ -10,27 +10,29 @@
 
 	<properties>
 		<spring.version>5.0.2.RELEASE</spring.version>
+		<spring.security.version>5.0.2.RELEASE</spring.security.version>
 	</properties>
 
 	<dependencies>
 		
-	<!-- 	<dependency>
+		<dependency>
 	<groupId>org.springframework.security</groupId>
 	<artifactId>spring-security-core</artifactId>
-	<version>4.1.2.RELEASE</version>
+	<version>${spring.security.version}</version>
 	</dependency>
 		
 	<dependency>
 		<groupId>org.springframework.security</groupId>
 		<artifactId>spring-security-web</artifactId>
-		<version>4.1.2.RELEASE</version>
+		<version>${spring.security.version}</version>
 	</dependency>
 	
 	<dependency>
 		<groupId>org.springframework.security</groupId>
 		<artifactId>spring-security-config</artifactId>
-		<version>4.1.2.RELEASE</version>
-	</dependency> -->
+		<version>${spring.security.version}</version>
+	</dependency>
+	
 		<!-- for logger info -->
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
