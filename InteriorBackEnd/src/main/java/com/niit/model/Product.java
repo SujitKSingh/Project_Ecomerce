@@ -21,11 +21,19 @@ public class Product
 	private String productName;
 	private String productDesc;
 	private int categoryId;
-	/*private int suplierId;*/
+	
+	public int getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
+	private int suplierId;
 	
 	@Transient
-	MultipartFile pimage;
+	private MultipartFile pimage;
 	
+		
 	public MultipartFile getPimage() {
 		return pimage;
 	}
@@ -73,16 +81,11 @@ public class Product
 	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
 	}
-	public int getCategoryId() {
-		return categoryId;
-	}
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
-	}
-	/*public int getSuplierId() {
+	
+	public int getSuplierId() {
 		return suplierId;
 	}
 	public void setSuplierId(int suplierId) {
 		this.suplierId = suplierId;
-	}*/
+	}
 }

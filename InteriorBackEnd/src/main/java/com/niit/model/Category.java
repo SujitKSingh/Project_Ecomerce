@@ -12,17 +12,16 @@ public class Category
 	@Id
 	@GeneratedValue
 	private int categoryId;
+	public int getCategoryId() {
+		return categoryId;
+	}
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
 	private String categoryName;
 	private String cateogryDesc;
 	
-	public int getCategoryId() 
-	{
-		return categoryId;
-	}
-	public void setCategoryId(int categoryId) 
-	{
-		this.categoryId = categoryId;
-	}
+	
 	public String getCategoryName() 
 	{
 		return categoryName;

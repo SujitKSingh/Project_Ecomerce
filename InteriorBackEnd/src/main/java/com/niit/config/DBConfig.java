@@ -51,7 +51,7 @@ public class DBConfig
 	{
 		
 		Properties hibernateProp=new Properties();
-		hibernateProp.setProperty("hibernate.hbm2ddl.auto", "update");
+		hibernateProp.setProperty("hibernate.hbm2ddl.auto", "create");
 		hibernateProp.put("hibernate.dialect","org.hibernate.dialect.H2Dialect");
 		
 		LocalSessionFactoryBuilder factoryBuilder=new LocalSessionFactoryBuilder(getH2DataSource());

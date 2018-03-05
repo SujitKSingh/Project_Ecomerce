@@ -6,12 +6,9 @@ import java.io.FileOutputStream;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +22,13 @@ import com.niit.dao.SuplierDAO;
 import com.niit.model.Category;
 import com.niit.model.Product;
 
+
+//import com.niit.model.Suplier;
+
 @Controller
 public class ProductController 
 {
-	private static final Logger logger=LoggerFactory.getLogger(ProductController.class);
+
 	
 	@Autowired
 	CategoryDAO categoryDAO;
@@ -58,15 +58,18 @@ public class ProductController
 	
 	
 	@RequestMapping(value="/InsertProduct",method=RequestMethod.POST)
-	public String addProduct(@ModelAttribute("product")Product product,Model m,@RequestParam("pimage") MultipartFile filedet,BindingResult result)
+	public String addProduct(@ModelAttribute("product")Product product,Model m,@RequestParam(value="pimage")MultipartFile filedet)
 	{
+		if(filedet==null) {
+			System.out.println("error");
+		}
 		Product product1=new Product();
 		m.addAttribute(product1);
 		//product.setSuplierId(1);
 		productDAO.addProduct(product);
 		
 		//===> Image Uploading
-		String imagePath="C:\\Users\\Admin\\project1\\InteriorFront\\src\\main\\webapp\\resources\\images\\";
+		String imagePath="C:\\Users\\Admin\\project1\\mvcdemo\\src\\main\\webapp\\resources\\images\\";
 		imagePath=imagePath+String.valueOf(product.getproductId())+".jpg";
 		File image=new File(imagePath);
 		
@@ -119,8 +122,8 @@ public class ProductController
 			suplist.put(suplier.getsuplierId(),suplier.getsuplierName());
 		}
 		return suplist;
-	}*/
-	
+	}
+	*/
 	@RequestMapping(value = "/deleteProduct/{product}", method = RequestMethod.GET)
 	public String deleteProduct(@PathVariable("product") int product,Model m)
 	{
@@ -177,7 +180,7 @@ public class ProductController
 */
 
 
-	@RequestMapping(value="/productpage",method=RequestMethod.GET)
+	@RequestMapping(value="/productPage",method=RequestMethod.GET)
 	public String showProductsPage(Model m)
 	{
 		List<Product> listProducts=productDAO.getProducts();
