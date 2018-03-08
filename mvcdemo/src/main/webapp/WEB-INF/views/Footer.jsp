@@ -65,7 +65,7 @@
             </div>
         </div>
     </footer>
-    <section style="text-align:center; margin:10px auto;"><p>Designed by <a href="http://enfoplus.net">Sujit K. Singh</a></p></section>
+    <section style="text-align:center; margin:10px auto;">CopyRight @ 2018 Designed by <a href="http://enfoplus.net">Sujit K. Singh</a></section>
 
 </div>
 </body>

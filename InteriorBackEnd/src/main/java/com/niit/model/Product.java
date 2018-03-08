@@ -21,6 +21,8 @@ public class Product
 	private String productName;
 	private String productDesc;
 	private int categoryId;
+	private int suplierId;
+	
 	
 	public int getCategoryId() {
 		return categoryId;
@@ -28,7 +30,7 @@ public class Product
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
-	private int suplierId;
+	
 	
 	@Transient
 	private MultipartFile pimage;

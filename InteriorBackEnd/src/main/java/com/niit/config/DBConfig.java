@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate4.HibernateTransactionManager;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.dao.CategoryDAO;
@@ -51,7 +51,7 @@ public class DBConfig
 	{
 		
 		Properties hibernateProp=new Properties();
-		hibernateProp.setProperty("hibernate.hbm2ddl.auto", "create");
+		hibernateProp.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProp.put("hibernate.dialect","org.hibernate.dialect.H2Dialect");
 		
 		LocalSessionFactoryBuilder factoryBuilder=new LocalSessionFactoryBuilder(getH2DataSource());

@@ -17,6 +17,7 @@ background-color:#F08080;
 <body>
 
 <div id="upperLabel" class="container-fluid">
+ <i class="fas fa-shopping-cart"></i>
  <label>Just Order</label>
  </div>
  
