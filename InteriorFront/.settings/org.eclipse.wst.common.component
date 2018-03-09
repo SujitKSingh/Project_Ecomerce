@@ -4,7 +4,10 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-        <property name="context-root" value="InteriorFront"/>
+        <dependent-module archiveName="InteriorBackEnd-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/InteriorBackEnd/InteriorBackEnd">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/InteriorFront/target/classes"/>
+        <property name="context-root" value="InteriorFront"/>
     </wb-module>
 </project-modules>

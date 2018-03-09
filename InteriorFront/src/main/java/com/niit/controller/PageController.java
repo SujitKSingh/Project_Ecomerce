@@ -1,11 +1,19 @@
 package com.niit.controller;
 
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.niit.model.User;
 
 @Controller
 public class PageController 
 {
+	private static final Logger logger=LoggerFactory.getLogger(PageController.class);
 	
 	@RequestMapping("/")
 	public String showHomePage()
@@ -14,9 +22,10 @@ public class PageController
 	}
 	
 	@RequestMapping("/login")
-	public String showLogin()
+	public String showLogin(Model model)
 	{
-		return "Login";
+		model.addAttribute("user", new User());
+		return "Login-Register";
 	}
 	
 	@RequestMapping("/aboutus")
