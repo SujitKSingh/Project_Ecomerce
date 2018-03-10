@@ -78,7 +78,7 @@ public class CategoryController {
 		return "UpdateCategory";
 	}
 	
-	@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
+	@RequestMapping(value="/updateCategory",method=RequestMethod.POST)
 	public String updateCategoryInDB(@RequestParam("catid") int categoryId,@RequestParam("catname") String categoryName,@RequestParam("catdesc") String categoryDesc,Model m)
 	{
 		Category category=categoryDAO.getCategory(categoryId);

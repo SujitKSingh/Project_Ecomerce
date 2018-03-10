@@ -19,7 +19,7 @@ public class CartDAOImpl implements CartDAO
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	//addCategory
+	//addCartItem
 	@Transactional
 	@Override
 	public boolean addcartItem(CartItem cartItem)
@@ -35,12 +35,11 @@ public class CartDAOImpl implements CartDAO
 		return false;
 		}
 	}
-	
-	
-	//updateCategory()
+		
+	//updateCartItem()
 		@Transactional
 		@Override
-		public boolean updateCartItemId(CartItem cartItem)
+		public boolean updateCartItem(CartItem cartItem)
 		{
 			try
 			{
@@ -52,45 +51,43 @@ public class CartDAOImpl implements CartDAO
 				System.out.println("Exception Arised:"+e);
 				return false;
 			}
+		}
 		
+		//deleteCategory()
+		@Transactional
+		@Override
+		public boolean deleteCartItem(CartItem  cartItem)
+		{
+			try
+			{
+				sessionFactory.getCurrentSession().delete(cartItem);
+				return true;
+			}
+			catch(Exception e)
+			{
+				System.out.println("Exception Arised:"+e);
+				return false;
+			}
+			
+		}
+		
+		//listCartItems()	
+		@Override
+		public List<CartItem> getcartItems(String username) 
+		{
+			Session session=sessionFactory.openSession();
+			
+			List<CartItem> listCartItems=session.createQuery("from CartItem where username=:username").setParameter("username", username).list();
+			return listCartItems;
 		}
 
-	//getCategory()
-	@Override
-	public CartItem getCartItemId(int cartItemId) 
-	{
-		Session session=sessionFactory.openSession();
-		CartItem cart=(CartItem)session.get(CartItem.class,cartItemId);
-		session.close();
-		return cart;
-	}
-
-	//deleteCategory()
-	@Transactional
-	@Override
-	public boolean deleteCart(CartItem  cartItem)
-	{
-		try
+		//getCartItems()
+		@Override
+		public CartItem getCartItem(int cartItemId) 
 		{
-			sessionFactory.getCurrentSession().delete(cartItem);
-			return true;
+			Session session=sessionFactory.openSession();
+			CartItem cart=(CartItem)session.get(CartItem.class,cartItemId);
+			session.close();
+			return cart;
 		}
-		catch(Exception e)
-		{
-			System.out.println("Exception Arised:"+e);
-			return false;
-		}
-		
-	}
-	
-	
-	//listCategories()	
-	@Override
-	public List<CartItem> getcartitemId(String username) 
-	{
-		Session session=sessionFactory.openSession();
-		
-		List<CartItem> listCartItems=session.createQuery("from CartItem where username=:username").setParameter("username", username).list();
-		return listCartItems;
-	}
 }

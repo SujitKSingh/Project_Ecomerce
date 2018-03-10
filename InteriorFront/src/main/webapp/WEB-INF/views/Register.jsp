@@ -1,8 +1,7 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<!------ Include the above in your HEAD tag ---------->
 <!DOCTYPE html>
 <html lang="en">
     <head> 
@@ -17,6 +16,9 @@
 		<!-- Google Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 		<title>Admin</title>
 	</head>
@@ -25,14 +27,14 @@
 			<div class="row main">
 				<div class="main-login main-center">
 				<h3>Sign up With US </h3>
-					<form class="" method="post" action="#">
+					<form:form method="post" action="Register" modelAttribute="user" >
 						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">User Name</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+									<form:input type="text" path="username" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
 								</div>
 							</div>
 						</div>
@@ -42,7 +44,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<form:input type="password" path="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
@@ -53,7 +55,7 @@
 								<div class="input-group">
 								
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+								<form:input type="text" class="form-control" path="customerName" name="username" id="username"  placeholder="Enter your Username"/>
 								</div>
 							</div>
 						</div>
@@ -63,7 +65,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="mobile" id="mobile"  placeholder="Enter Mobile Number "/>
+									<form:input  path="mobileNo" class="form-control" name="mobile" id="mobile"  placeholder="Enter Mobile Number "/>
 								</div>
 							</div>
 						</div>
@@ -73,7 +75,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<form:input type="email" path="emailId" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
 								</div>
 							</div>
 						</div>
@@ -85,17 +87,18 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="address-book" id="confirm"  placeholder="Home Address"/>
+									<form:input type="text" path="address" class="form-control" name="address-book" id="confirm"  placeholder="Home Address"/>
 								</div>
 							</div>
-						</div>
+						</di3v>
 						
-							
+							<form:hidden path="role" value="ROLE_USER"/>
+							<form:hidden path="enabled" value="TRUE"/>
 						<div class="form-group ">
-							<a href="" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+							<input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" value="Register"/>
 						</div>
 						
-					</form>
+					</form:form>
 				</div>
 			</div>
 		</div>

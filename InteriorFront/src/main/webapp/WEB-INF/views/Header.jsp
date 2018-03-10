@@ -28,17 +28,23 @@ background-color:#F08080;
         <div class"navbar-header">
           <a class="navbar-brand" href="${pageContext.request.contextPath}/#">Just Order</a>
         </div>  
-        <ui class="nav navbar-nav">
+        <ul class="nav navbar-nav">
+         <c:if test="${pageContext.request.userPrincipal.name==null}">
            <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
            <li><a href="${pageContext.request.contextPath}/register">Register</a></li>
+           </c:if>
            <li><a href="${pageContext.request.contextPath}/aboutus">About Us</a></li>
            <li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
+           <c:if test="${pageContext.request.userPrincipal.name=='Sumit'}">
            <li><a href="${pageContext.request.contextPath}/category">Category</a></li>
            <li><a href="${pageContext.request.contextPath}/product">Product</a></li>
+           </c:if>
            <li><a href="${pageContext.request.contextPath}/productPage">ProductPage</a></li>
-           <li><a href="${pageContext.request.contextPath}/updateProduct">Manage Product</a></li>
            
-              <ui>
+        <c:if test="${pageContext.request.userPrincipal.name!=null}">
+           <li><a href="${pageContext.request.contextPath}/perform_logout">Logout</a></li>
+            </c:if>
+              <ul>
           </div>
       </nav>
    </div>

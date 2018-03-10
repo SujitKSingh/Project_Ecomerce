@@ -1,8 +1,12 @@
 package com.niit.test;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.BeforeClass;
+import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.dao.ProductDAO;
+import com.niit.model.Product;
 
 
 public class ProductUnitTest 
@@ -20,23 +24,20 @@ public class ProductUnitTest
 		productDAO=(ProductDAO)context.getBean("productDAO");
 	}
 	
-	/*@Test
+	@Test
 	public void addProductTest()
 	{
 		Product product=new Product();
+		
 		product.setproductName("Book Cupboard");
+		product.setCategoryId(4);
 		product.setproductDesc("All the Book Cupboard Types");
-		assertTrue("Problem in Category Insertion",productDAO.addProduct(product));
-		
-		product.setproductName("Cupboard");
-		product.setproductDesc("All the Cupboard Types");
-		assertTrue("Problem in Category Insertion",productDAO.addProduct(product));
-		
-		product.setproductName("Board");
-		product.setproductDesc("All the Board Types");
-		assertTrue("Problem in Category Insertion",productDAO.addProduct(product));
+		product.setSuplierId(44);
+		product.setproductPrice(100);
+		product.setStock(4);
+		assertTrue("Problem in Product Insertion",productDAO.addProduct(product));
 	}
-*/
+
 	/*
 	@Test
 	public void getProductTest()

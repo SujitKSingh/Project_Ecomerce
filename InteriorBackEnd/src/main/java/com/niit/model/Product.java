@@ -22,7 +22,14 @@ public class Product
 	private String productDesc;
 	private int categoryId;
 	private int suplierId;
+	private int stock;
 	
+	public int getStock() {
+		return stock;
+	}
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
 	
 	public int getCategoryId() {
 		return categoryId;

@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.niit.dao.CartDAO;
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.SuplierDAO;
+import com.niit.model.CartItem;
 import com.niit.model.Category;
 import com.niit.model.Product;
 
@@ -33,6 +37,8 @@ public class ProductController
 	@Autowired
 	CategoryDAO categoryDAO;
 	
+	@Autowired
+	CartDAO cartDAO;
 	boolean flag = true;
 	
 	@Autowired
@@ -69,7 +75,7 @@ public class ProductController
 		productDAO.addProduct(product);
 		
 		//===> Image Uploading
-		String imagePath="C:\\Users\\Admin\\project1\\mvcdemo\\src\\main\\webapp\\resources\\images\\";
+		String imagePath="D:\\eclipse-jee-oxygen-2-win32-x86_64\\oxy workspace\\Project_Ecomerce\\InteriorFront\\src\\main\\webapp\\resources\\images\\";
 		imagePath=imagePath+String.valueOf(product.getproductId())+".jpg";
 		File image=new File(imagePath);
 		
@@ -190,13 +196,18 @@ public class ProductController
 	
 	
 	@RequestMapping(value="/productDesc/{productId}",method=RequestMethod.GET)
-	public String showProductDesc(@PathVariable("productId")int productId,Model m)
+	public String showProductDesc(@PathVariable("productId")int productId,Model m,HttpSession session)
 	{
 		Product product=productDAO.getProduct(productId);
 		
+		
+	
 		String categoryName=categoryDAO.getCategory(product.getCategoryId()).getCategoryName();
 		m.addAttribute("ProductInfo",product);
 		m.addAttribute("categoryName",categoryName);
+		
+		m.addAttribute("product",productId);
+		
 		return "ProductDesc";
 	}
 }

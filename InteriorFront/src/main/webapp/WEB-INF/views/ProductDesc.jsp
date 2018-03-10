@@ -4,6 +4,7 @@
 
 <h3 align="center">Product Page</h3>
 
+<form action="<c:url value='/addtoCart/${product}'/>" >
 <table  align="center" width="40%" height="40%" border="2" >
 	<tr align="center" bgcolor="#7e57c2" >
 		<td colspan="2" >Product Details</td></tr>
@@ -40,8 +41,11 @@
 		</select>
 		</td>
 	</tr>
+	<tr>
+	<td colspan="2"><center> <input type="Submit" value="Add To Cart" /></center></td>
+	</tr>
 </table>
 
-
+</form>
 </body>
 </html>

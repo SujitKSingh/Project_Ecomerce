@@ -21,7 +21,9 @@ import com.niit.dao.SuplierDAO;
 import com.niit.dao.SuplierDAOImpl;
 import com.niit.dao.UserDAO;
 import com.niit.dao.UserDAOImpl;
+import com.niit.model.CartItem;
 import com.niit.model.Category;
+import com.niit.model.OrderDetail;
 import com.niit.model.Product;
 import com.niit.model.Suplier;
 import com.niit.model.User;
@@ -59,6 +61,8 @@ public class DBConfig
 		factoryBuilder.addAnnotatedClass(Suplier.class);
 		factoryBuilder.addAnnotatedClass(Product.class);
 		factoryBuilder.addAnnotatedClass(User.class);
+		factoryBuilder.addAnnotatedClass(OrderDetail.class);
+		factoryBuilder.addAnnotatedClass(CartItem.class);
 		factoryBuilder.addProperties(hibernateProp);
 		
 		System.out.println("Creating SessionFactory Bean");

@@ -51,7 +51,7 @@ public class UserController
    	}
    	}
    	 
-   	 return page;
+   	 return "redirect:/";
    	 
    
    	 

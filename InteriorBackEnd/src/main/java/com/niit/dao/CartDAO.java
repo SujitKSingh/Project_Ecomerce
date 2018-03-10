@@ -7,8 +7,9 @@ import com.niit.model.CartItem;
 public interface CartDAO
 {
 	public boolean addcartItem(CartItem cartItem);
-	public CartItem getCartItemId(int cartItemId);
-	public boolean deleteCart(CartItem cartItem);
-	public boolean updateCartItemId(CartItem cartItem);
-	public List<CartItem> getcartitemId(String username);
+	public CartItem getCartItem(int cartItemId);
+	public boolean deleteCartItem(CartItem cartItem);
+	public boolean updateCartItem(CartItem cartItem);
+	public List<CartItem> getcartItems(String username);
+	
 }

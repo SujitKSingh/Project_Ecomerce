@@ -22,10 +22,8 @@ public class PageController
 	}
 	
 	@RequestMapping("/login")
-	public String showLogin(Model model)
-	{
-		model.addAttribute("user", new User());
-		return "Login-Register";
+	public String showLogin() {
+		return "Login";
 	}
 	
 	@RequestMapping("/aboutus")
@@ -35,8 +33,21 @@ public class PageController
 	}
 	
 	@RequestMapping("/register")
-	public String showRegister()
+	public String showRegister(Model model)
 	{
+		model.addAttribute("user", new User());
+	
 		return "Register";
 	}
+	@RequestMapping("/cart")
+	public String showCart()
+	{
+		return "Cart";
+	}
+	@RequestMapping("/perform_logout")
+	public String showLogout()
+	{
+		return "Logout";
+	}
+	
 }
