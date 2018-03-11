@@ -26,6 +26,11 @@ public class PageController {
 	public String showAboutUs() {
 		return "AboutUs";
 	}
+	
+	@RequestMapping("/contactus")
+	public String showContactUs() {
+		return "ContactUs";
+	}
 
 	@RequestMapping("/register")
 	public String showRegister(Model model) {

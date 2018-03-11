@@ -17,8 +17,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="lg-text">Contact Us</h1>
-				<p class="image-aboutus-para">Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit.</p>
+				<p class="image-aboutus-para">We entertain you issues,
+					Feel free to contact us.</p>
 			</div>
 		</div>
 	</div>
@@ -28,7 +28,7 @@
 		<div class="row">
 			<div class="col-md-8 col-sm-6 col-xs-8">
 				<ol class="breadcrumb">
-					<li><a href="index.html">Home</a></li>
+					<li>Home</li>
 					<li class="active">About Us</li>
 				</ol>
 			</div>
@@ -41,11 +41,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-4">
-				<i class="fa fa-home"></i> <b>WebDesign Inc.</b><br> 2500
-				CityWest Blvd.<br> Suite 300 Houston, 77042 USA<br>
-				<br> <i class="fa fa-phone"></i> <b>1800-xxx-990</b><br> <i
-					class="fa fa-fax"></i> <b>1800-xxx-996</b><br> <i
-					class="fa fa-envelope"></i> <a href="mailto:example@info.com">info@bigpixi.com</a><br>
+				<i class="fa fa-home"></i> <b>Just order Inc.</b><br> 41
+				Sapru Marg<br> Lucknow, 226001 INDIA<br>
+				<br> <i class="fa fa-phone"></i> <b>1800-xxx-111</b><br> <i
+					class="fa fa-fax"></i> <b>1800-xxx-111</b><br> <i
+					class="fa fa-envelope"></i> <a href="mailto:example@info.com">info@justorder.in</a><br>
 				<br> <i class="fa fa-home"></i> <b>Mon - Fri 9.00 - 18.00</b><br>
 				Saturday - Sunday CLOSED
 			</div>
@@ -164,7 +164,7 @@
 			<div class="row">
 				<div class="col-sm-12 text-center ">
 					<div class="copyright-text">
-						<p>CopyRight © 2017 Digital All Rights Reserved</p>
+						<p>CopyRight © 2018 Digital All Rights Reserved</p>
 					</div>
 				</div>
 				<!-- End Col -->
