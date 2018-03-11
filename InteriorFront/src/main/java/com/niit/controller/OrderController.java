@@ -19,50 +19,48 @@ import com.niit.dao.ProductDAO;
 import com.niit.model.CartItem;
 import com.niit.model.OrderDetail;
 
-
-
 @Controller
 public class OrderController {
 	@Autowired
 	CategoryDAO categoryDAO;
-	
+
 	@Autowired
 	ProductDAO productDAO;
-	
+
 	@Autowired
 	CartDAO cartDAO;
+
 	@Autowired
 	OrderDetailDAO orderDAO;
-	
+
 	@RequestMapping("/ConfirmOrder")
-	public String confirmOrder(HttpSession session,Model m)
-	{
-		String username=(String)session.getAttribute("username");
-		List<CartItem> listCartItems=cartDAO.getcartItems(username);
-		m.addAttribute("cartList",listCartItems);
-		m.addAttribute("grandTotal",this.grandTotal(listCartItems));
-		return "OrderConfirm" ;
-		
+	public String confirmOrder(HttpSession session, Model m) {
+		String username = (String) session.getAttribute("username");
+		List<CartItem> listCartItems = cartDAO.getcartItems(username);
+		m.addAttribute("cartList", listCartItems);
+		m.addAttribute("grandTotal", this.grandTotal(listCartItems));
+		return "OrderConfirm";
 	}
-	
+
 	@RequestMapping("/PaymentConfirm")
-	public String paymentConfirm(@RequestParam("pmode")String pmode,@RequestParam("shipAddr")String shipAddr,HttpSession session) {
-		OrderDetail order=new OrderDetail();
+	public String paymentConfirm(@RequestParam("pmode") String pmode, @RequestParam("shipAddr") String shipAddr,
+			HttpSession session) {
+		OrderDetail order = new OrderDetail();
 		order.setOrderDate(new Date());
 		order.setShippingAddress(shipAddr);
 		order.setTransactionType(pmode);
 		order.setTotalAmount(this.grandTotal(cartDAO.getcartItems(session.getAttribute("username").toString())));
 		order.setUsername(session.getAttribute("username").toString());
-		int cartid=0;
-		for(CartItem cart:cartDAO.getcartItems(session.getAttribute("username").toString())) {
-			cartid=cart.getCartId();
+		int cartid = 0;
+		for (CartItem cart : cartDAO.getcartItems(session.getAttribute("username").toString())) {
+			cartid = cart.getCartId();
 		}
 		order.setCartId(cartid);
 		orderDAO.confirmOrderDetail(order);
-		
+
 		return "ThankYou";
 	}
-	
+
 	public int grandTotal(List<CartItem> listCartItems) {
 		int grandTotal = 0;
 		for (CartItem cartItem : listCartItems) {
@@ -71,6 +69,5 @@ public class OrderController {
 		}
 		System.out.println(grandTotal);
 		return grandTotal;
-
 	}
 }

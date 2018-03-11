@@ -3,6 +3,8 @@ package com.niit.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,7 +14,8 @@ public class OrderDetail
 
 {
    @Id
-  // @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.AUTO)
+   int oderid;
    int cartId;
    String Username;
    Date orderDate;
@@ -55,5 +58,11 @@ return orderDate;
 }
 public void setOrderDate(Date orderDate) {
 this.orderDate = orderDate;
+}
+public int getOderid() {
+	return oderid;
+}
+public void setOderid(int oderid) {
+	this.oderid = oderid;
 }
 }

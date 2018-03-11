@@ -7,8 +7,11 @@ com\niit\dao\CartDAOImpl.class
 com\niit\dao\UserDAOImpl.class
 com\niit\dao\ProductDAO.class
 com\niit\model\CartItem.class
+com\niit\model\OrderDetail.class
+com\niit\dao\OrderDetailDAOImpl.class
 com\niit\dao\CategoryDAOImpl.class
 com\niit\dao\SuplierDAOImpl.class
+com\niit\dao\OrderDetailDAO.class
 com\niit\model\Category.class
 com\niit\dao\SuplierDAO.class
 com\niit\dao\CartDAO.class

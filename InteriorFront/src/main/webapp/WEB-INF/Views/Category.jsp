@@ -13,8 +13,8 @@
 		<td><input type="text" id="catdesc" name="catdesc" /></td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center"><input type="submit" value="SUBMIT" /> <input
-				type="reset" value="RESET" /></td>
+			<td colspan="2" align="center"><input type="submit"
+				value="SUBMIT" /> <input type="reset" value="RESET" /></td>
 		</tr>
 	</table>
 </form>

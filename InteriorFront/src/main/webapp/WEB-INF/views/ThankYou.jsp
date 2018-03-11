@@ -1,4 +1,4 @@
-<%@include file="Header.jsp" %>
+<%@include file="Header.jsp"%>
 
 <h1>Thank You :)</h1>
 

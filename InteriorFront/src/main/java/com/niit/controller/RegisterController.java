@@ -13,15 +13,15 @@ import com.niit.model.User;
 public class RegisterController
 
 {
-@Autowired
-UserDAO userDetailDAO;
+	@Autowired
+	UserDAO userDetailDAO;
 
-@RequestMapping(value ="/Register", method = RequestMethod.POST)
-public String insertUsers(@ModelAttribute("user")User user)
+	@RequestMapping(value = "/Register", method = RequestMethod.POST)
+	public String insertUsers(@ModelAttribute("user") User user)
 
-{
-	userDetailDAO.registerUser(user);
-return "Login";
-}
+	{
+		userDetailDAO.registerUser(user);
+		return "Login";
+	}
 
 }
