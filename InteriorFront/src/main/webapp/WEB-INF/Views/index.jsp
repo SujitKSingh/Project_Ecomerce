@@ -25,34 +25,44 @@
 			<div class="carousel-inner">
 				<div class="item active">
 					<img class="img-fluid"
-						src="<c:url value="/resources/images/la.jpg"/>" alt="Los Angeles"
+						src="<c:url value="/resources/images/lava.jpeg"/>" alt="Lava"
 						style="width: 100%; height: 500px">
 					<div class="carousel-caption">
-						<h3>Los Angeles</h3>
-						<p>LA is always so much fun!</p>
+						<h3>LAVA IRIS</h3>
+						<p>With SnapDragon Processor</p>
 					</div>
 				</div>
 
 				<div class="item">
 					<img class="img-fluid"
-						src="<c:url value="/resources/images/chicago.jpg"/>" alt="Chicago"
+						src="<c:url value="/resources/images/FormalPeter.jpg"/>" alt="FormalShirt"
 						style="width: 100%; height: 500px">
 					<div class="carousel-caption">
-						<h3>Chicago</h3>
-						<p>Thank you, Chicago!</p>
+						<h3>Peter England</h3>
+						<p>Threaded With Pure Cotton!</p>
 					</div>
 				</div>
 
 				<div class="item">
 					<img class="img-fluid"
-						src="<c:url value="/resources/images/ny.jpg"/>" alt="New York"
+						src="<c:url value="/resources/images/203.jpg"/>" alt="Pen"
 						style="width: 100%; height: 500px">
 					<div class="carousel-caption">
-						<h3>New York</h3>
-						<p>We love the Big Apple!</p>
+						<h3>Parker</h3>
+						<p>Write your future!</p>
 					</div>
 				</div>
-
+				
+				<div class="item">
+					<img class="img-fluid"
+						src="<c:url value="/resources/images/book.jpg"/>" alt="Books"
+						style="width: 100%; height: 500px">
+					<div class="carousel-caption">
+						<h3>Parker</h3>
+						<p>Write your future!</p>
+					</div>
+				</div>
+				
 			</div>
 
 			<!-- Left and right controls -->

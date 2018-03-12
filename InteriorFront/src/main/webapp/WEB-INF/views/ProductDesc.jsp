@@ -54,5 +54,7 @@
 	</table>
 
 </form>
+
 </body>
+<%@include file="/WEB-INF/views/Footer.jsp"%>
 </html>

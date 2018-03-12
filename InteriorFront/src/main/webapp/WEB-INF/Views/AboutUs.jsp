@@ -19,8 +19,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="lg-text">About Us</h1>
-				<p class="lead">Just Order is something a bit different from other e-commerce sites,<br>
-					which focuses on consumers experience.</p>
+				<p class="lead">
+					Just Order is something a bit different from other e-commerce
+					sites,<br> which focuses on consumers experience.
+				</p>
 			</div>
 		</div>
 	</div>
@@ -33,10 +35,10 @@
 				<h1 class="strong">
 					Who we are and<br>what we do
 				</h1>
-				<p class="lead">
-					This is the e-commerce portal for easy and quick shopping.You can find best categories of products and pay through various modes.
-					Once you will visit us we ensure that you go for shopping for sure.
-				</p>
+				<p class="lead">This is the e-commerce portal for easy and quick
+					shopping.You can find best categories of products and pay through
+					various modes. Once you will visit us we ensure that you go for
+					shopping for sure.</p>
 			</div>
 		</div>
 	</div>
@@ -46,7 +48,9 @@
 		<div class="site-heading text-center">
 			<h3>Our Team</h3>
 			<p>
-				We are bunch of members working for making the shopping easier and convenient <br> Meet our team members 			</p>
+				We are bunch of members working for making the shopping easier and
+				convenient <br> Meet our team members
+			</p>
 			<div class="border"></div>
 		</div>
 	</div>
@@ -57,9 +61,9 @@
 				<div class="team-content">
 					<h3>Srinivas Patnaik</h3>
 					<div class="border-team"></div>
-					<p>Srinivas Patnaik is a technical trainer and mentor who has spent around
-					14 years teaching several technologies starting with C, C++ , Java and dot net. etc.
-</p>
+					<p>Srinivas Patnaik is a technical trainer and mentor who has
+						spent around 14 years teaching several technologies starting with
+						C, C++ , Java and dot net. etc.</p>
 					<div class="social-icons">
 						<a href="https://www.facebook.com/"><i id="social-fb"
 							class="fa fa-facebook-square fa-3x social"></i></a> <a
@@ -79,9 +83,9 @@
 				<div class="team-content">
 					<h3>Bhanoo Pratap Singh</h3>
 					<div class="border-team"></div>
-					<p>Bhanoo Pratap Singh is a technical mentor who 
-					has spent more than five years of teaching several
-					technologies starting with C, C++ , Java and dot net. etc.</p>
+					<p>Bhanoo Pratap Singh is a technical mentor who has spent more
+						than five years of teaching several technologies starting with C,
+						C++ , Java and dot net. etc.</p>
 					<div class="social-icons">
 						<a href="https://www.facebook.com/"><i id="social-fb"
 							class="fa fa-facebook-square fa-3x social"></i></a> <a
@@ -101,8 +105,10 @@
 				<div class="team-content">
 					<h3>Sujit Singh</h3>
 					<div class="border-team"></div>
-					<p>Sujit Singh is a developer working for the project under guidance of Srinivas Patniak and Bhanoo Pratap Singh.
-					The project is specifically for e-commerce.Through basic usage various technologies we developed.</p>
+					<p>Sujit Singh is a developer working for the project under
+						guidance of Srinivas Patniak and Bhanoo Pratap Singh. The project
+						is specifically for e-commerce.Through basic usage various
+						technologies we developed.</p>
 					<div class="social-icons">
 						<a href="https://www.facebook.com/"><i id="social-fb"
 							class="fa fa-facebook-square fa-3x social"></i></a> <a

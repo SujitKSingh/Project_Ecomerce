@@ -21,12 +21,10 @@
 	<footer class="footer-bs">
 		<div class="row">
 			<div class="col-md-3 footer-brand animated fadeInLeft">
-				<h2>Logo</h2>
-				<p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam
-					porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget
-					faucibus faucibus, purus erat eleifend enim, porta pellentesque ex
-					mi ut sem.</p>
-				<p>© 2014 BS3 UI Kit, All rights reserved</p>
+				<h2>Just Order</h2>
+				<p>Just Order is something a bit different from other e-commerce
+					sites, which focuses on consumers experience.</p>
+				<p>Copyright � 2018 Just Order, All rights reserved</p>
 			</div>
 			<div class="col-md-4 footer-nav animated fadeInUp">
 				<h4>Menu —</h4>
@@ -41,8 +39,9 @@
 				</div>
 				<div class="col-md-6">
 					<ul class="list">
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Contacts</a></li>
+						<li><a href="${pageContext.request.contextPath}/aboutus">About
+								Us</a></li>
+						<li><a href="${pageContext.request.contextPath}/contactus">Contacts</a></li>
 						<li><a href="#">Terms & Condition</a></li>
 						<li><a href="#">Privacy Policy</a></li>
 					</ul>
@@ -59,8 +58,7 @@
 			</div>
 			<div class="col-md-3 footer-ns animated fadeInRight">
 				<h4>Newsletter</h4>
-				<p>A rover wearing a fuzzy suit doesn’t alarm the real
-					penguins</p>
+				<p>Get the latest updates on your mail</p>
 				<p>
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search for...">
