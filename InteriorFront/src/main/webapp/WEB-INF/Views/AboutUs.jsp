@@ -56,8 +56,8 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4 team-box">
-			<div class="team-img thumbnail">
-				<img src="">
+			<div class="team-img thumbnail " >
+				<img src="<c:url value="/resources/images/projecthead.jpg" />" class="img-responsive img-thumbnail" >
 				<div class="team-content">
 					<h3>Srinivas Patnaik</h3>
 					<div class="border-team"></div>
@@ -78,8 +78,8 @@
 			</div>
 		</div>
 		<div class="col-md-4 team-box">
-			<div class="team-img thumbnail">
-				<img src="">
+			<div class="team-img thumbnail ">
+				<img src="<c:url value="" />" class="img-responsive img-thumbnail " >
 				<div class="team-content">
 					<h3>Bhanoo Pratap Singh</h3>
 					<div class="border-team"></div>
@@ -101,7 +101,7 @@
 		</div>
 		<div class="col-md-4 team-box">
 			<div class="team-img thumbnail">
-				<img src="">
+				<img src="<c:url value="" />" class="img-responsive img-thumbnail" >
 				<div class="team-content">
 					<h3>Sujit Singh</h3>
 					<div class="border-team"></div>

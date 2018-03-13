@@ -125,7 +125,9 @@ public class ProductController {
 		m.addAttribute("ProductInfo", product);
 		m.addAttribute("categoryName", categoryName);
 
-		m.addAttribute("product", productId);
+		m.addAttribute("product", product.getproductId());
+		
+		System.out.println(product.getproductId());
 
 		return "ProductDesc";
 	}

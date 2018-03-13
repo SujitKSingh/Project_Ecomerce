@@ -77,17 +77,10 @@ public class Product
 	
 	public int getproductPrice() 
 	{
-		return productId;
-	}
-	public void setproductPrice(int productId) 
-	{
-		this.productId = productId;
-	}
-	
-	public int getProductPrice() {
 		return productPrice;
 	}
-	public void setProductPrice(int productPrice) {
+	public void setproductPrice(int productPrice) 
+	{
 		this.productPrice = productPrice;
 	}
 	
