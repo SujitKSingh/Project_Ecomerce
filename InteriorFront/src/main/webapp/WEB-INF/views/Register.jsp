@@ -44,7 +44,9 @@
 									aria-hidden="true"></i></span>
 								<form:input type="text" path="username" class="form-control"
 									name="name" id="name" placeholder="Enter your Name" />
+									
 							</div>
+							<span style="color:red;">${usernameMsg}</span>
 						</div>
 					</div>
 
@@ -95,8 +97,10 @@
 								<span class="input-group-addon"><i
 									class="fa fa-envelope fa" aria-hidden="true"></i></span>
 								<form:input type="email" path="emailId" class="form-control"
-									name="email" id="email" placeholder="Enter your Email" />
+									name="email" id="email" placeholder="Enter your Email" /><br/>
+									
 							</div>
+							<span style="color:red;">${emailMsg}</span>
 						</div>
 					</div>
 
@@ -112,7 +116,7 @@
 									name="address-book" id="confirm" placeholder="Home Address" />
 							</div>
 						</div>
-						</di3v>
+						</div>
 
 						<form:hidden path="role" value="ROLE_USER" />
 						<form:hidden path="enabled" value="TRUE" />

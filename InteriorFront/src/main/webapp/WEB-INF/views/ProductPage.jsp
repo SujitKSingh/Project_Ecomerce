@@ -8,7 +8,7 @@
 	<tr bgcolor="pink">
 		<td colspan="4" align="center">Product Detail</td>
 	</tr>
-	<tr>
+	<tr >
 		<c:forEach items="${listProducts}" var="product">
 
 			<td><img src="<c:url value="/resources/images/${product.productId}.jpg"/>" width="250" height="250" /> <br /> 

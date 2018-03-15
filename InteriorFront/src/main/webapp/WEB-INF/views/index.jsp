@@ -10,7 +10,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container ">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 			<!-- Indicators -->

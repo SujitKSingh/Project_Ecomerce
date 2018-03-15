@@ -15,14 +15,12 @@
 }
 </style>
 </head>
-<body>
-
+<body style="background-image:url('/InteriorFront/resources/images/backgroundcr.jpg');">
 	<div id="upperLabel" class="container-fluid">
 		<i class="fas fa-shopping-cart"></i> <label>Just Order</label>
 	</div>
 
 	<div class="container">
-
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<divclass"navbar-header"> <a class="navbar-brand"
