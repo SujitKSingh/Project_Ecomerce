@@ -15,7 +15,7 @@
 	rel='stylesheet'>
 
 <div class="image-aboutus-banner" style="margin-top: 70px">
-	<div class="container">
+	<div class="container well">
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="lg-text">About Us</h1>
@@ -29,7 +29,7 @@
 </div>
 
 <div class="aboutus-secktion paddingTB60">
-	<div class="container">
+	<div class="container well">
 		<div class="row">
 			<div class="col-md-6">
 				<h1 class="strong">
@@ -44,7 +44,7 @@
 	</div>
 </div>
 <div class="container team-sektion paddingTB60">
-	<div class="row">
+	<div class="row well">
 		<div class="site-heading text-center">
 			<h3>Our Team</h3>
 			<p>
@@ -54,10 +54,10 @@
 			<div class="border"></div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row well">
 		<div class="col-md-4 team-box">
 			<div class="team-img thumbnail " >
-				<img src="<c:url value="/resources/images/projecthead.jpg" />" class="img-responsive img-thumbnail" >
+				<img src="<c:url value="/resources/images/index.png" />" class="img-responsive img-thumbnail" >
 				<div class="team-content">
 					<h3>Srinivas Patnaik</h3>
 					<div class="border-team"></div>
@@ -79,7 +79,7 @@
 		</div>
 		<div class="col-md-4 team-box">
 			<div class="team-img thumbnail ">
-				<img src="<c:url value="" />" class="img-responsive img-thumbnail " >
+				<img src="<c:url value="/resources/images/index.png" />" class="img-responsive img-thumbnail " >
 				<div class="team-content">
 					<h3>Bhanoo Pratap Singh</h3>
 					<div class="border-team"></div>
@@ -101,14 +101,13 @@
 		</div>
 		<div class="col-md-4 team-box">
 			<div class="team-img thumbnail">
-				<img src="<c:url value="" />" class="img-responsive img-thumbnail" >
+				<img src="<c:url value="/resources/images/index.png" />" class="img-responsive img-thumbnail" >
 				<div class="team-content">
 					<h3>Sujit Singh</h3>
 					<div class="border-team"></div>
 					<p>Sujit Singh is a developer working for the project under
 						guidance of Srinivas Patniak and Bhanoo Pratap Singh. The project
-						is specifically for e-commerce.Through basic usage various
-						technologies we developed.</p>
+						is specifically for e-commerce.</p>
 					<div class="social-icons">
 						<a href="https://www.facebook.com/"><i id="social-fb"
 							class="fa fa-facebook-square fa-3x social"></i></a> <a
