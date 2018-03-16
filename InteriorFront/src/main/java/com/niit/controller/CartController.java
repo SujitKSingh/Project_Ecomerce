@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.niit.dao.CartDAO;
 import com.niit.dao.ProductDAO;
 import com.niit.model.CartItem;
-import com.niit.model.OrderDetail;
 import com.niit.model.Product;
 
 @Controller

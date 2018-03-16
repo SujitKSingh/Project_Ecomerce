@@ -1,36 +1,9 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!------ Include the above in your HEAD tag ---------->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Website CSS style -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Website Font style -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-<link rel="stylesheet" href="Registercss.css">
-<!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Passion+One'
-	rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Oxygen'
-	rel='stylesheet' type='text/css'>
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
-<title>Admin</title>
-</head>
-<body>
+<%@include file="Header.jsp" %>
 	<div class="container">
-		<div class="row main">
+		<div class="row main jumbotron">
 			<div class="main-login main-center">
 				<h3>Sign up With US</h3>
 				<form:form method="post" action="Register" modelAttribute="user">
@@ -130,10 +103,4 @@
 		</div>
 	</div>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+	<%@include file="Footer.jsp" %>

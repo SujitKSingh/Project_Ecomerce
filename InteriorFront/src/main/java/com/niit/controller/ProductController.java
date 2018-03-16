@@ -22,7 +22,6 @@ import com.niit.dao.CartDAO;
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.SuplierDAO;
-import com.niit.model.CartItem;
 import com.niit.model.Category;
 import com.niit.model.Product;
 

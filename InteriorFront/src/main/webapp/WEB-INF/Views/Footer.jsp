@@ -14,7 +14,7 @@
 </head>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container">
+<div class="container-fluid">
 	<section style="height: 80px;"></section>
 	<div class="row" style="text-align: center;"></div>
 	<!----------- Footer ------------>

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserController {
+	@SuppressWarnings({ "unchecked", "unused" })
 	@RequestMapping("/login_success")
 	public String showHomePage(HttpSession session, Model m) {
 		String page = "";

@@ -15,7 +15,7 @@
 	rel='stylesheet'>
 
 <div class="image-aboutus-banner" style="margin-top: 70px">
-	<div class="container">
+	<div class="container well">
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="lg-text">Contact Us</h1>
@@ -23,10 +23,7 @@
 					Feel free to contact us.</p>
 			</div>
 		</div>
-	</div>
-</div>
-<div class="bread-bar">
-	<div class="container">
+		<div class="bread-bar">
 		<div class="row">
 			<div class="col-md-8 col-sm-6 col-xs-8">
 				<ol class="breadcrumb">
@@ -36,13 +33,16 @@
 			</div>
 			<div class="col-md-4 col-sm-6 col-xs-4"></div>
 		</div>
+		</div>
 	</div>
 </div>
 
+	
+
 <div class="contact-section paddingTB60">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-3 col-sm-4">
+		<div class="row well">
+			<div class="col-md-3 col-sm-4 ">
 				<i class="fa fa-home"></i> <b>Just order Inc.</b><br> 41
 				Sapru Marg<br> Lucknow, 226001 INDIA<br>
 				<br> <i class="fa fa-phone"></i> <b>1800-xxx-111</b><br> <i
@@ -93,7 +93,7 @@
 </div>
 
 <div class="cta-sektion cta-padding35">
-	<div class="container">
+	<div class="container well">
 		<div class="row">
 			<div class="col-md-9 col-sm-9 col-xs-12">
 				<h3>
@@ -110,7 +110,7 @@
 </div>
 <div class="footer-section">
 	<div class="footer">
-		<div class="container">
+		<div class="container well">
 			<div class="col-md-4 footer-one">
 				<h5>About Us</h5>
 				<p>Cras sociis natoque penatibus et magnis dis parturient
@@ -159,19 +159,6 @@
 			</div>
 
 			<div class="clearfix"></div>
-		</div>
-	</div>
-	<div class="footer-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 text-center ">
-					<div class="copyright-text">
-						<p>CopyRight © 2018 Digital All Rights Reserved</p>
-					</div>
-				</div>
-				<!-- End Col -->
-
-			</div>
 		</div>
 	</div>
 </div>
