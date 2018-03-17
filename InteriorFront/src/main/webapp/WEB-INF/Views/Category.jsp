@@ -1,9 +1,9 @@
 <%@include file="Header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<h3 align="center">Category Page</h3>
+<h3 align="center" class="container well">Category Page</h3>
 
-<form action="InsertCategory" method="post">
+<form action="InsertCategory" method="post" class="container well" >
 	<table align="center">
 		<tr>
 			<td>Category Name</td>
@@ -19,7 +19,7 @@
 	</table>
 </form>
 
-<table align="center">
+<table align="center" class="container well" border="2" >
 	<tr>
 		<td>Category ID</td>
 		<td>Category Name</td>

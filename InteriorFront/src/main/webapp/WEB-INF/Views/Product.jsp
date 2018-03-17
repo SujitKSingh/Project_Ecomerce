@@ -1,12 +1,12 @@
 <%@include file="Header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<h3 align="center">Product Page</h3>
+<h3 align="center" class="container well">Product Page</h3>
 
 <c:if test="${product!=null}">
 	<form:form method="post" action="InsertProduct"
-		modelAttribute="product" enctype="multipart/form-data">
-		<table align="center">
+		modelAttribute="product" enctype="multipart/form-data" class="container well">
+		<table align="center" >
 			<tr>
 				<td>Product Image</td>
 				<td><form:input type="file" path="pimage" /></td>
@@ -47,7 +47,7 @@
 		</table>
 	</form:form>
 </c:if>
-<table align="center" border="2">
+<table align="center" border="2" class="container well" >
 	<tr>
 		<td>Product ID</td>
 		<td>Product Name</td>
@@ -62,7 +62,6 @@
 			<td>${product.productPrice}</td>
 			<td>${product.productDesc}</td>
 			<td>
-				<!--  a href="<c:url value="/updateProduct/${product.productId}"/>">Update</a>-->/
 				<a href="<c:url value="/deleteProduct/${product.productId}"/>">Delete</a>
 			</td>
 		</tr>

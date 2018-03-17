@@ -73,7 +73,7 @@
 			</div>
 		</div>
 	</footer>
-	<section style="text-align: center; margin: 10px auto;">
+	<section style="text-align: center; margin: 10px auto;" class="container-fluid well">
 		CopyRight @ 2018 Designed by <a href="http://enfoplus.net">Sujit
 			K. Singh</a>
 	</section>
