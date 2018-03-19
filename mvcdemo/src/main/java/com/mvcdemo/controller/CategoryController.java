@@ -2,8 +2,6 @@ package com.mvcdemo.controller;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +16,7 @@ import com.niit.model.Category;
 
 @Controller
 public class CategoryController {
-	private static final Logger logger=LoggerFactory.getLogger(CategoryController.class);
+	
 	
 	@Autowired
 	CategoryDAO categoryDAO;
@@ -78,7 +76,7 @@ public class CategoryController {
 		return "UpdateCategory";
 	}
 	
-	@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
+	@RequestMapping(value="/updateCategory",method=RequestMethod.POST)
 	public String updateCategoryInDB(@RequestParam("catid") int categoryId,@RequestParam("catname") String categoryName,@RequestParam("catdesc") String categoryDesc,Model m)
 	{
 		Category category=categoryDAO.getCategory(categoryId);

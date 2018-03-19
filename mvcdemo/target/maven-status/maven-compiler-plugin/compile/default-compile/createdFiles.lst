@@ -1,4 +1,7 @@
+com\mvcdemo\controller\OrderController.class
 com\mvcdemo\controller\CategoryController.class
 com\mvcdemo\controller\PageController.class
-com\mvcdemo\controller\ProductController.class
 com\mvcdemo\controller\UserController.class
+com\mvcdemo\controller\CartController.class
+com\mvcdemo\controller\ProductController.class
+com\mvcdemo\controller\RegisterController.class

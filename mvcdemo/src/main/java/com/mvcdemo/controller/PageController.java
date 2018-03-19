@@ -1,9 +1,5 @@
 package com.mvcdemo.controller;
 
-
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,32 +7,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.niit.model.User;
 
 @Controller
-public class PageController 
-{
-	private static final Logger logger=LoggerFactory.getLogger(PageController.class);
+public class PageController {
 	
+
 	@RequestMapping("/")
-	public String showHomePage()
-	{
+	public String showHomePage() {
 		return "index";
 	}
-	
+
 	@RequestMapping("/login")
-	public String showLogin(Model model)
-	{
-		model.addAttribute("user", new User());
-		return "Login-Register";
+	public String showLogin() {
+		return "Login";
 	}
-	
+
 	@RequestMapping("/aboutus")
-	public String showAboutUs()
-	{
+	public String showAboutUs() {
 		return "AboutUs";
 	}
 	
+	@RequestMapping("/contactus")
+	public String showContactUs() {
+		return "ContactUs";
+	}
+
 	@RequestMapping("/register")
-	public String showRegister()
-	{
+	public String showRegister(Model model) {
+		model.addAttribute("user", new User());
+
 		return "Register";
 	}
+
+	@RequestMapping("/cart")
+	public String showCart() {
+		return "Cart";
+	}
+
+	@RequestMapping("/perform_logout")
+	public String showLogout() {
+		return "Logout";
+	}
+
 }
