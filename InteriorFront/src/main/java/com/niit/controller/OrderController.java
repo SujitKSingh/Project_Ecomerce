@@ -51,12 +51,15 @@ public class OrderController {
 		order.setTotalAmount(this.grandTotal(cartDAO.getcartItems(session.getAttribute("username").toString())));
 		order.setUsername(session.getAttribute("username").toString());
 		int cartid = 0;
+		int cartItemId=0;
 		for (CartItem cart : cartDAO.getcartItems(session.getAttribute("username").toString())) {
 			cartid = cart.getCartId();
+			cartItemId=cart.getCartItemId();
 		}
 		order.setCartId(cartid);
 		orderDAO.confirmOrderDetail(order);
-
+		cartDAO.deleteCartItem(cartDAO.getCartItem(cartItemId));
+			
 		return "ThankYou";
 	}
 

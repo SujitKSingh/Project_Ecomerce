@@ -11,30 +11,45 @@
 				<td>Product Image</td>
 				<td><form:input type="file" path="pimage" /></td>
 			</tr>
+			
 			<tr>
 				<td>Product Name</td>
 				<td><form:input path="productName" /></td>
 			</tr>
+			
 			<tr>
 				<td>Product Price</td>
 				<td><form:input path="productPrice" /></td>
 			</tr>
+			
 			<tr>
 				<td>Product Desc</td>
 				<td><form:input path="productDesc" /></td>
 			</tr>
+			
 			<tr>
 				<td>Category</td>
-				<td><form:input path="categoryId" /> <%-- <form:select path="categoryId">
-			<form:option value="0" label="--Select--"/>
-			<form:options items="${catlist}" itemValue="categoryId" itemLabel="categoryName"/>
-		</form:select> --%></td>
-				<!-- check -->
+				<td>
+				<select  name="categoryId">
+				  
+				  	<c:forEach items="${catlist}" var="cat">
+				  	<option value="${cat.categoryId}">${cat.categoryName}</option>
+				  	</c:forEach>
+				 
+  			 	</select>
+				</td>
 			</tr>
+			
 			<tr>
 				<td>Suplier</td>
-				<td><form:input path="suplierId" /></td>
-				<!-- check -->
+				<td><select  name="suplierId">
+				  
+				  	<c:forEach items="${suplist}" var="supl">
+				  	<option value="${supl.suplierId}">${supl.suplierName}</option>
+				  	</c:forEach>
+				 
+  			 	</select>
+  			 	 	
 			</tr>
 
 			<tr align="center">

@@ -50,6 +50,7 @@ public class ProductController {
 		List<Product> listProducts = productDAO.getProducts();
 		m.addAttribute("listProducts", listProducts);
 		m.addAttribute("catlist", categoryDAO.getCategories());
+		m.addAttribute("suplist", suplierDAO.getsupliers());
 		for (Product nproduct : productDAO.getProducts()) {
 			System.out.println(nproduct.getproductName() + ",");
 		}
@@ -58,11 +59,12 @@ public class ProductController {
 
 	@RequestMapping(value = "/InsertProduct", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute("product") Product product, Model m,
-			@RequestParam(value = "pimage") MultipartFile filedet) {
+			@RequestParam(value = "pimage") MultipartFile filedet,@RequestParam("categoryId")int catId) {
 		if (filedet == null) {
 			System.out.println("error");
 		}
 		Product product1 = new Product();
+		product.setCategoryId(catId);
 		m.addAttribute(product1);
 		// product.setSuplierId(1);
 		productDAO.addProduct(product);
@@ -87,7 +89,10 @@ public class ProductController {
 			System.out.println("Problem Occured in File Uploading");
 		}
 
-		m.addAttribute("catlist", this.listCategories());
+		m.addAttribute("catlist", categoryDAO.getCategories());
+		m.addAttribute("suplist", suplierDAO.getsupliers());
+		List<Product> listProducts = productDAO.getProducts();
+		m.addAttribute("listProducts", listProducts);
 		return "Product";
 	}
 
@@ -106,6 +111,7 @@ public class ProductController {
 		List<Product> listProducts = productDAO.getProducts();
 		m.addAttribute("listProduct", listProducts);
 		m.addAttribute("product", new Product());
+		
 		flag = false;
 		return "Product";
 	}
@@ -121,9 +127,10 @@ public class ProductController {
 	public String showProductDesc(@PathVariable("productId") int productId, Model m, HttpSession session) {
 		Product product = productDAO.getProduct(productId);
 		String categoryName = categoryDAO.getCategory(product.getCategoryId()).getCategoryName();
+		String suplierName = suplierDAO.getSuplier(product.getSuplierId()).getsuplierName();
 		m.addAttribute("ProductInfo", product);
 		m.addAttribute("categoryName", categoryName);
-
+		m.addAttribute("suplierName", suplierName);
 		m.addAttribute("product", product.getproductId());
 		
 		System.out.println(product.getproductId());

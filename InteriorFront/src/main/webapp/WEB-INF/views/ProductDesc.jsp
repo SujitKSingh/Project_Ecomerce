@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<h3 align="center">Product Page</h3>
+<h3 align="center" class="container well">Product Page</h3>
 
 <form action="<c:url value='/addtoCart/${product}'/>">
 	<table align="center" width="40%" height="40%" border="2">
@@ -23,12 +23,12 @@
 			<td>${ProductInfo.productName}</td>
 		</tr>
 		<tr bgcolor="pink">
-			<td>Category ID</td>
+			<td>Category </td>
 			<td>${categoryName}</td>
 		</tr>
 		<tr bgcolor="pink">
-			<%-- <td>Supplier ID</td>
-		<td>${ProductInfo.supplierId}</td> --%>
+			<td>Supplier </td>
+		<td>${suplierName}</td> 
 		</tr>
 		<tr bgcolor="pink">
 			<td>Product Description</td>

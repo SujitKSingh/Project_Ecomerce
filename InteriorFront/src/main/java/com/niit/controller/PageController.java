@@ -46,5 +46,7 @@ public class PageController {
 	public String showLogout() {
 		return "Logout";
 	}
+	
+	
 
 }

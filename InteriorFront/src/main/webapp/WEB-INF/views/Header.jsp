@@ -56,6 +56,7 @@
 					<c:if test="${pageContext.request.userPrincipal.name=='Sumit'}">
 						<li><a href="${pageContext.request.contextPath}/category">Category</a></li>
 						<li><a href="${pageContext.request.contextPath}/product">Product</a></li>
+						<li><a href="${pageContext.request.contextPath}/suplier">Suplier</a></li>
 					</c:if>
 					<li><a href="${pageContext.request.contextPath}/productPage">ProductPage</a></li>
 

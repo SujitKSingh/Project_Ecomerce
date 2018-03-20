@@ -12,7 +12,6 @@ public class Suplier
 	@Id
 	@GeneratedValue
 	private int suplierId;
-	
 	private String suplierName;
 	private String suplierDesc;
 	

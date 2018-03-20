@@ -9,12 +9,17 @@
 		<td colspan="4" align="center">Product Detail</td>
 	</tr>
 	<tr >
+		<c:set var="i" value="1"/>
 		<c:forEach items="${listProducts}" var="product">
 
 			<td><img src="<c:url value="/resources/images/${product.productId}.jpg"/>" width="250" height="250" /> <br /> 
 				<a href="<c:url value="/productDesc/${product.productId}"/>" >${product.productName}</a>
 				<br />INR. ${product.productPrice} /-</td>
-
+				<c:if test="${i%4==0}">
+					</tr>
+					<tr>
+				</c:if>
+				<c:set var="i" value="${i+1}"/>
 		</c:forEach>
 	</tr>
 </table>

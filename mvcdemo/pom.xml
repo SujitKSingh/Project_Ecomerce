@@ -131,7 +131,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>InteriorFront</finalName>
+		<finalName>mvcdemo</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

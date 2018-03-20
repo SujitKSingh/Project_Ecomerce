@@ -19,6 +19,8 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 	<security:http>
 		<security:intercept-url pattern="/product/**"
 			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/suplier/**"
+			access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/cart/**"
 			access="hasRole('ROLE_USER')" />
 		<security:form-login login-page="/login"
