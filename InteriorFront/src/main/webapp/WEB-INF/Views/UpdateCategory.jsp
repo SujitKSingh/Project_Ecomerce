@@ -1,9 +1,9 @@
 <%@include file="Header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<h3 align="center">Category Page</h3>
+<h3 align="center" class="container well">Update Category Detail</h3>
 
-<form action="<c:url value="/updateCategory"/>" method="post">
+<form action="<c:url value="/updateCategory"/>" class="container well" method="post">
 	<table align="center">
 		<tr bgcolor="pink">
 			<td colspan="2">Update Category</td>
@@ -31,7 +31,7 @@
 	</table>
 </form>
 
-<table align="center">
+<table align="center" class="container well">
 	<tr>
 		<td>Category ID</td>
 		<td>Category Name</td>

@@ -20,25 +20,25 @@ public class RegisterController
 	UserDAO userDetailDAO;
 
 	@RequestMapping(value = "/Register", method = RequestMethod.POST)
-	public String insertUsers(@ModelAttribute("user") User user,Model m)
+	public String insertUsers(@ModelAttribute("user") User user, Model m)
 
 	{
-		List<User> ulist=userDetailDAO.getAllUser();
-		for(User user1:ulist) {
-			if(user1.getEmailId().equals(user.getEmailId())) {
+		List<User> ulist = userDetailDAO.getAllUser();
+		for (User user1 : ulist) {
+			if (user1.getEmailId().equals(user.getEmailId())) {
 				m.addAttribute("emailMsg", "* Email Address Alredy Exists");
 				m.addAttribute("user", new User());
 				return "Register";
-				
+
 			}
-			if(user1.getUsername().equals(user.getUsername())) {
+			if (user1.getUsername().equals(user.getUsername())) {
 				m.addAttribute("usernameMsg", "* Username Alredy Exists");
 				m.addAttribute("user", new User());
 				return "Register";
-				
+
 			}
 		}
-		
+
 		userDetailDAO.registerUser(user);
 		return "Login";
 	}

@@ -25,13 +25,13 @@ public class CartController
 
 	@Autowired
 	ProductDAO productDAO;
-	
+
 	@RequestMapping("/addtoCart/{productId}")
 	public String addCartItem(@PathVariable("productId") int productId, @RequestParam("quantity") int quantity,
 			HttpSession session, Model m) {
 		CartItem cartItem = new CartItem();
 		Product product = productDAO.getProduct(productId);
-		
+
 		String username = (String) session.getAttribute("username");
 
 		cartItem.setProductId(productId);
@@ -48,7 +48,7 @@ public class CartController
 		m.addAttribute("grandTotal", this.grandTotal(listCartItems));
 		m.addAttribute("cartList", cartDAO.getcartItems(username));
 		return "Cart";
-}
+	}
 
 	@RequestMapping("/updateCartItem/{cartItemId}")
 	public String updateCartItem(@PathVariable("cartItemId") int cartItemId, @RequestParam("qty") int quantity, Model m,
@@ -86,11 +86,11 @@ public class CartController
 	public int grandTotal(List<CartItem> listCartItems) {
 		int grandTotal = 0;
 		for (CartItem cartItem : listCartItems) {
-			int c=cartItem.getProductId();
+			int c = cartItem.getProductId();
 			System.out.println(c);
-			int p=productDAO.getProduct(c).getproductPrice();
-			System.out.println("Price"+p);
-			grandTotal = grandTotal+cartItem.getQuantity()*(p);
+			int p = productDAO.getProduct(c).getproductPrice();
+			System.out.println("Price" + p);
+			grandTotal = grandTotal + cartItem.getQuantity() * (p);
 
 		}
 		System.out.println(grandTotal);

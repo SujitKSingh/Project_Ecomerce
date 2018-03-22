@@ -8,7 +8,6 @@ import com.niit.model.User;
 
 @Controller
 public class PageController {
-	
 
 	@RequestMapping("/")
 	public String showHomePage() {
@@ -24,7 +23,7 @@ public class PageController {
 	public String showAboutUs() {
 		return "AboutUs";
 	}
-	
+
 	@RequestMapping("/contactus")
 	public String showContactUs() {
 		return "ContactUs";
@@ -46,7 +45,5 @@ public class PageController {
 	public String showLogout() {
 		return "Logout";
 	}
-	
-	
 
 }

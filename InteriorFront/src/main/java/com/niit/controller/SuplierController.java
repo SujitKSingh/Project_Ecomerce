@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.niit.dao.SuplierDAO;
 import com.niit.model.Suplier;
 
-
 @Controller
 public class SuplierController {
-		
+
 	@Autowired
 	SuplierDAO SuplierDAO;
 
@@ -25,7 +24,7 @@ public class SuplierController {
 	@RequestMapping("/suplier")
 	public String showSuplier(Model m) {
 		List<Suplier> listSupliers = SuplierDAO.getsupliers();
-		m.addAttribute("listCategories", listSupliers);
+		m.addAttribute("listSupliers", listSupliers);
 
 		for (Suplier Suplier : listSupliers) {
 			System.out.println(Suplier.getsuplierName() + ",");
@@ -35,8 +34,8 @@ public class SuplierController {
 	}
 
 	@RequestMapping(value = "/InsertSuplier", method = RequestMethod.POST)
-	public String insertSuplierData(@RequestParam("suplname") String suplname, @RequestParam("supldesc") String supldesc,
-			Model m) {
+	public String insertSuplierData(@RequestParam("suplname") String suplname,
+			@RequestParam("supldesc") String supldesc, Model m) {
 		Suplier Suplier = new Suplier();
 		Suplier.setsuplierName(suplname);
 		Suplier.setSuplierDesc(supldesc);
@@ -50,44 +49,41 @@ public class SuplierController {
 	}
 
 	@RequestMapping("/deleteSuplier/{SuplierId}")
-	public String deleteSuplier(@PathVariable("SuplierId") int SuplierId,Model m)
-	{
-		Suplier Suplier=SuplierDAO.getSuplier(SuplierId);
-		
+	public String deleteSuplier(@PathVariable("SuplierId") int SuplierId, Model m) {
+		Suplier Suplier = SuplierDAO.getSuplier(SuplierId);
+
 		SuplierDAO.deleteSuplier(Suplier);
-		
-		List<Suplier> listSupliers=SuplierDAO.getsupliers();
-		m.addAttribute("listSupliers",listSupliers);
-		flag=false;
+
+		List<Suplier> listSupliers = SuplierDAO.getsupliers();
+		m.addAttribute("listSupliers", listSupliers);
+		flag = false;
 		return "Suplier";
 	}
 
 	@RequestMapping("/updateSuplier/{SuplierId}")
-	public String updateSuplier(@PathVariable("SuplierId") int SuplierId,Model m)
-	{
-		Suplier Suplier=SuplierDAO.getSuplier(SuplierId);
-		
-		
-		List<Suplier> listSupliers=SuplierDAO.getsupliers();
-		m.addAttribute("listSupliers",listSupliers);
-		m.addAttribute("SuplierInfo",Suplier);
-		
+	public String updateSuplier(@PathVariable("SuplierId") int SuplierId, Model m) {
+		Suplier Suplier = SuplierDAO.getSuplier(SuplierId);
+
+		List<Suplier> listSupliers = SuplierDAO.getsupliers();
+		m.addAttribute("listSupliers", listSupliers);
+		m.addAttribute("SuplierInfo", Suplier);
+
 		return "UpdateSuplier";
 	}
-	
-	@RequestMapping(value="/updateSuplier",method=RequestMethod.POST)
-	public String updateSuplierInDB(@RequestParam("suplid") int SuplierId,@RequestParam("suplname") String SuplierName,@RequestParam("supldesc") String SuplierDesc,Model m)
-	{
-		Suplier Suplier=SuplierDAO.getSuplier(SuplierId);
+
+	@RequestMapping(value = "/updateSuplier", method = RequestMethod.POST)
+	public String updateSuplierInDB(@RequestParam("suplid") int SuplierId, @RequestParam("suplname") String SuplierName,
+			@RequestParam("supldesc") String SuplierDesc, Model m) {
+		Suplier Suplier = SuplierDAO.getSuplier(SuplierId);
 		Suplier.setsuplierName(SuplierName);
 		Suplier.setSuplierDesc(SuplierDesc);
-		
+
 		SuplierDAO.updateSuplier(Suplier);
-		
-		List<Suplier> listSupliers=SuplierDAO.getsupliers();
-		m.addAttribute("listSupliers",listSupliers);
-		
+
+		List<Suplier> listSupliers = SuplierDAO.getsupliers();
+		m.addAttribute("listSupliers", listSupliers);
+
 		return "Suplier";
 	}
-	
+
 }

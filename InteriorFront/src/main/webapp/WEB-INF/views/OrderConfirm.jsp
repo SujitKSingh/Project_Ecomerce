@@ -21,7 +21,7 @@
 				<td>${cartItem.productId}</td>
 				<td><input type="text" name="qty" value="${cartItem.quantity}" /></td>
 				<td>${cartItem.subTotal}</td>
-				<td><input type="submit" value="Update" class="btn-sucess" />
+				<td><input type="submit" value="Update" class="btn-sucess " />
 				<td><a
 					href="<c:url value="/deleteCartItem/${cartItem.cartItemId}"/>"
 					class="btn btn-danger btn-block">Delete</a></td>

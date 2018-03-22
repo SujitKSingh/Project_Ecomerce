@@ -57,8 +57,8 @@
 						src="<c:url value="/resources/images/book.jpg"/>" alt="Books"
 						style="width: 100%; height: 500px">
 					<div class="carousel-caption">
-						<h3>Parker</h3>
-						<p>Write your future!</p>
+						<h3>Popular Books</h3>
+						<p>Read and Enjoy!</p>
 					</div>
 				</div>
 				

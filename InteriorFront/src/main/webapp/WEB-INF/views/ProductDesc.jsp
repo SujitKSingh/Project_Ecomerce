@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<h3 align="center" class="container well">Product Page</h3>
+<h3 align="center" class="container well">Product Description </h3>
 
 <form action="<c:url value='/addtoCart/${product}'/>">
 	<table align="center" width="40%" height="40%" border="2">
@@ -34,7 +34,7 @@
 			<td>Product Description</td>
 			<td>${ProductInfo.productDesc}</td>
 		</tr>
-		<tr>
+		<tr bgcolor="pink" >
 			<td>Quantity</td>
 			<td><select name="quantity">
 					<option value="1">1</option>
@@ -44,7 +44,7 @@
 					<option value="5">5</option>
 			</select></td>
 		</tr>
-		<tr>
+		<tr bgcolor="cyan">
 			<td colspan="2"><center>
 				<c:if test="${pageContext.request.userPrincipal.name!='Sumit'}">	
 				<input type="Submit" value="Add To Cart" />
@@ -52,9 +52,5 @@
 				</center></td>
 		</tr>
 	</table>
-
 </form>
-
-</body>
 <%@include file="/WEB-INF/views/Footer.jsp"%>
-</html>

@@ -1,9 +1,9 @@
 <%@include file="Header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<h3 align="center">Suplier Page</h3>
+<h3 align="center" class="container well" >Update Suplier Detail</h3>
 
-<form action="<c:url value="/updateSuplier"/>" method="post">
+<form action="<c:url value="/updateSuplier"/>" method="post" class="container well">
 	<table align="center">
 		<tr bgcolor="pink">
 			<td colspan="2">Update Suplier</td>
@@ -31,7 +31,7 @@
 	</table>
 </form>
 
-<table align="center">
+<table align="center" class="container well">
 	<tr>
 		<td>Suplier ID</td>
 		<td>Suplier Name</td>

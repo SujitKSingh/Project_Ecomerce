@@ -49,10 +49,10 @@ public class UserController {
 		return "redirect:/";
 
 	}
+
 	@RequestMapping("/UserHome")
-	public String UserHome()
-	{
-		return "UserHome" ;
-		
+	public String UserHome() {
+		return "UserHome";
+
 	}
 }

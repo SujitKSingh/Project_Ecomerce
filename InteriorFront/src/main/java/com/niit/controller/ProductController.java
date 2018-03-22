@@ -25,8 +25,6 @@ import com.niit.dao.SuplierDAO;
 import com.niit.model.Category;
 import com.niit.model.Product;
 
-//import com.niit.model.Suplier;
-
 @Controller
 public class ProductController {
 
@@ -35,14 +33,15 @@ public class ProductController {
 
 	@Autowired
 	CartDAO cartDAO;
-	boolean flag = true;
+	
 
 	@Autowired
 	ProductDAO productDAO;
 
 	@Autowired
 	SuplierDAO suplierDAO;
-
+	
+	boolean flag = true;
 	@RequestMapping("/product")
 	public String showProductPage(Model m) {
 		Product product = new Product();
@@ -59,14 +58,13 @@ public class ProductController {
 
 	@RequestMapping(value = "/InsertProduct", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute("product") Product product, Model m,
-			@RequestParam(value = "pimage") MultipartFile filedet,@RequestParam("categoryId")int catId) {
+			@RequestParam(value = "pimage") MultipartFile filedet, @RequestParam("categoryId") int catId) {
 		if (filedet == null) {
 			System.out.println("error");
 		}
 		Product product1 = new Product();
 		product.setCategoryId(catId);
 		m.addAttribute(product1);
-		// product.setSuplierId(1);
 		productDAO.addProduct(product);
 
 		String imagePath = "D:\\eclipse-jee-oxygen-2-win32-x86_64\\oxy workspace\\Project_Ecomerce\\InteriorFront\\src\\main\\webapp\\resources\\images\\";
@@ -111,7 +109,7 @@ public class ProductController {
 		List<Product> listProducts = productDAO.getProducts();
 		m.addAttribute("listProduct", listProducts);
 		m.addAttribute("product", new Product());
-		
+
 		flag = false;
 		return "Product";
 	}
@@ -132,7 +130,7 @@ public class ProductController {
 		m.addAttribute("categoryName", categoryName);
 		m.addAttribute("suplierName", suplierName);
 		m.addAttribute("product", product.getproductId());
-		
+
 		System.out.println(product.getproductId());
 
 		return "ProductDesc";
