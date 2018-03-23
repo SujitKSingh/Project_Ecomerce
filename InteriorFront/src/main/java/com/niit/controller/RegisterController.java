@@ -23,6 +23,7 @@ public class RegisterController
 	public String insertUsers(@ModelAttribute("user") User user, Model m)
 
 	{
+		
 		List<User> ulist = userDetailDAO.getAllUser();
 		for (User user1 : ulist) {
 			if (user1.getEmailId().equals(user.getEmailId())) {
