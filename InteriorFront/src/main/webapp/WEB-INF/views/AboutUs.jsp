@@ -56,8 +56,9 @@
 	</div>
 	<div class="row well">
 		<div class="col-md-4 team-box">
-			<div class="team-img thumbnail " >
-				<img src="<c:url value="/resources/images/index.png" />" class="img-responsive img-thumbnail" >
+			<div class="team-img thumbnail ">
+				<img src="<c:url value="/resources/images/index.png" />"
+					class="img-responsive img-thumbnail">
 				<div class="team-content">
 					<h3>Srinivas Patnaik</h3>
 					<div class="border-team"></div>
@@ -79,7 +80,8 @@
 		</div>
 		<div class="col-md-4 team-box">
 			<div class="team-img thumbnail ">
-				<img src="<c:url value="/resources/images/index.png" />" class="img-responsive img-thumbnail " >
+				<img src="<c:url value="/resources/images/index.png" />"
+					class="img-responsive img-thumbnail ">
 				<div class="team-content">
 					<h3>Bhanoo Pratap Singh</h3>
 					<div class="border-team"></div>
@@ -101,7 +103,8 @@
 		</div>
 		<div class="col-md-4 team-box">
 			<div class="team-img thumbnail">
-				<img src="<c:url value="/resources/images/index.png" />" class="img-responsive img-thumbnail" >
+				<img src="<c:url value="/resources/images/index.png" />"
+					class="img-responsive img-thumbnail">
 				<div class="team-content">
 					<h3>Sujit Singh</h3>
 					<div class="border-team"></div>
@@ -129,13 +132,11 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-9 col-xs-12">
 				<h3>
-					<span class="glyphicon glyphicon-cog "></span> <b>Homes for
-						sale?</b> Explore properties like a pro.
+					<span class="glyphicon glyphicon-cog "></span> <b>Products for
+						sale?</b> Explore products like a pro.
+					<button type="button" class="btn btn-primary site-btn">Start
+						Right Now</button>
 				</h3>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-12 Tpadding10">
-				<button type="button" class="btn btn-primary site-btn">Start
-					Right Now</button>
 			</div>
 		</div>
 	</div>
