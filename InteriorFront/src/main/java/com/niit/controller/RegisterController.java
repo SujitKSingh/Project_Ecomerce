@@ -25,8 +25,8 @@ public class RegisterController
 	{
 
 		List<User> ulist = userDetailDAO.getAllUser();
-		if (!user.getCustomerName().equals("") && !user.getEmailId().equals("") && !user.getMobileNo().equals("")
-				&& !user.getPassword().equals("")) {
+		//if (!user.getCustomerName().equals("") && !user.getEmailId().equals("") && !user.getMobileNo().equals("")
+				//&& !user.getPassword().equals("")) {
 			for (User user1 : ulist) {
 				if (user1.getEmailId().equals(user.getEmailId())) {
 					m.addAttribute("emailMsg", "* Email Address Alredy Exists");
@@ -41,13 +41,13 @@ public class RegisterController
 
 				}
 			}
-		}
-		else {
-			m.addAttribute("Null", "* Fields are empty !");
+		//}
+		//else {
+		/*	m.addAttribute("Null", "* Fields are empty !");
 			m.addAttribute("user", new User());
 			return "Register";
 
-		}
+		}*/
 
 		userDetailDAO.registerUser(user);
 		return "Login";

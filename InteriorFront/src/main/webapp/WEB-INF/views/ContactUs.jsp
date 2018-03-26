@@ -95,10 +95,10 @@
 <div class="cta-sektion cta-padding35">
 	<div class="container-fluid well">
 		<div class="row">
-			<div class="col-md-9 col-sm-9 col-xs-12">
+			<div class="col-md-9 col-sm-9 col-xs-12 ">
 				<h3>
 					<span class="glyphicon glyphicon-cog "></span> <b>Products for
-						sale?</b> Explore products like a pro.
+						sale?</b> Explore products like a pro. &nbsp;&nbsp;&nbsp;
 					<button type="button" class="btn btn-primary site-btn">Start
 						Right Now</button>
 				</h3>

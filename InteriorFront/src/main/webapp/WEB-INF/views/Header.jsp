@@ -47,7 +47,7 @@
 </style>
 </head>
 
-<body style="background-image: url('/InteriorFront/resources/images/backgroundcr.jpg');">
+<body style="background-image: url('/InteriorFront/resources/images/backgroundcr.jpg');" ng-app="myApp">
 	<div id="upperLabel" class="container-fluid">
 		<div class="container-fluid" style="padding-left: 15px">
 			<i class="fas fa-shopping-cart"></i><label>Just Order</label>

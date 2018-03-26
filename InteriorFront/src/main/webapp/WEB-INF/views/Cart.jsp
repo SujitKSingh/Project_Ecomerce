@@ -18,7 +18,6 @@
 	<tr>
 		<td><h1>Your Cart is Empty Please add some product to proceed.</h1></td>
 	</tr>
-
 </c:if>
 	<c:forEach items="${cartList}" var="cartItem">
 		<form action="<c:url value="/updateCartItem/${cartItem.cartItemId}"/>"

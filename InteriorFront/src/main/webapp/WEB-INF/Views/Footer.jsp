@@ -15,7 +15,7 @@
 
 <!------ Include the above in your HEAD tag ---------->
 
-<div >
+<div>
 	<!----------- Footer ------------>
 	<footer class="footer-bs container-fluid">
 		<div class="row ">
@@ -67,17 +67,17 @@
 						</button>
 					</span>
 				</div>
+
 				<!-- /input-group -->
 				</p>
 			</div>
 		</div>
-		
 	</footer>
 </div>
-			<div style="text-align: center; margin: 10px auto;color: #e67e22 ;" class="container-fluid well">
-				CopyRight @ 2018 Designed by <a href="http://enfoplus.net">Sujit K. Singh</a>
-			</div>
+<div class="copy container-fluid well" >
+	CopyRight @ 2018 Designed by Sujit K.Singh
+</div>
 </body>
-			
+
 </html>
 

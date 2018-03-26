@@ -14,44 +14,38 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto'
 	rel='stylesheet'>
 
-<div class="image-aboutus-banner" style="margin-top: 70px">
-	<div class="container well">
-		<div class="row">
-			<div class="col-md-12">
-				<h1 class="lg-text">About Us</h1>
-				<p class="lead">
-					Just Order is something a bit different from other e-commerce
-					sites,<br> which focuses on consumers experience.
-				</p>
-			</div>
+<div class="image-aboutus-banner container-fluid well">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="lg-text">About Us</h1>
+			<p class="lead">
+				Just Order is something a bit different from other e-commerce sites,which focuses on consumers experience.
+			</p>
 		</div>
 	</div>
 </div>
 
 <div class="aboutus-secktion paddingTB60">
-	<div class="container well">
+	<div class="container-fluid well">
 		<div class="row">
 			<div class="col-md-6">
 				<h1 class="strong">
-					Who we are and<br>what we do
+					Who we are and what we do
 				</h1>
-				<p class="lead">This is the e-commerce portal for easy and quick
-					shopping.You can find best categories of products and pay through
-					various modes. Once you will visit us we ensure that you go for
-					shopping for sure.</p>
+				<div class="lead">This is the e-commerce portal for easy and quick shopping.You can find best categories of products and pay through
+					various modes. Once you will visit us we ensure that you go for shopping for sure.</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="container team-sektion paddingTB60">
+<div class="container-fluid team-sektion paddingTB60">
 	<div class="row well">
-		<div class="site-heading text-center">
-			<h3>Our Team</h3>
-			<p>
+		<div class="site-heading">
+			<h1 class="strong" >Our Team</h3>
+			<p class="lead">
 				We are bunch of members working for making the shopping easier and
 				convenient <br> Meet our team members
 			</p>
-			<div class="border"></div>
 		</div>
 	</div>
 	<div class="row well">
@@ -128,12 +122,12 @@
 	</div>
 </div>
 <div class="cta-sektion cta-padding35">
-	<div class="container">
+	<div class="container-fluid well">
 		<div class="row">
 			<div class="col-md-9 col-sm-9 col-xs-12">
 				<h3>
 					<span class="glyphicon glyphicon-cog "></span> <b>Products for
-						sale?</b> Explore products like a pro.
+						sale?</b> Explore products like a pro.&nbsp;&nbsp;&nbsp;
 					<button type="button" class="btn btn-primary site-btn">Start
 						Right Now</button>
 				</h3>
