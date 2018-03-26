@@ -93,6 +93,7 @@
 
 				<form:hidden path="role" value="ROLE_USER" />
 				<form:hidden path="enabled" value="TRUE" />
+				<span style="color: red;">${Null}</span>
 				<div class="form-group ">
 					<input type="submit" id="button"
 						class="btn btn-primary btn-lg btn-block login-button"

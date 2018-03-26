@@ -2,6 +2,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
+
+<c:if test="${grandTotal==0}">
+
+<c:redirect url="/productPage"/>
+</c:if>
 <table align="center" class="table">
 	<tr class="danger">
 		<td colspan="4"><center>Your Order</center></td>
@@ -14,8 +19,8 @@
 	</tr>
 
 	<c:forEach items="${cartList}" var="cartItem">
-		<form action="<c:url value="/updateCartItem/${cartItem.cartItemId}"/>"
-			method="get">
+		<form  action="<c:url value="/updateCartItem/${cartItem.cartItemId}"/>"
+			method="get" >
 			<tr class="info">
 
 				<td>${cartItem.productId}</td>
@@ -35,21 +40,21 @@
 	</tr>
 </table>
 
-<form action="<c:url value="PaymentConfirm" />" method="get">
+<form id="myForm" action="<c:url value="PaymentConfirm" />" method="get">
 	<table align="center" class="table">
 		<tr bgcolor="pink">
 			<td colspan="2">Payment Option</td>
 		</tr>
 		<tr>
 			<td colspan="2">Payment Mode</td>
-			<td><input type="radio" name="pmode" value="CC" />Credit Card <input
+			<td><input type="radio" checked="checked" name="pmode" value="CC" />Credit Card <input
 				type="radio" name="pmode" value="NB" />Net Banking <input
 				type="radio" name="pmode" value="COD" />Cash On Delivery</td>
 		</tr>
 
 		<tr>
 			<td>Shipping Address</td>
-			<td><textarea name="shipAddr"> </textarea></td>
+			<td><textarea  name="shipAddr"> </textarea><span style="color: red;">${Null}</span></td>
 		</tr>
 
 		<tr>

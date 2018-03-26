@@ -2,9 +2,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<h3 align="center" class="container well" >Product Page</h3>
-<div class="container well" >
-<table align="center" border="4" >
+<body>
+<div class="container-fluid well" >
+<h3 align="center" class="container-fluid well" >Product Page</h3>
+<table align="center" border="4" style="width:100%" >
 	<tr bgcolor="pink">
 		<td colspan="4" align="center">Product Detail</td>
 	</tr>
@@ -23,4 +24,5 @@
 	</tr>
 </table>
 </div>
+</body>
 <%@include file="/WEB-INF/views/Footer.jsp"%>

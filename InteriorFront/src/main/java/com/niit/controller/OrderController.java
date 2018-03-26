@@ -43,7 +43,9 @@ public class OrderController {
 
 	@RequestMapping("/PaymentConfirm")
 	public String paymentConfirm(@RequestParam("pmode") String pmode, @RequestParam("shipAddr") String shipAddr,
-			HttpSession session) {
+			HttpSession session,Model m) {
+		if(!shipAddr.equals(" "))
+		{
 		OrderDetail order = new OrderDetail();
 		order.setOrderDate(new Date());
 		order.setShippingAddress(shipAddr);
@@ -59,8 +61,17 @@ public class OrderController {
 		order.setCartId(cartid);
 		orderDAO.confirmOrderDetail(order);
 		cartDAO.deleteCartItem(cartDAO.getCartItem(cartItemId));
-
+		
 		return "ThankYou";
+		}
+		else {
+			String username = (String) session.getAttribute("username");
+			List<CartItem> listCartItems = cartDAO.getcartItems(username);
+			m.addAttribute("cartList", listCartItems);
+			m.addAttribute("grandTotal", this.grandTotal(listCartItems));
+			m.addAttribute("Null", "* Please Enter Full Shipping Address !");
+			return "OrderConfirm";
+		}
 	}
 
 	public int grandTotal(List<CartItem> listCartItems) {

@@ -15,8 +15,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="Registercss.css">
 
-<!-- Angular Js  -->
-<script src="angular.min.js"></script>
+
 
 <!-- Google Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Passion+One'
@@ -24,8 +23,10 @@
 <link href='https://fonts.googleapis.com/css?family=Oxygen'
 	rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<!-- Angular Js  -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <style type="text/css">
 #upperLabel {
 	background-color:  #eb984e;

@@ -23,21 +23,30 @@ public class RegisterController
 	public String insertUsers(@ModelAttribute("user") User user, Model m)
 
 	{
-		
+
 		List<User> ulist = userDetailDAO.getAllUser();
-		for (User user1 : ulist) {
-			if (user1.getEmailId().equals(user.getEmailId())) {
-				m.addAttribute("emailMsg", "* Email Address Alredy Exists");
-				m.addAttribute("user", new User());
-				return "Register";
+		if (!user.getCustomerName().equals("") && !user.getEmailId().equals("") && !user.getMobileNo().equals("")
+				&& !user.getPassword().equals("")) {
+			for (User user1 : ulist) {
+				if (user1.getEmailId().equals(user.getEmailId())) {
+					m.addAttribute("emailMsg", "* Email Address Alredy Exists");
+					m.addAttribute("user", new User());
+					return "Register";
 
-			}
-			if (user1.getUsername().equals(user.getUsername())) {
-				m.addAttribute("usernameMsg", "* Username Alredy Exists");
-				m.addAttribute("user", new User());
-				return "Register";
+				}
+				if (user1.getUsername().equals(user.getUsername())) {
+					m.addAttribute("usernameMsg", "* Username Alredy Exists");
+					m.addAttribute("user", new User());
+					return "Register";
 
+				}
 			}
+		}
+		else {
+			m.addAttribute("Null", "* Fields are empty !");
+			m.addAttribute("user", new User());
+			return "Register";
+
 		}
 
 		userDetailDAO.registerUser(user);
