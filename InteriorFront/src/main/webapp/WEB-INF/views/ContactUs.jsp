@@ -14,8 +14,8 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto'
 	rel='stylesheet'>
 
-<div class="image-aboutus-banner" style="margin-top: 70px">
-	<div class="container well">
+<div class="image-aboutus-banner" >
+	<div class="container-fluid well">
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="lg-text">Contact Us</h1>
@@ -23,9 +23,9 @@
 					Feel free to contact us.</p>
 			</div>
 		</div>
-		<div class="bread-bar">
-		<div class="row">
-			<div class="col-md-8 col-sm-6 col-xs-8">
+		<div class="bread-bar container-fluid">
+		<div class="row ">
+			<div class="col-md-8 col-sm-6 col-xs-8 ">
 				<ol class="breadcrumb">
 					<li>Home</li>
 					<li class="active">About Us</li>
@@ -39,8 +39,8 @@
 
 	
 
-<div class="contact-section paddingTB60">
-	<div class="container">
+<div class="contact-section paddingTB60 ">
+	<div class="container-fluid">
 		<div class="row well">
 			<div class="col-md-3 col-sm-4 ">
 				<i class="fa fa-home"></i> <b>Just order Inc.</b><br> 41
@@ -93,29 +93,26 @@
 </div>
 
 <div class="cta-sektion cta-padding35">
-	<div class="container well">
+	<div class="container-fluid well">
 		<div class="row">
 			<div class="col-md-9 col-sm-9 col-xs-12">
 				<h3>
-					<span class="glyphicon glyphicon-cog "></span> <b>Homes for
-						sale?</b> Explore properties like a pro.
+					<span class="glyphicon glyphicon-cog "></span> <b>Products for
+						sale?</b> Explore products like a pro.
+					<button type="button" class="btn btn-primary site-btn">Start
+						Right Now</button>
 				</h3>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-12 Tpadding10">
-				<button type="button" class="btn btn-primary site-btn">Start
-					Right Now</button>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="footer-section">
-	<div class="footer">
-		<div class="container well">
+<div class="footer-section ">
+	<div class="footer ">
+		<div class="container-fluid well">
 			<div class="col-md-4 footer-one">
 				<h5>About Us</h5>
-				<p>Cras sociis natoque penatibus et magnis dis parturient
-					montes, nascetur ridiculus mus. Cras sociis natoque penatibus et
-					magnis dis parturient montes, nascetur ridiculus mus.</p>
+				<p>Just Order is something a bit different from other e-commerce sites,
+which focuses on consumers experience. </p>
 				<div class="social-icons">
 					<a href="https://www.facebook.com/"><i id="social-fb"
 						class="fa fa-facebook-square fa-3x social"></i></a> <a

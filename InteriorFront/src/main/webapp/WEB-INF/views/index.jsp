@@ -10,7 +10,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container ">
+	<div class="container-fluid" style="width:100%" >
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 			<!-- Indicators -->
@@ -75,7 +75,9 @@
 			</a>
 		</div>
 	</div>
-	<%@include file="/WEB-INF/views/Footer.jsp"%>
+	
 </body>
+
+<%@include file="/WEB-INF/views/Footer.jsp"%>
 </html>
 

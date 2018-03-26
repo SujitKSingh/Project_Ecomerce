@@ -12,14 +12,13 @@
 <link rel="Stylesheet"
 	href="<c:url value="/resources/CSS/boostrap-css.css"/>" />
 </head>
+
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container-fluid">
-	<section style="height: 80px;"></section>
-	<div class="row" style="text-align: center;"></div>
+<div >
 	<!----------- Footer ------------>
-	<footer class="footer-bs">
-		<div class="row">
+	<footer class="footer-bs container-fluid">
+		<div class="row ">
 			<div class="col-md-3 footer-brand animated fadeInLeft">
 				<h2>Just Order</h2>
 				<p>Just Order is something a bit different from other e-commerce
@@ -72,13 +71,13 @@
 				</p>
 			</div>
 		</div>
+		
 	</footer>
-	<section style="text-align: center; margin: 10px auto;" class="container-fluid well">
-		CopyRight @ 2018 Designed by <a href="http://enfoplus.net">Sujit
-			K. Singh</a>
-	</section>
-
 </div>
+			<div style="text-align: center; margin: 10px auto;color: #e67e22 ;" class="container-fluid well">
+				CopyRight @ 2018 Designed by <a href="http://enfoplus.net">Sujit K. Singh</a>
+			</div>
 </body>
+			
 </html>
 

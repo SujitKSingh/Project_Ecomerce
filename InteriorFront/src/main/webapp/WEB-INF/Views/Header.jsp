@@ -23,18 +23,17 @@
 	rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oxygen'
 	rel='stylesheet' type='text/css'>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style type="text/css">
 #upperLabel {
-	background-color: #F08080;
+	background-color:  #eb984e;
 	padding: 0px;
 	margin: 0px;
 	width: 100%;
 }
+
 
 .inputText {
 	border: 1px solid #ccc;
@@ -44,17 +43,16 @@
 	width: 200px;
 	height: 30px;
 }
-
 </style>
 </head>
 
 <body style="background-image: url('/InteriorFront/resources/images/backgroundcr.jpg');">
 	<div id="upperLabel" class="container-fluid">
 		<div class="container-fluid" style="padding-left: 15px">
-			<i class="fas fa-shopping-cart"></i> <label>Just Order</label>
+			<i class="fas fa-shopping-cart"></i><label>Just Order</label>
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div id="upperLabel" class="container-fluid" >
 		<nav class="navbar navbar-inverse ">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -82,7 +80,7 @@
 					<li><a href="<c:url value="/UserHome"/>">${pageContext.request.userPrincipal.name}</a></li>
 					<li><a href="${pageContext.request.contextPath}/perform_logout">Logout</a></li>
 				</c:if>
-				</ul>
+			</ul>
 			</div>
 		</nav>
 	</div>
