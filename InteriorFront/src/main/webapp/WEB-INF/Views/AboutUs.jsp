@@ -18,9 +18,8 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h1 class="lg-text">About Us</h1>
-			<p class="lead">
-				Just Order is something a bit different from other e-commerce sites,which focuses on consumers experience.
-			</p>
+			<p class="lead">Just Order is something a bit different from
+				other e-commerce sites,which focuses on consumers experience.</p>
 		</div>
 	</div>
 </div>
@@ -29,11 +28,11 @@
 	<div class="container-fluid well">
 		<div class="row">
 			<div class="col-md-6">
-				<h1 class="strong">
-					Who we are and what we do
-				</h1>
-				<div class="lead">This is the e-commerce portal for easy and quick shopping.You can find best categories of products and pay through
-					various modes. Once you will visit us we ensure that you go for shopping for sure.</div>
+				<h1 class="strong">Who we are and what we do</h1>
+				<div class="lead">This is the e-commerce portal for easy and
+					quick shopping.You can find best categories of products and pay
+					through various modes. Once you will visit us we ensure that you go
+					for shopping for sure.</div>
 			</div>
 		</div>
 	</div>
@@ -41,11 +40,13 @@
 <div class="container-fluid team-sektion paddingTB60">
 	<div class="row well">
 		<div class="site-heading">
-			<h1 class="strong" >Our Team</h3>
-			<p class="lead">
-				We are bunch of members working for making the shopping easier and
-				convenient <br> Meet our team members
-			</p>
+			<h1 class="strong">
+				Our Team
+				</h3>
+				<p class="lead">
+					We are bunch of members working for making the shopping easier and
+					convenient <br> Meet our team members
+				</p>
 		</div>
 	</div>
 	<div class="row well">
