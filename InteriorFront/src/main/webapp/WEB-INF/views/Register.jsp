@@ -52,11 +52,13 @@ app.directive('myDirective', function() {
 								aria-hidden="true"></i></span>
 							<form:input type="text" path="username" class="form-control"
 								name="name" id="name" placeholder="Enter your Name" ng-model="myInput"/>
+								
 						</div>
+						<form:errors path="username" style="color: red;"/>
 						<span style="color: red;">${usernameMsg}</span>
 					</div>
 				</div>
-				{{3<2}}
+				
 				<div class="form-group">
 					<label for="password" class="cols-sm-2 control-label">Password</label>
 					<div class="cols-sm-10">
@@ -66,6 +68,7 @@ app.directive('myDirective', function() {
 							<form:input type="password" path="password" class="form-control"
 								name="password" id="password" placeholder="Enter your Password"  />
 						</div>
+						<form:errors path="password" style="color: red;"/>
 					</div>
 				</div>
 				
@@ -80,6 +83,7 @@ app.directive('myDirective', function() {
 							<form:input type="text" class="form-control" path="customerName"
 								name="username" id="username" placeholder="Enter your Username"  />
 						</div>
+						<form:errors path="customerName" style="color: red;"/>
 					</div>
 				</div>
 
@@ -90,9 +94,10 @@ app.directive('myDirective', function() {
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-mobile"
 								aria-hidden="true"></i></span>
-							<form:input path="mobileNo" class="form-control" name="mobile"
+							<form:input path="mobileNo" pattern="[789]\d{9}" title="Please Enter Indian Mobile Number" class="form-control" name="mobile"
 								id="mobile" placeholder="Enter Mobile Number " />
 						</div>
+						<form:errors path="mobileNo" style="color: red;"/>
 					</div>
 				</div>
 
@@ -103,11 +108,12 @@ app.directive('myDirective', function() {
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="fa fa-envelope fa" aria-hidden="true"></i></span>
-							<form:input type="email" path="emailId" class="form-control"
-								name="email" id="email" placeholder="Enter your Email" />
+							<form:input type="email" path="emailId" pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$" class="form-control"
+								name="email" id="email" placeholder="john@doe.com" />
 							<br />
 
 						</div>
+						<form:errors path="emailId" style="color: red;"/>
 						<span style="color: red;">${emailMsg}</span>
 					</div>
 				</div>
@@ -123,6 +129,7 @@ app.directive('myDirective', function() {
 							<form:input type="text" path="address" class="form-control"
 								name="address-book" id="confirm" placeholder="Home Address" />
 						</div>
+						<form:errors path="address" style="color: red;"/>
 					</div>
 				</div>
 

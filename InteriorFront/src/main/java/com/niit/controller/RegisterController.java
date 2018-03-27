@@ -2,9 +2,12 @@ package com.niit.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,14 +23,17 @@ public class RegisterController
 	UserDAO userDetailDAO;
 
 	@RequestMapping(value = "/Register", method = RequestMethod.POST)
-	public String insertUsers(@ModelAttribute("user") User user, Model m)
+	public String insertUsers(@Valid @ModelAttribute("user") User user,BindingResult result, Model m)
 
 	{
+		if(result.hasErrors()) {
+			return "Register";
+		}
 
 		List<User> ulist = userDetailDAO.getAllUser();
-		//if (!user.getCustomerName().equals("") && !user.getEmailId().equals("") && !user.getMobileNo().equals("")
-				//&& !user.getPassword().equals("")) {
-			for (User user1 : ulist) {
+		/*if (!user.getCustomerName().equals("") && !user.getEmailId().equals("") && !user.getMobileNo().equals("")
+				&& !user.getPassword().equals("")) {
+		*/	for (User user1 : ulist) {
 				if (user1.getEmailId().equals(user.getEmailId())) {
 					m.addAttribute("emailMsg", "* Email Address Alredy Exists");
 					m.addAttribute("user", new User());
@@ -42,13 +48,13 @@ public class RegisterController
 				}
 			}
 		//}
-		//else {
-		/*	m.addAttribute("Null", "* Fields are empty !");
+		/*else {
+			m.addAttribute("Null", "* Fields are empty !");
 			m.addAttribute("user", new User());
 			return "Register";
 
-		}*/
-
+		}
+*/
 		userDetailDAO.registerUser(user);
 		return "Login";
 	}

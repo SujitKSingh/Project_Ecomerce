@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.lang.NonNull;
+
 @Entity
 @Table
 public class User {
@@ -14,13 +17,19 @@ public class User {
 @GeneratedValue(strategy=GenerationType.AUTO)
 
 private int userId;
+@NotBlank(message="Username cannot be blank !")
 private String username;
+@NotBlank(message="Password cannot be blank !")
 private String password;
 private String role;			//admin|user
 private boolean enabled;		//true|false
+@NotBlank(message="Customer name cannot be blank !")
 private String customerName;
+@NotBlank(message="Mobile Number cannot be blank !")
 private String mobileNo;
+@NotBlank(message="Email address cannot be blank !")
 private String emailId;
+@NotBlank(message="Address cannot be blank !")
 private String address;
 
 public int getUserId() {

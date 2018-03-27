@@ -1,6 +1,6 @@
 <%@include file="Header.jsp"%>
 <div>
-<form action="perform_login" method="post">
+<form action="perform_login" method="post" autocomplete="off">
 <div><br><br><br><br></div>
 	<table align="center" border="3" >
 		<tr bgcolor="#dce775">

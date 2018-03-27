@@ -41,8 +41,8 @@
 						<li><a href="${pageContext.request.contextPath}/aboutus">About
 								Us</a></li>
 						<li><a href="${pageContext.request.contextPath}/contactus">Contacts</a></li>
-						<li><a href="#">Terms & Condition</a></li>
-						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="${pageContext.request.contextPath}/termsandconditions">Terms & Condition</a></li>
+						<li><a href="${pageContext.request.contextPath}/privacy">Privacy Policy</a></li>
 					</ul>
 				</div>
 			</div>

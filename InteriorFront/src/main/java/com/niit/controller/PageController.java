@@ -29,6 +29,17 @@ public class PageController {
 		return "ContactUs";
 	}
 
+	@RequestMapping("/termsandconditions")
+	public String showTermsAndConditions() {
+		return "TermsAndConditions";
+	} 
+	
+	@RequestMapping("/privacy")
+	public String showPrivacy() {
+		return "Privacy";
+	} 
+	
+	
 	@RequestMapping("/register")
 	public String showRegister(Model model) {
 		model.addAttribute("user", new User());
@@ -45,5 +56,5 @@ public class PageController {
 	public String showLogout() {
 		return "Logout";
 	}
-
+	
 }
