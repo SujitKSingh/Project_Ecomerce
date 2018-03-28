@@ -1,26 +1,29 @@
 <%@include file="Header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<h3 align="center" class="container well">Category Page</h3>
 
-<form action="InsertCategory" method="post" class="container well" >
-	<table align="center">
-		<tr>
-			<td>Category Name</td>
-			<td><input type="text" id="catname" name="catname" /></td>
+
+<form action="InsertCategory" method="post" class="container-fluid well" >
+<h3 align="center" style="background-color:pink;" class="container-fluid well">Category Page</h3>
+	<table align="center" border="5" class="table table-striped table-hover" >
+		<tr >
+			<td>Category Name </td>
+			<td><input type="text" id="catname" name="catname" cellpadding="3px" placeholder="Enter Category" /></td>
 		</tr>
-		<td>Category Desc</td>
-		<td><input type="text" id="catdesc" name="catdesc" /></td>
+		<tr >
+		<td>Category Desc </td>
+		<td><input type="text" id="catdesc" name="catdesc" cellpadding="3px" placeholder="Enter Description" /></td>
 		</tr>
-		<tr>
-			<td colspan="2" align="center"><input type="submit"
-				value="SUBMIT" /> <input type="reset" value="RESET" /></td>
+		<tr >
+			<td colspan="2" align="center" ><input type="submit"
+				value="SUBMIT" class="btn btn-info" /> <input type="reset" value="RESET"  class="btn btn-info" /></td>
 		</tr>
 	</table>
 </form>
 
-<table align="center" class="container well" border="2" >
-	<tr>
+<div class="container-fluid well" >
+<table align="center" border="5"  class="table table-striped table-hover">
+	<tr >
 		<td>Category ID</td>
 		<td>Category Name</td>
 		<td>Category Desc</td>
@@ -37,21 +40,8 @@
 			</td>
 		</tr>
 	</c:forEach>
-
 </table>
+</div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

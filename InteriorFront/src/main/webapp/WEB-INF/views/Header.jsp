@@ -47,7 +47,7 @@
 </style>
 </head>
 
-<body style="background-image: url('/InteriorFront/resources/images/backgroundcr.jpg');" ng-app="myApp">
+<body style="background-image: url('/InteriorFront/resources/images/backgroundcr.jpg');" >
 	<div id="upperLabel" class="container-fluid">
 		<div class="container-fluid" style="padding-left: 15px">
 			<i class="fas fa-shopping-cart"></i><label>Just Order</label>
@@ -62,14 +62,14 @@
 				</div>
 			<ul class="nav navbar-nav">
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
-					<li style="padding: 10px"><input type="text" ng-model="curPlace" class="inputText "> </li>
+					<!-- <li style="padding: 10px"><input type="text" ng-model="curPlace" class="inputText "> </li>
 					<li ng-repeat="place in placesVisited | filter:curPlace">
 					<a ng-href="https://www.google.co.in/webhp?q={{place}}">{{place}} </a>
-					</li>
-					<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+					</li> -->
+					<li><a href="${pageContext.request.contextPath}/login" >Login</a></li>
 					<li><a href="${pageContext.request.contextPath}/register">Register</a></li>
 				</c:if>
-					<li><a href="${pageContext.request.contextPath}/aboutus">About Us</a></li>
+					<li><a href="${pageContext.request.contextPath}/aboutus" >About Us</a></li>
 					<li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
 				<c:if test="${pageContext.request.userPrincipal.name=='Sumit'}">
 					<li><a href="${pageContext.request.contextPath}/category">Category</a></li>

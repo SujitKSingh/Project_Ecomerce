@@ -1,9 +1,13 @@
 package com.niit.model;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -16,6 +20,9 @@ public class Product
 
 	@Id
 	@GeneratedValue
+	
+	
+	
 	private int productId;
 	private int  productPrice;
 	private String productName;
@@ -23,6 +30,7 @@ public class Product
 	private int categoryId;
 	private int suplierId;
 	private int stock;
+	
 	
 	public int getStock() {
 		return stock;
@@ -38,10 +46,12 @@ public class Product
 		this.categoryId = categoryId;
 	}
 	
+	/*@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "pimage", joinColumns = { @JoinColumn(name = "PRODUCT_ID") }, inverseJoinColumns = { @JoinColumn(name = "PRODUCT_ID") })
 	
+	private List<MultipartFile> multiimages= pimage;*/
 	@Transient
 	private MultipartFile pimage;
-	
 		
 	public MultipartFile getPimage() {
 		return pimage;

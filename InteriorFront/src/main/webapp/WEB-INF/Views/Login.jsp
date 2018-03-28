@@ -17,7 +17,7 @@
 		<tr bgcolor="#dce775">
 			<td colspan="2">
 				<center>
-					<input type="submit" value="Login" />
+					<input type="submit" value="Login" align="center" />
 				</center>
 			</td>
 		</tr>
