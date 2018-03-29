@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,7 +27,7 @@ public class SuplierController {
 	public String showSuplier(Model m) {
 		List<Suplier> listSupliers = SuplierDAO.getsupliers();
 		m.addAttribute("listSupliers", listSupliers);
-
+		m.addAttribute("suplier", new Suplier());
 		for (Suplier Suplier : listSupliers) {
 			System.out.println(Suplier.getsuplierName() + ",");
 		}
@@ -34,19 +35,15 @@ public class SuplierController {
 	}
 
 	@RequestMapping(value = "/InsertSuplier", method = RequestMethod.POST)
-	public String insertSuplierData(@Valid @RequestParam("suplname") String suplname,
-			@RequestParam("supldesc") String supldesc, BindingResult results, Model m) {
+	public String insertSuplierData(@Valid @ModelAttribute("suplier")Suplier suplier, BindingResult results, Model m) {
 		List<Suplier> listSupliers;
 		if (results.hasErrors()) {
 			listSupliers = SuplierDAO.getsupliers();
 			m.addAttribute("listSupliers", listSupliers);
 			return "Suplier";
 		}
-		Suplier Suplier = new Suplier();
-		Suplier.setsuplierName(suplname);
-		Suplier.setSuplierDesc(supldesc);
-
-		SuplierDAO.addSuplier(Suplier);
+		
+		SuplierDAO.addSuplier(suplier);
 
 		listSupliers = SuplierDAO.getsupliers();
 		m.addAttribute("listSupliers", listSupliers);
@@ -60,6 +57,7 @@ public class SuplierController {
 		SuplierDAO.deleteSuplier(Suplier);
 
 		List<Suplier> listSupliers = SuplierDAO.getsupliers();
+		m.addAttribute("suplier", new Suplier());
 		m.addAttribute("listSupliers", listSupliers);
 		return "Suplier";
 	}
@@ -71,7 +69,7 @@ public class SuplierController {
 		List<Suplier> listSupliers = SuplierDAO.getsupliers();
 		m.addAttribute("listSupliers", listSupliers);
 		m.addAttribute("SuplierInfo", Suplier);
-
+		
 		return "UpdateSuplier";
 	}
 
@@ -86,7 +84,7 @@ public class SuplierController {
 
 		List<Suplier> listSupliers = SuplierDAO.getsupliers();
 		m.addAttribute("listSupliers", listSupliers);
-
+		m.addAttribute("suplier", new Suplier());
 		return "Suplier";
 	}
 
