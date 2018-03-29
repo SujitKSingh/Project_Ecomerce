@@ -23,7 +23,7 @@
 		</tr>
 	</table>
 </form>
-${message}
+<center style="background-color:White;">${message}</center>
 </div>
 <div><br><br><br><br><br><br><br></div>
 <%@include file="Footer.jsp"%>

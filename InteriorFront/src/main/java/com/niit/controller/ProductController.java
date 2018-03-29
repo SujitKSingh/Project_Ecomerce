@@ -43,7 +43,6 @@ public class ProductController {
 	@Autowired
 	SuplierDAO suplierDAO;
 	
-	boolean flag = true;
 	@RequestMapping("/product")
 	public String showProductPage(Model m) {
 		Product product = new Product();
@@ -72,7 +71,6 @@ public class ProductController {
 			
 			listProducts = productDAO.getProducts();
 			m.addAttribute("listProducts", listProducts);
-			flag = false;
 			return "Product";
 		}
 		
@@ -126,7 +124,6 @@ public class ProductController {
 		m.addAttribute("listProduct", listProducts);
 		m.addAttribute("product", new Product());
 
-		flag = false;
 		return "Product";
 	}
 

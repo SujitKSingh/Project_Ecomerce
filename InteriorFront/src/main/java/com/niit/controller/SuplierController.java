@@ -22,8 +22,6 @@ public class SuplierController {
 	@Autowired
 	SuplierDAO SuplierDAO;
 
-	boolean flag = true;
-
 	@RequestMapping("/suplier")
 	public String showSuplier(Model m) {
 		List<Suplier> listSupliers = SuplierDAO.getsupliers();
@@ -32,19 +30,16 @@ public class SuplierController {
 		for (Suplier Suplier : listSupliers) {
 			System.out.println(Suplier.getsuplierName() + ",");
 		}
-		flag = false;
 		return "Suplier";
 	}
 
 	@RequestMapping(value = "/InsertSuplier", method = RequestMethod.POST)
 	public String insertSuplierData(@Valid @RequestParam("suplname") String suplname,
-			@RequestParam("supldesc") String supldesc,BindingResult results, Model m) {
+			@RequestParam("supldesc") String supldesc, BindingResult results, Model m) {
 		List<Suplier> listSupliers;
-		if(results.hasErrors())
-		{
+		if (results.hasErrors()) {
 			listSupliers = SuplierDAO.getsupliers();
 			m.addAttribute("listSupliers", listSupliers);
-			flag = false;
 			return "Suplier";
 		}
 		Suplier Suplier = new Suplier();
@@ -55,7 +50,6 @@ public class SuplierController {
 
 		listSupliers = SuplierDAO.getsupliers();
 		m.addAttribute("listSupliers", listSupliers);
-		flag = false;
 		return "Suplier";
 	}
 
@@ -67,7 +61,6 @@ public class SuplierController {
 
 		List<Suplier> listSupliers = SuplierDAO.getsupliers();
 		m.addAttribute("listSupliers", listSupliers);
-		flag = false;
 		return "Suplier";
 	}
 

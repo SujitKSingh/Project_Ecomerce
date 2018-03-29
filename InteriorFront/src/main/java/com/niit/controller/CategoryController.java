@@ -22,7 +22,6 @@ public class CategoryController {
 	@Autowired	
 	CategoryDAO categoryDAO;
 
-	boolean flag = true;
 
 	@RequestMapping("/category")
 	public String showCategory(Model m) {
@@ -32,7 +31,6 @@ public class CategoryController {
 		for (Category category : listCategories) {
 			System.out.println(category.getCategoryName() + ",");
 		}
-		flag = false;
 		return "Category";
 	}
 
@@ -43,7 +41,6 @@ public class CategoryController {
 		{
 			listCategories = categoryDAO.getCategories();
 			m.addAttribute("listCategories", listCategories);
-			flag = false;
 			return "Category";
 		}
 		
@@ -51,7 +48,6 @@ public class CategoryController {
 
 		listCategories = categoryDAO.getCategories();
 		m.addAttribute("listCategories", listCategories);
-		flag = false;
 		return "Category";
 	}
 
@@ -64,7 +60,6 @@ public class CategoryController {
 		List<Category> listCategories = categoryDAO.getCategories();
 		m.addAttribute("category", new Category());
 		m.addAttribute("listCategories", listCategories);
-		flag = false;
 		return "Category";
 	}
 

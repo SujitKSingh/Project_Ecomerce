@@ -1,5 +1,6 @@
 <%@include file="/WEB-INF/views/Header.jsp"%>
 
+<head>
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -13,7 +14,8 @@
 	rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Roboto'
 	rel='stylesheet'>
-
+</head>
+<body>
 <div class="image-aboutus-banner" >
 	<div class="container-fluid well">
 		<div class="row">
@@ -160,3 +162,4 @@ which focuses on consumers experience. </p>
 	</div>
 </div>
 <%@include file="/WEB-INF/views/Footer.jsp"%>
+</body>
