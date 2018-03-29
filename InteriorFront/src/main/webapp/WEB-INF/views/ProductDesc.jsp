@@ -5,7 +5,7 @@
 <h3 align="center" class="container-fluid well">Product Description </h3>
 
 <form action="<c:url value='/addtoCart/${product}'/>"  >
-	<table align="center" width="60%" height="60%" border="2" class="container-fluid">
+	<table align="center" border="4" class="table table-striped table-hover container-fluid" style="height:250;width:800;" >
 		<tr align="center" bgcolor="#7e57c2">
 			<td colspan="2">Product Details</td>
 		</tr>
@@ -44,10 +44,10 @@
 					<option value="5">5</option>
 			</select></td>
 		</tr>
-		<tr bgcolor="cyan">
+		<tr >
 			<td colspan="2"><center>
 				<c:if test="${pageContext.request.userPrincipal.name!='Sumit'}">	
-				<input type="Submit" value="Add To Cart" />
+				<input type="Submit" value="Add To Cart" class="btn btn-success" style="height:35;width:100;" />
 				</c:if>
 				</center></td>
 		</tr>
