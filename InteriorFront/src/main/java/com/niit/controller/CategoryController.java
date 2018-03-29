@@ -2,9 +2,13 @@ package com.niit.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,7 +28,7 @@ public class CategoryController {
 	public String showCategory(Model m) {
 		List<Category> listCategories = categoryDAO.getCategories();
 		m.addAttribute("listCategories", listCategories);
-
+		m.addAttribute("category", new Category());
 		for (Category category : listCategories) {
 			System.out.println(category.getCategoryName() + ",");
 		}
@@ -33,15 +37,19 @@ public class CategoryController {
 	}
 
 	@RequestMapping(value = "/InsertCategory", method = RequestMethod.POST)
-	public String insertCategoryData(@RequestParam("catname") String catname, @RequestParam("catdesc") String catdesc,
-			Model m) {
-		Category category = new Category();
-		category.setCategoryName(catname);
-		category.setCateogryDesc(catdesc);
-
+	public String insertCategoryData(@Valid @ModelAttribute("category")Category category,BindingResult results,Model m) {
+		List<Category> listCategories;
+		if(results.hasErrors())
+		{
+			listCategories = categoryDAO.getCategories();
+			m.addAttribute("listCategories", listCategories);
+			flag = false;
+			return "Category";
+		}
+		
 		categoryDAO.addCategory(category);
 
-		List<Category> listCategories = categoryDAO.getCategories();
+		listCategories = categoryDAO.getCategories();
 		m.addAttribute("listCategories", listCategories);
 		flag = false;
 		return "Category";
@@ -54,6 +62,7 @@ public class CategoryController {
 		categoryDAO.deleteCategory(category);
 
 		List<Category> listCategories = categoryDAO.getCategories();
+		m.addAttribute("category", new Category());
 		m.addAttribute("listCategories", listCategories);
 		flag = false;
 		return "Category";
@@ -64,6 +73,7 @@ public class CategoryController {
 		Category category = categoryDAO.getCategory(categoryId);
 
 		List<Category> listCategories = categoryDAO.getCategories();
+		
 		m.addAttribute("listCategories", listCategories);
 		m.addAttribute("categoryInfo", category);
 
@@ -78,7 +88,7 @@ public class CategoryController {
 		category.setCateogryDesc(categoryDesc);
 
 		categoryDAO.updateCategory(category);
-
+		m.addAttribute("category", new Category());
 		List<Category> listCategories = categoryDAO.getCategories();
 		m.addAttribute("listCategories", listCategories);
 

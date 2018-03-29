@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table
 public class Category 
@@ -12,7 +14,9 @@ public class Category
 	@Id
 	@GeneratedValue
 	private int categoryId;
+	@NotBlank(message="Category Name cannot be blank !")
 	private String categoryName;
+	@NotBlank(message="Category Description cannot be blank !")
 	private String cateogryDesc;
 	
 	public int getCategoryId() {

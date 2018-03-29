@@ -7,10 +7,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,15 +59,29 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/InsertProduct", method = RequestMethod.POST)
-	public String addProduct(@ModelAttribute("product") Product product, Model m,
+	public String addProduct(@Valid @ModelAttribute("product") Product product,BindingResult results,Model m,
 			@RequestParam(value = "pimage") MultipartFile filedet, @RequestParam("categoryId") int catId) {
 		if (filedet == null) {
 			System.out.println("error");
 		}
+		List<Product> listProducts;
+		if(results.hasErrors())
+		{
+			m.addAttribute("catlist", categoryDAO.getCategories());
+			m.addAttribute("suplist", suplierDAO.getsupliers());
+			
+			listProducts = productDAO.getProducts();
+			m.addAttribute("listProducts", listProducts);
+			flag = false;
+			return "Product";
+		}
+		
+		
+		productDAO.addProduct(product);
 		Product product1 = new Product();
 		product.setCategoryId(catId);
 		m.addAttribute(product1);
-		productDAO.addProduct(product);
+		
 
 		String imagePath = "D:\\eclipse-jee-oxygen-2-win32-x86_64\\oxy workspace\\Project_Ecomerce\\InteriorFront\\src\\main\\webapp\\resources\\images\\";
 		imagePath = imagePath + String.valueOf(product.getproductId()) + ".jpg";
@@ -89,7 +105,7 @@ public class ProductController {
 
 		m.addAttribute("catlist", categoryDAO.getCategories());
 		m.addAttribute("suplist", suplierDAO.getsupliers());
-		List<Product> listProducts = productDAO.getProducts();
+		 listProducts = productDAO.getProducts();
 		m.addAttribute("listProducts", listProducts);
 		return "Product";
 	}

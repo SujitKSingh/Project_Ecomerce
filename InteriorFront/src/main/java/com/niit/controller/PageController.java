@@ -3,6 +3,7 @@ package com.niit.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.model.User;
 
@@ -15,7 +16,10 @@ public class PageController {
 	}
 
 	@RequestMapping("/login")
-	public String showLogin() {
+	public String showLogin(@RequestParam(name="error",required=false)String error,Model m) {
+		if(error!=null) {
+			m.addAttribute("message","username and password is Invalid");
+		}
 		return "Login";
 	}
 

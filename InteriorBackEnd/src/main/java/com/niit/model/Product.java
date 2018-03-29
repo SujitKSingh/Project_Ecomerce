@@ -11,6 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -21,14 +23,22 @@ public class Product
 	@Id
 	@GeneratedValue
 	
-	
-	
 	private int productId;
+	
+	@Range(min=1,message="Product Price value can not be 0")
 	private int  productPrice;
+	
+	@NotBlank(message="Product Name cannot be blank !")
 	private String productName;
+	
+	@NotBlank(message="Product Description cannot be blank !")
 	private String productDesc;
+	
 	private int categoryId;
 	private int suplierId;
+	
+	
+	@Range(min=1,message="Stock value can not be 0")
 	private int stock;
 	
 	

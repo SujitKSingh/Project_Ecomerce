@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table
 public class Suplier 
@@ -12,7 +14,11 @@ public class Suplier
 	@Id
 	@GeneratedValue
 	private int suplierId;
+	
+	@NotBlank(message="Supplier Name cannot be blank !")
 	private String suplierName;
+	
+	@NotBlank(message="Supplier Description cannot be blank !")
 	private String suplierDesc;
 	
 	public int getsuplierId() 

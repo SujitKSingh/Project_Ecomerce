@@ -10,28 +10,31 @@
 		<table align="center" border="5" class="table table-striped table-hover" >
 			<tr >
 				<td>Product Image</td>
-				<td><form:input type="file" path="pimage" /></td>
+				<td><form:input type="file" path="pimage" class="form-control-file"/></td>
 			</tr>
 			
 			<tr >
 				<td>Product Name</td>
 				<td><form:input path="productName" placeholder="Enter Product Name" /></td>
+				<td><form:errors path="productName" style="color:red;"/></td>
 			</tr>
 			
 			<tr >
 				<td>Product Price</td>
 				<td><form:input path="productPrice" placeholder="Enter Price" /></td>
+				<td><form:errors path="productPrice" style="color:red;"/></td>
 			</tr>
 			
 			<tr>
 				<td>Product Desc</td>
 				<td><form:input path="productDesc" placeholder="Enter Description" /></td>
+				<td><form:errors path="productDesc" style="color:red;"/></td>
 			</tr>
 			
 			<tr >
 				<td>Category</td>
 				<td>
-				<select  name="categoryId">
+				<select  name="categoryId" style="width:175;height:29;">
 				  
 				  	<c:forEach items="${catlist}" var="cat">
 				  	<option value="${cat.categoryId}">${cat.categoryName}</option>
@@ -43,7 +46,7 @@
 			
 			<tr>
 				<td>Suplier</td>
-				<td><select  name="suplierId">
+				<td><select  name="suplierId" style="width:175;height:29;">
 				  
 				  	<c:forEach items="${suplist}" var="supl">
 				  	<option value="${supl.suplierId}">${supl.suplierName}</option>

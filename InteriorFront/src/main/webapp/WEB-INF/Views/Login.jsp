@@ -23,6 +23,7 @@
 		</tr>
 	</table>
 </form>
+${message}
 </div>
 <div><br><br><br><br><br><br><br></div>
 <%@include file="Footer.jsp"%>

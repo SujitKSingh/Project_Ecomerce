@@ -1,25 +1,27 @@
 <%@include file="Header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 
-
-<form action="InsertCategory" method="post" class="container-fluid well" >
+<form:form modelAttribute="category" action="InsertCategory" method="post" class="container-fluid well" >
 <h3 align="center" style="background-color:pink;" class="container-fluid well">Category Page</h3>
 	<table align="center" border="5" class="table table-striped table-hover" >
 		<tr >
 			<td>Category Name </td>
-			<td><input type="text" id="catname" name="catname" cellpadding="3px" placeholder="Enter Category" /></td>
+			<td><form:input type="text" path="categoryName" id="catname" name="catname" cellpadding="3px" placeholder="Enter Category" /></td>
+			<td><form:errors path="categoryName" style="color:red;"/></td>
 		</tr>
 		<tr >
 		<td>Category Desc </td>
-		<td><input type="text" id="catdesc" name="catdesc" cellpadding="3px" placeholder="Enter Description" /></td>
+		<td><form:input type="text" path="cateogryDesc" id="catdesc" name="catdesc" cellpadding="3px" placeholder="Enter Description" /></td>
+		<td><form:errors path="cateogryDesc" style="color:red;"/></td>
 		</tr>
 		<tr >
-			<td colspan="2" align="center" ><input type="submit"
-				value="SUBMIT" class="btn btn-info" /> <input type="reset" value="RESET"  class="btn btn-info" /></td>
+			<td colspan="3" align="center" ><input type="submit"
+				value="SUBMIT" class="btn btn-info" /> <a href="<c:url value="/category"/>" class="btn btn-info">Reset</a></td>
 		</tr>
 	</table>
-</form>
+</form:form>
 
 <div class="container-fluid well" >
 <table align="center" border="5"  class="table table-striped table-hover">

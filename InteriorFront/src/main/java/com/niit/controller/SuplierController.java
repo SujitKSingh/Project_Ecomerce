@@ -2,9 +2,12 @@ package com.niit.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,15 +37,23 @@ public class SuplierController {
 	}
 
 	@RequestMapping(value = "/InsertSuplier", method = RequestMethod.POST)
-	public String insertSuplierData(@RequestParam("suplname") String suplname,
-			@RequestParam("supldesc") String supldesc, Model m) {
+	public String insertSuplierData(@Valid @RequestParam("suplname") String suplname,
+			@RequestParam("supldesc") String supldesc,BindingResult results, Model m) {
+		List<Suplier> listSupliers;
+		if(results.hasErrors())
+		{
+			listSupliers = SuplierDAO.getsupliers();
+			m.addAttribute("listSupliers", listSupliers);
+			flag = false;
+			return "Suplier";
+		}
 		Suplier Suplier = new Suplier();
 		Suplier.setsuplierName(suplname);
 		Suplier.setSuplierDesc(supldesc);
 
 		SuplierDAO.addSuplier(Suplier);
 
-		List<Suplier> listSupliers = SuplierDAO.getsupliers();
+		listSupliers = SuplierDAO.getsupliers();
 		m.addAttribute("listSupliers", listSupliers);
 		flag = false;
 		return "Suplier";
