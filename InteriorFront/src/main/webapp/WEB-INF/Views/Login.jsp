@@ -4,7 +4,7 @@
 
 <div><br><br><br><br></div>
 	<table align="center" border="5" class="table table-hover"  style="height:150;width:300;">
-		<tr bgcolor="#dce775">
+		<tr bgcolor="#dce775" >
 			<td colspan="2"><center>Enter Credential</center></td>
 		</tr>
 		<tr bgcolor="#e0e0e0">

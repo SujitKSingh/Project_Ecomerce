@@ -35,7 +35,7 @@
 	</c:forEach>
 	<c:if test="${grandTotal!=0}">
 		<tr align="center" class="Success">
-			<td colspan="5" ><b><strong>Grand Total - </strong> Rs.${grandTotal}/-</b></td>
+			<td colspan="5" ><strong>Grand Total - </strong> Rs.${grandTotal}/-</b></td>
 		</tr>
 	</c:if>
 	<tr>

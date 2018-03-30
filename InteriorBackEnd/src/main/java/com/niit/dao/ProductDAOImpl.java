@@ -87,4 +87,12 @@ public class ProductDAOImpl implements ProductDAO
 			List<Product> listProducts=(List<Product>)query.list();
 			return listProducts;
 		}
+
+		@Override
+		public List<Product> getProductByCategory(int categoryId) {
+			Session session=sessionFactory.openSession();
+			Query query=session.createQuery("from Product where categoryId=:categoryId").setParameter("categoryId", categoryId);
+			List<Product> listProducts=(List<Product>)query.list();
+			return listProducts;
+		}
 }

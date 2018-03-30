@@ -32,7 +32,7 @@
 
 <style type="text/css">
 #upperLabel {
-	background-color:  #eb984e;
+	background-color:#81d4fa;;
 	padding: 0px;
 	margin: 0px;
 	width: 100%;
@@ -42,7 +42,7 @@
 .inputText {
 	border: 1px solid #ccc;
 	border-radius: 10px;
-	background-color: #e8f5e9;
+	background-color: #3c3d41;
 	box-shadow: 1px 1px 1px 1px #ccc;
 	width: 200px;
 	height: 30px;
@@ -64,10 +64,10 @@
 						Order</a>
 				</div>
 			<ul class="nav navbar-nav">
-				<c:if test="${pageContext.request.userPrincipal.name==null}">
-					<li><a href="${pageContext.request.contextPath}/login" >Login</a></li>
-					<li><a href="${pageContext.request.contextPath}/register">Register</a></li>
-				</c:if>
+				<c:forEach items="${categories}" var="category">
+					<li><a href="<c:url value='/Products/${category.categoryId}'/>">${category.categoryName}</a></li>
+				</c:forEach>
+				
 					<li><a href="${pageContext.request.contextPath}/aboutus" >About Us</a></li>
 					<li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
 				<c:if test="${pageContext.request.userPrincipal.name=='Sumit'}">
@@ -75,10 +75,17 @@
 					<li><a href="${pageContext.request.contextPath}/product">Product</a></li>
 					<li><a href="${pageContext.request.contextPath}/suplier">Suplier</a></li>
 				</c:if>
-					<li><a href="${pageContext.request.contextPath}/productPage">ProductPage</a></li>
+					<li><a href="${pageContext.request.contextPath}/productPage">All Products</a></li>
+				<c:if test="${pageContext.request.userPrincipal.name==null}">
+					<li><a href="${pageContext.request.contextPath}/register">Register</a></li>
+					<li><a href="${pageContext.request.contextPath}/login" >Login</a></li>
+					
+				</c:if>
 				<c:if test="${pageContext.request.userPrincipal.name!=null}">
 					<li><a href="<c:url value="/UserHome"/>">${pageContext.request.userPrincipal.name}</a></li>
 					<li><a href="${pageContext.request.contextPath}/perform_logout">Logout</a></li>
+					
+				
 				</c:if>
 			</ul>
 			</div>

@@ -4,7 +4,7 @@
 
 
 <form:form modelAttribute="suplier"  action="InsertSuplier" method="post" class="container-fluid well" >
-<h3 align="center" style="background-color:pink;" class="container-fluid well" >Suplier Page</h3>
+<h3 align="center" style="background-color:#81d4fa;" class="container-fluid well" >Suplier Page</h3>
 	<table align="center" border="5" class="table table-striped table-hover" >
 		<tr >
 			<td>Suplier Name</td>
@@ -16,32 +16,35 @@
 		<td><form:errors path="suplierDesc" style="color:red;"/></td>
 		</tr>
 		<tr >
-			<td colspan="2" align="center" ><input type="submit"
-				value="SUBMIT" class="btn btn-info" /><a href="<c:url value="/suplier"/>" class="btn btn-info">Reset</a></td>
+			<td colspan="2" align="center" ><input type="submit" value="SUBMIT" class="btn btn-info" style="height:35;width:100;" />&nbsp;&nbsp;
+				<a href="<c:url value="/suplier"/>" class="btn btn-info" style="height:35;width:100;">Reset</a></td>
 		</tr>
 	</table>
-</form:form>
-<div class="container-fluid well" >
+
+<div >
 <table align="center" border="5" class="table table-striped table-hover" >
-	<tr align="center">
+	<tr align="center" style="font-family:Verdana;font-weight:bold;background-color:#81d4fa;">
 		<td >Suplier ID</td>
 		<td>Suplier Name</td>
 		<td>Suplier Desc</td>
 		<td>Operation</td>
 	</tr>
 	<c:forEach items="${listSupliers}" var="suplier">
-		<tr>
-			<td align="center"  >${suplier.suplierId}</td>
+		<tr align="center">
+			<td >${suplier.suplierId}</td>
 			<td>${suplier.suplierName}</td>
 			<td>${suplier.suplierDesc}</td>
-			<td><a href="<c:url value="/updateSuplier/${suplier.suplierId}"/>">Update</a> / 
-				<a href="<c:url value="/deleteSuplier/${suplier.suplierId}"/>">Delete </a>
+			<td align="center">
+					<a href="<c:url value="/updateSuplier/${suplier.suplierId}"/>"><strong>Update</strong></a><strong>&nbsp;/&nbsp;</strong>
+				&nbsp;<a href="<c:url value="/deleteSuplier/${suplier.suplierId}"/>"><strong>Delete</strong></a>
 			</td>
 		</tr>
 	</c:forEach>
 
 </table>
 </div>
+</form:form>
+
 </body>
 </html>
 

@@ -127,6 +127,13 @@ public class ProductController {
 		return "Product";
 	}
 
+	@RequestMapping("/Products/{categoryId}")
+	public String getProductByCategory(@PathVariable("categoryId")int  categoryId,Model m) {
+		List<Product> listProducts = productDAO.getProductByCategory(categoryId);
+		m.addAttribute("listProducts", listProducts);
+		return "ProductPage";
+	}
+	
 	@RequestMapping(value = "/productPage", method = RequestMethod.GET)
 	public String showProductsPage(Model m) {
 		List<Product> listProducts = productDAO.getProducts();

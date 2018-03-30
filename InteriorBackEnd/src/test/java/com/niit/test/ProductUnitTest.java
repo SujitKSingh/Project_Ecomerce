@@ -1,7 +1,9 @@
 package com.niit.test;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -23,7 +25,7 @@ public class ProductUnitTest
 		
 		productDAO=(ProductDAO)context.getBean("productDAO");
 	}
-	
+	@Ignore
 	@Test
 	public void addProductTest()
 	{
@@ -36,6 +38,11 @@ public class ProductUnitTest
 		product.setproductPrice(100);
 		product.setStock(4);
 		assertTrue("Problem in Product Insertion",productDAO.addProduct(product));
+	}
+	@Test
+	public void getProductByCategoryTest()
+	{
+		assertNotNull("Something went wrong !",productDAO.getProductByCategory(562));
 	}
 
 	/*

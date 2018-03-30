@@ -9,5 +9,6 @@ public interface ProductDAO
 	public boolean deleteProduct(Product product);
 	public boolean updateProduct(Product product);
 	public List<Product> getProducts();
+	public List<Product> getProductByCategory(int categoryId);
 	
 }

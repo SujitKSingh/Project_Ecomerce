@@ -1,10 +1,12 @@
 package com.niit.test;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -29,7 +31,7 @@ context.refresh();
 orderDetailDAO=(OrderDetailDAO)context.getBean("orderDetailDAO");
 }
 
-
+@Ignore
 @Test
 
 public void confirmorderDetailTest()
@@ -48,4 +50,9 @@ orderDetail.setTransactionType("CC");
 assertTrue("has some error", orderDetailDAO.confirmOrderDetail(orderDetail));
 }
 
+@Test
+public void getOrderIdByUserName()
+{
+	assertNotNull("Something went wrong !",orderDetailDAO.getAll("Sujit"));
+}
 }

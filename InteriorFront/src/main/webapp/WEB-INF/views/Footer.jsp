@@ -75,7 +75,7 @@
 	</footer>
 </div>
 <div class="copy container-fluid well" >
-	CopyRight @ 2018 Designed by Sujit K.Singh
+	<strong>CopyRight @ 2018 Designed by Sujit K.Singh</strong>
 </div>
 </body>
 
