@@ -4,9 +4,10 @@
 
 <div class="container-fluid well ">
 
-<h3 align="center" style="background-color:pink;" >User Home</h3>
+<h3 align="center" style="background-color:#81d4fa;" >User Home</h3>
 <table class=" container-fluid table table-striped table-hover " border="5" >
-<tr style="background-color:pink;" align="center">
+<tr style="background-color:#81d4fa;" align="center">
+		<td>Order No</td>
 		<td>UserName</td>
 		<td>Order Detail</td>
 		<td>TotalAmount</td>
@@ -17,7 +18,7 @@
 <c:forEach items="${orderdetails}" var="order">
 <tr>
 <td>${i}</td>
-<%-- <td>${order.UserName}</td> --%>
+<td>${username}</td>
 <td align="center">${order.orderDate}</td>
 <td>${order.totalAmount}</td>
 <td>${order.shippingAddress}</td>

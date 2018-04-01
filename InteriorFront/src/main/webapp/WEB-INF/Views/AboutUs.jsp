@@ -31,7 +31,7 @@
 					eCommerce solutions from India to save big bucks.</p>
 			</div>
 			<div class="image-aboutus-banner container-fluid well">
-				<div class="row">
+		<div class="row">
 					<div class="col-md-12">
 						<h1 class="lg-text" align="center"
 							style="background-color: #81d4fa; text-align: center;">Who
@@ -41,12 +41,8 @@
 							through various modes. Once you will visit us we ensure that you
 							go for shopping for sure.</p>
 					</div>
-				</div>
-			</div>
 		</div>
-	</div>
-
-	<div class="container-fluid row well">
+		<div class="container-fluid row well">
 		<div class=" team-sektion paddingTB60 ">
 			<div class="row well">
 				<div class="site-heading">
@@ -119,13 +115,10 @@
 							Singh. The project is specifically for e-commerce.</p>
 						<div class="social-icons" align="center">
 							<a href="https://www.facebook.com/"><i id="social-fb"
-								class="fa fa-facebook-square fa-3x social"></i></a> <a
-								href="https://twitter.com/"><i id="social-tw"
-								class="fa fa-twitter-square fa-3x social"></i></a> <a
-								href="https://plus.google.com/"><i id="social-gp"
-								class="fa fa-google-plus-square fa-3x social"></i></a> <a
-								href="mailto:bootsnipp@gmail.com"><i id="social-em"
-								class="fa fa-envelope-square fa-3x social"></i></a>
+								class="fa fa-facebook-square fa-3x social"></i></a> 
+							<a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a> 
+							<a href="https://plus.google.com/discover"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a> 
+							<a href="mailto:justorder@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
 						</div>
 					</div>
 				</div>
@@ -142,10 +135,13 @@
 									Right Now</button>
 							</h3>
 						</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>	
+</div>
 </body>
 <%@include file="/WEB-INF/views/Footer.jsp"%>

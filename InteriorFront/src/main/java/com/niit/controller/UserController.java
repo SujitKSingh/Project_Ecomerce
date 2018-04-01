@@ -64,7 +64,7 @@ public class UserController {
 
 		String username = authentication.getName();
 		m.addAttribute("orderdetails", orderDetailDAO.getAll(username));
-		
+		m.addAttribute("username", username);
 		return "UserHome";
 
 	}

@@ -60,13 +60,17 @@
 				<div>
 					<td colspan="2">
 					<input type="submit" value="SUBMIT" class="btn btn-info" style="height:35;width:100;" /> 
-					<input type="reset" value="RESET"  class="btn btn-info" style="height:35;width:100;"/>
+					<a href="<c:url value="/product"/>" class="btn btn-info" style="height:35;width:100;">Reset</a></td>
 				</div>
 				</td>
 			</tr>
 		</table>
 		
 <div > 
+
+</div>
+	</form:form>
+</c:if>
 <table align="center" border="5"  class="table table-striped table-hover" >
 	<tr align="center" style="font-family:Verdana;font-weight:bold;background-color:#81d4fa;" >
 		<td  >Product ID</td>
@@ -88,10 +92,6 @@
 	</c:forEach>
 
 </table>
-</div>
-	</form:form>
-</c:if>
-
 </body>
 </html>
 

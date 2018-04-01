@@ -11,6 +11,7 @@
 			<td><form:input type="text" id="suplname" path="suplierName" name="suplname" placeholder="Enter Supplier Name" /></td>
 			<td><form:errors path="suplierName" style="color:red;"/></td>
 		</tr>
+		<tr bgcolor="#81d4fa">
 		<td>Suplier Desc</td>
 		<td><form:input type="text" id="supldesc" path="suplierDesc" name="supldesc" placeholder="Enter Supplier Desc" /></td>
 		<td><form:errors path="suplierDesc" style="color:red;"/></td>
@@ -22,6 +23,9 @@
 	</table>
 
 <div >
+
+</form:form>
+
 <table align="center" border="5" class="table table-striped table-hover" >
 	<tr align="center" style="font-family:Verdana;font-weight:bold;background-color:#81d4fa;">
 		<td >Suplier ID</td>
@@ -43,8 +47,6 @@
 
 </table>
 </div>
-</form:form>
-
 </body>
 </html>
 
