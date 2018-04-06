@@ -66,11 +66,14 @@ public class ProductDAOImpl implements ProductDAO
 		{
 			try
 			{
+				System.out.println("update Product set categoryId="+product.getCategoryId()+", productDesc="+product.getproductDesc()+", productName="+product.getproductName()+", productPrice="+product.getproductPrice()+", stock="+product.getStock()+", suplierId="+product.getSuplierId()+"  where productId="+product.getproductId()+"");
 				sessionFactory.getCurrentSession().update(product);
+				System.out.println("test");
 				return true;
 			}
 			catch(Exception e)
 			{
+				System.out.println("failtest");
 				System.out.println("Exception Arised:"+e);
 				return false;
 			}

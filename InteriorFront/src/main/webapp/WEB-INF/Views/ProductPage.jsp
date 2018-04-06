@@ -5,7 +5,7 @@
 <body >
 <div class="container-fluid well" >
 <h3 align="center" background-color="#81d4fa" class="container-fluid well" >Product Page</h3>
-<table align="center" border="4" style="width:100%" >
+<table align="center"  border="4" style="width:100%" >
 	<tr bgcolor="#81d4fa">
 		<td colspan="4" align="center">Product Detail</td>
 	</tr>
@@ -23,6 +23,7 @@
 		</c:forEach>
 	</tr>
 </table>
+
 </div>
 </body>
 <%@include file="/WEB-INF/views/Footer.jsp"%>

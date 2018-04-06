@@ -40,7 +40,7 @@ public class SuplierController {
 		if (results.hasErrors()) {
 			listSupliers = SuplierDAO.getsupliers();
 			m.addAttribute("listSupliers", listSupliers);
-			return "Suplier";
+			return "redirect:/suplier";
 		}
 		
 		SuplierDAO.addSuplier(suplier);
@@ -59,7 +59,7 @@ public class SuplierController {
 		List<Suplier> listSupliers = SuplierDAO.getsupliers();
 		m.addAttribute("suplier", new Suplier());
 		m.addAttribute("listSupliers", listSupliers);
-		return "Suplier";
+		return "redirect:/suplier";
 	}
 
 	@RequestMapping("/updateSuplier/{SuplierId}")

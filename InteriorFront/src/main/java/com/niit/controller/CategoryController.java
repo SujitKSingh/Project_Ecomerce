@@ -48,7 +48,7 @@ public class CategoryController {
 
 		listCategories = categoryDAO.getCategories();
 		m.addAttribute("listCategories", listCategories);
-		return "Category";
+		return "redirect:/category";
 	}
 
 	@RequestMapping("/deleteCategory/{categoryId}")
@@ -60,7 +60,7 @@ public class CategoryController {
 		List<Category> listCategories = categoryDAO.getCategories();
 		m.addAttribute("category", new Category());
 		m.addAttribute("listCategories", listCategories);
-		return "Category";
+		return "redirect:/category";
 	}
 
 	@RequestMapping("/updateCategory/{categoryId}")
@@ -87,7 +87,7 @@ public class CategoryController {
 		List<Category> listCategories = categoryDAO.getCategories();
 		m.addAttribute("listCategories", listCategories);
 
-		return "Category";
+		return "redirect:/category";
 	}
 
 }

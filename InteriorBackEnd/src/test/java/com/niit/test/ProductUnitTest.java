@@ -2,6 +2,8 @@ package com.niit.test;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
+
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -39,20 +41,21 @@ public class ProductUnitTest
 		product.setStock(4);
 		assertTrue("Problem in Product Insertion",productDAO.addProduct(product));
 	}
+	@Ignore
 	@Test
 	public void getProductByCategoryTest()
 	{
 		assertNotNull("Something went wrong !",productDAO.getProductByCategory(562));
 	}
 
-	/*
+	@Ignore
 	@Test
 	public void getProductTest()
 	{
 		assertNotNull("Problem in get Category",productDAO.getProduct(1));
 	}
 	
-	
+	@Ignore
 	@Test
 	public void deleteProductTest()
 	{
@@ -64,11 +67,11 @@ public class ProductUnitTest
 	@Test
 	public void updateCategoryTest()
 	{
-		Product product=productDAO.getProduct(4);
+		Product product=productDAO.getProduct(44);
 		product.setproductName("L Sofa Model");
 		assertTrue("Problem in Updation",productDAO.updateProduct(product));
 	}
-	
+	@Ignore
 	@Test
 	public void listProductsTest()
 	{
@@ -82,6 +85,6 @@ public class ProductUnitTest
 			System.out.println(product.getproductDesc());
 		}
 	}
-*/
+
 }
 

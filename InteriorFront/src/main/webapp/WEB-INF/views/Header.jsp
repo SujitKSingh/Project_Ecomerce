@@ -4,32 +4,31 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<!-- Bootstrap CDN ----->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link  href="<c:url value="/resources/CSS/fontawesome.css"/>"/>
+<link  href="<c:url value="/resources/CSS/solid.css"/>"/>
 
-<!-- Font Awesome CDN ----->
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"
-	integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk"
-	crossorigin="anonymous">
-	
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css"
-	integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P"
-	crossorigin="anonymous">
-	
-<link rel="stylesheet" href="Registercss.css">
+<link  href="<c:url value="/resources/CSS/bootstrap.min.css"/>"/>
+<link  href="<c:url value="/resources/CSS/css1.css"/>"/>
 
-<!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Passion+One'
-	rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Oxygen'
-	rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js"/>"></script>
 
+
+
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Roboto'
+	rel='stylesheet'>
+
+<script >
+ window.menu ='${title}';
+ window.contextRoot='${contextRoot}';
+</script>
 <style type="text/css">
 #upperLabel {
 	background-color:#81d4fa;;
@@ -53,7 +52,7 @@
 <body style="background-image: url('/InteriorFront/resources/images/backgroundcr.jpg');" >
 	<div id="upperLabel" class="container-fluid">
 		<div class="container-fluid" style="padding-left: 15px">
-			<i class="fas fa-shopping-cart"></i><label>Just Order</label>
+			<i class="fa fa-shopping-cart"></i><label>Just Order</label>
 		</div>
 	</div>
 	<div id="upperLabel" class="container-fluid" >
@@ -64,7 +63,7 @@
 						Order</a>
 				</div>
 			<ul class="nav navbar-nav">
-				<c:forEach items="${categories}" var="category">
+				<c:forEach items="${categories}" var="category" end="4">
 					<li><a href="<c:url value='/Products/${category.categoryId}'/>">${category.categoryName}</a></li>
 				</c:forEach>
 				
