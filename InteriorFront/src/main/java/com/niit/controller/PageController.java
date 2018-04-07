@@ -1,12 +1,18 @@
 package com.niit.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.dao.CategoryDAO;
+import com.niit.dao.ProductDAO;
+import com.niit.model.Product;
 import com.niit.model.User;
 
 @Controller
@@ -14,7 +20,8 @@ public class PageController {
 
 	@Autowired
 	CategoryDAO categoryDAO;
-	
+	@Autowired
+	ProductDAO productDAO;
 	@RequestMapping("/")
 	public String showHomePage() {
 		
@@ -66,5 +73,20 @@ public class PageController {
 	public String showLogout() {
 		return "Logout";
 	}
+	
+	@RequestMapping("/searchBy")
+	public String productBySearch(@RequestParam("search")String search,Model m) {
+		
+		List<Product> listProducts = productDAO.getBySearch(search);
+		m.addAttribute("listProducts", listProducts);
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+		m.addAttribute("role", auth.getAuthorities().toString());
+
+		return "ProductPage";
+
+	}
+	
+	
 	
 }

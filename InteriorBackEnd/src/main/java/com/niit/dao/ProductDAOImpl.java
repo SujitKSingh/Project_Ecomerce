@@ -14,7 +14,7 @@ public class ProductDAOImpl implements ProductDAO
 	@Autowired
 	SessionFactory sessionFactory;
 
-	//addCategory
+	//addProduct
 	@Transactional
 	@Override
 	public boolean addProduct(Product product) 
@@ -31,7 +31,7 @@ public class ProductDAOImpl implements ProductDAO
 		}
 	}
 	
-	//getCategory()
+	//getProduct()
 		@Override
 		public Product getProduct(int productId) 
 		{
@@ -41,7 +41,7 @@ public class ProductDAOImpl implements ProductDAO
 			return product;
 		}
 
-		//deleteCategory()
+		//deleteProduct()
 		@Transactional
 		@Override
 		public boolean deleteProduct(Product product) 
@@ -59,7 +59,7 @@ public class ProductDAOImpl implements ProductDAO
 			
 		}
 		
-		//updateCategory()
+		//updateProduct()
 		@Transactional
 		@Override
 		public boolean updateProduct(Product product) 
@@ -80,7 +80,7 @@ public class ProductDAOImpl implements ProductDAO
 		
 		}
 
-		//listCategories()	
+		//listProducts()	
 		@SuppressWarnings("unchecked")
 		@Override
 		public List<Product> getProducts() 
@@ -95,6 +95,14 @@ public class ProductDAOImpl implements ProductDAO
 		public List<Product> getProductByCategory(int categoryId) {
 			Session session=sessionFactory.openSession();
 			Query query=session.createQuery("from Product where categoryId=:categoryId").setParameter("categoryId", categoryId);
+			List<Product> listProducts=(List<Product>)query.list();
+			return listProducts;
+		}
+
+		@Override
+		public List<Product> getBySearch(String search) {
+			Session session=sessionFactory.openSession();
+			Query query=session.createQuery("from Product WHERE productDesc LIKE '"+search+"%' OR productDesc LIKE '%"+search+"%' OR productDesc LIKE '%"+search+"' OR productName LIKE '%"+search+"' OR productName LIKE '%"+search+"%' OR productName LIKE '%"+search+"' OR productPrice LIKE '"+search+"%' OR productPrice LIKE '%"+search+"%' OR productPrice LIKE '%"+search+"'");
 			List<Product> listProducts=(List<Product>)query.list();
 			return listProducts;
 		}

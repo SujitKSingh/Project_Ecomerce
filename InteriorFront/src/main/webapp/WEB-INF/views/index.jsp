@@ -21,7 +21,7 @@
 				<div class="item active">
 					<img class="img-fluid"
 						src="<c:url value="/resources/images/lava.jpeg"/>" alt="Lava"
-						style="width: 100%; height: 500px">
+						style="width: 100%; height: 500px" href="" >
 					<div class="carousel-caption">
 						<h3>LAVA IRIS</h3>
 						<p>With SnapDragon Processor</p>
@@ -29,9 +29,11 @@
 				</div>
 
 				<div class="item">
+				<a href="/InteriorFront/productDesc/48">
 					<img class="img-fluid"
 						src="<c:url value="/resources/images/FormalPeter.jpg"/>" alt="FormalShirt"
 						style="width: 100%; height: 500px">
+						</a>
 					<div class="carousel-caption">
 						<h3>Peter England</h3>
 						<p>Threaded With Pure Cotton!</p>

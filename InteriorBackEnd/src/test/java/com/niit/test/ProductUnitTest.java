@@ -3,6 +3,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
+import java.util.Scanner;
 
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -63,13 +64,21 @@ public class ProductUnitTest
 		assertTrue("Problem in Deletion:",productDAO.deleteProduct(product));
 	}
 
-	
+	@Ignore
 	@Test
 	public void updateCategoryTest()
 	{
 		Product product=productDAO.getProduct(44);
 		product.setproductName("L Sofa Model");
 		assertTrue("Problem in Updation",productDAO.updateProduct(product));
+	}
+	@Test
+	public void searchTest()
+	{
+		Scanner sc=new Scanner(System.in);
+		String search=sc.nextLine();
+		
+		assertNotNull("No Result found",productDAO.getBySearch(search));
 	}
 	@Ignore
 	@Test

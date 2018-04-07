@@ -10,5 +10,6 @@ public interface ProductDAO
 	public boolean updateProduct(Product product);
 	public List<Product> getProducts();
 	public List<Product> getProductByCategory(int categoryId);
+	public List<Product> getBySearch(String search);
 	
 }

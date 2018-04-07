@@ -172,6 +172,7 @@ public class ProductController {
 		String categoryName = categoryDAO.getCategory(product.getCategoryId()).getCategoryName();
 		productDAO.updateProduct(product);
 		m.addAttribute("ProductInfo", product);
+		m.addAttribute("product", productId);
 		m.addAttribute("categoryName", categoryName);
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		m.addAttribute("role", auth.getAuthorities().toString());

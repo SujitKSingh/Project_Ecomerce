@@ -47,6 +47,7 @@ public class CartController
 		m.addAttribute("cartList", listCartItems);
 		m.addAttribute("grandTotal", this.grandTotal(listCartItems));
 		m.addAttribute("cartList", cartDAO.getcartItems(username));
+		System.out.println("\t-------------Cart  Controller");
 		return "Cart";
 	}
 

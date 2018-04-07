@@ -46,6 +46,23 @@
 	width: 200px;
 	height: 30px;
 }
+
+.searchinput {
+    width:250px;
+    height:35px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
 </style>
 </head>
 
@@ -63,10 +80,13 @@
 						Order</a>
 				</div>
 			<ul class="nav navbar-nav">
+				
 				<c:forEach items="${categories}" var="category" end="4">
 					<li><a href="<c:url value='/Products/${category.categoryId}'/>">${category.categoryName}</a></li>
 				</c:forEach>
-				
+					<li><form style="margin-top:10px;" action="${pageContext.request.contextPath}/searchBy">
+						<input type="text" name="search" placeholder="Search.." event.keyCode === 13 class="searchinput" >
+					</form></li>
 					<li><a href="${pageContext.request.contextPath}/aboutus" >About Us</a></li>
 					<li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
 				<c:if test="${pageContext.request.userPrincipal.name=='Sumit'}">
@@ -80,6 +100,7 @@
 					<li><a href="${pageContext.request.contextPath}/login" >Login</a></li>
 					
 				</c:if>
+				
 				<c:if test="${pageContext.request.userPrincipal.name!=null}">
 					<li><a href="<c:url value="/UserHome"/>">${pageContext.request.userPrincipal.name}</a></li>
 					<li><a href="${pageContext.request.contextPath}/perform_logout">Logout</a></li>
