@@ -106,4 +106,12 @@ public class ProductDAOImpl implements ProductDAO
 			List<Product> listProducts=(List<Product>)query.list();
 			return listProducts;
 		}
+		
+		@Override
+		public List<Product> getByFilter(int MIN,int MAX) {
+			Session session=sessionFactory.openSession();
+			Query query=session.createQuery("from Product WHERE productPrice BETWEEN :MIN AND :MAX").setParameter("MIN", MIN).setParameter("MAX", MAX);
+			List<Product> listProducts=(List<Product>)query.list();
+			return listProducts;
+		}
 }

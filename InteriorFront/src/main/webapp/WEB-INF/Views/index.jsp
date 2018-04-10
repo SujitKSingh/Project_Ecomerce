@@ -19,9 +19,11 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
 				<div class="item active">
+				<a href="/InteriorFront/productDesc/133">
 					<img class="img-fluid"
-						src="<c:url value="/resources/images/lava.jpeg"/>" alt="Lava"
-						style="width: 100%; height: 500px" href="" >
+						src="<c:url value="/resources/images/133.jpg"/>" alt="Lava"
+						style="width: 100%; height: 500px" >
+						</a>
 					<div class="carousel-caption">
 						<h3>LAVA IRIS</h3>
 						<p>With SnapDragon Processor</p>
@@ -41,9 +43,11 @@
 				</div>
 
 				<div class="item">
+				<a href="/InteriorFront/productDesc/134">
 					<img class="img-fluid"
 						src="<c:url value="/resources/images/203.jpg"/>" alt="Pen"
 						style="width: 100%; height: 500px">
+						</a>
 					<div class="carousel-caption">
 						<h3>Parker</h3>
 						<p>Write your future!</p>

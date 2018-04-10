@@ -87,6 +87,17 @@ public class PageController {
 
 	}
 	
+	@RequestMapping("/filterBy")
+	public String productByFilter(@RequestParam("min")int min,@RequestParam("max")int max,Model m) {
+		List<Product> listProducts = productDAO.getByFilter(min,max);
+		m.addAttribute("listProducts", listProducts);
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+		m.addAttribute("role", auth.getAuthorities().toString());
+
+		return "ProductPage";
+
+	}
 	
 	
 }

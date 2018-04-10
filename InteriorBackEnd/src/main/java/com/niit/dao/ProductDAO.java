@@ -1,5 +1,6 @@
 package com.niit.dao;
 import java.util.List;
+
 import com.niit.model.Product;
 
 public interface ProductDAO 
@@ -11,5 +12,6 @@ public interface ProductDAO
 	public List<Product> getProducts();
 	public List<Product> getProductByCategory(int categoryId);
 	public List<Product> getBySearch(String search);
+	public List<Product> getByFilter(int MIN,int MAX);
 	
 }

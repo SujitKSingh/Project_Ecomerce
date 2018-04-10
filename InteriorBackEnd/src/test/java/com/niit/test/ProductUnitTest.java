@@ -28,6 +28,7 @@ public class ProductUnitTest
 		
 		productDAO=(ProductDAO)context.getBean("productDAO");
 	}
+	
 	@Ignore
 	@Test
 	public void addProductTest()
@@ -42,13 +43,14 @@ public class ProductUnitTest
 		product.setStock(4);
 		assertTrue("Problem in Product Insertion",productDAO.addProduct(product));
 	}
+	
 	@Ignore
 	@Test
 	public void getProductByCategoryTest()
 	{
 		assertNotNull("Something went wrong !",productDAO.getProductByCategory(562));
 	}
-
+	
 	@Ignore
 	@Test
 	public void getProductTest()
@@ -72,6 +74,8 @@ public class ProductUnitTest
 		product.setproductName("L Sofa Model");
 		assertTrue("Problem in Updation",productDAO.updateProduct(product));
 	}
+	
+	@Ignore
 	@Test
 	public void searchTest()
 	{
@@ -94,6 +98,37 @@ public class ProductUnitTest
 			System.out.println(product.getproductDesc());
 		}
 	}
-
+	
+	@Test
+	public void filterTest()
+	{
+		Scanner sc=new Scanner(System.in);
+		int MIN=sc.nextInt();
+		int MAX=sc.nextInt();
+		
+		assertNotNull("No Result found",productDAO.getByFilter(MIN,MAX));
+		for(Product product:productDAO.getByFilter(MIN,MAX))
+		{
+			System.out.print(product.getproductId()+":::");
+			System.out.print(product.getproductName()+":::");
+			System.out.println(product.getproductDesc());
+		}
+	
+	}
+	
+	@Ignore
+	@Test
+	public void listProductsTest1()
+	{
+		List<Product> listProducts1=productDAO.getProducts();
+		assertNotNull("No Products",listProducts1);
+		
+		for(Product product:listProducts1)
+		{
+			System.out.print(product.getproductId()+":::");
+			System.out.print(product.getproductName()+":::");
+			System.out.println(product.getproductDesc());
+		}
+	}
 }
 

@@ -27,7 +27,7 @@
 			<td>${categoryName}</td>
 		</tr>
 		<tr bgcolor="pink">
-			<td>Supplier </td>
+			<td>Suplier </td>
 		<td>${suplierName}</td> 
 		</tr>
 		<tr bgcolor="pink">

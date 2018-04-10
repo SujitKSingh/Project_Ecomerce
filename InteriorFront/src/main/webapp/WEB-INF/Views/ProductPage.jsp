@@ -2,28 +2,53 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<body >
-<div class="container-fluid well" >
-<h3 align="center" background-color="#81d4fa" class="container-fluid well" >Product Page</h3>
-<table align="center"  border="4" style="width:100%" >
-	<tr bgcolor="#81d4fa">
-		<td colspan="4" align="center">Product Detail</td>
-	</tr>
-	<tr  >
-		<c:set var="i" value="1"/>
-		<c:forEach items="${listProducts}" var="product">
-			<td align="center" bgcolor="#eeeeee " ><img src="<c:url value="/resources/images/${product.productId}.jpg"/>" width="250" height="250" /> <br /> 
-				<a href="<c:url value="/productDesc/${product.productId}"/>" >${product.productName}</a>
-				<br />INR. ${product.productPrice} /-</td>
-				<c:if test="${i%4==0}">
-					</tr>
-					<tr>
+<body>
+	<div class="container-fluid well">
+		<h3 align="center" background-color="#81d4fa"
+			class="container-fluid well">Product Page</h3>
+		<table align="center" border="4" style="width: 100%">
+			<tr bgcolor="#81d4fa">
+				<td colspan="4" align="center">Product Detail</td>
+			</tr>
+			<tr>
+				<form style="margin-top:10px;" action="${pageContext.request.contextPath}/filterBy">
+					<select name="min" style="height:35px;width:150px;">
+						<option value="Select Minimum">Select Minimum</option>
+						<option value="0">0</option>
+						<option value="1000">1000</option>
+						<option value="2000">2000</option>
+						<option value="5000">5000</option>
+						<option value="10000">10000</option>
+					</select> 
+					<select name="max" style="height:35px;width:150px;">
+						<option value="Select Maximum">Select Maximum</option>
+						<option value="1000">1000</option>
+						<option value="2000">2000</option>
+						<option value="5000">5000</option>
+						<option value="10000">10000</option>
+						<option value="15000">15000</option>
+					</select>&nbsp;&nbsp;&nbsp;<input type="submit" value="Go" style="height:35px;width:80px;" class="btn btn-success" />
+				</form>
+			</tr>
+			<br><br>
+			<tr>
+				<c:set var="i" value="1" />
+				<c:forEach items="${listProducts}" var="product">
+					<td align="center" bgcolor="#eeeeee "><img
+						src="<c:url value="/resources/images/${product.productId}.jpg"/>"
+						width="250" height="250" /> <br /> <a
+						href="<c:url value="/productDesc/${product.productId}"/>">${product.productName}</a>
+						<br />INR. ${product.productPrice} /-</td>
+					<c:if test="${i%4==0}">
+			</tr>
+			<tr>
 				</c:if>
-				<c:set var="i" value="${i+1}"/>
-		</c:forEach>
-	</tr>
-</table>
+				<c:set var="i" value="${i+1}" />
+				</c:forEach>
+			</tr>
 
-</div>
+		</table>
+
+	</div>
 </body>
 <%@include file="/WEB-INF/views/Footer.jsp"%>

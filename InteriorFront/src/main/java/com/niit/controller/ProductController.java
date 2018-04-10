@@ -174,6 +174,7 @@ public class ProductController {
 		m.addAttribute("ProductInfo", product);
 		m.addAttribute("product", productId);
 		m.addAttribute("categoryName", categoryName);
+		m.addAttribute("suplierName", suplierDAO.getSuplier(product.getSuplierId()).getsuplierName());
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		m.addAttribute("role", auth.getAuthorities().toString());
 

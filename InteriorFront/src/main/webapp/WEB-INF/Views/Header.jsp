@@ -104,10 +104,12 @@
 				<c:if test="${pageContext.request.userPrincipal.name!=null}">
 					<li><a href="<c:url value="/UserHome"/>">${pageContext.request.userPrincipal.name}</a></li>
 					<li><a href="${pageContext.request.contextPath}/perform_logout">Logout</a></li>
-					
-				
 				</c:if>
+			
 			</ul>
+			<a style="float:right;margin-top:12px;" href="${pageContext.request.contextPath}/cart">
+					<img  src="<c:url value="/resources/images/Shopingcart.jpg"/>" alt="ShoppingCart" style="height:35px;width:50px;border:3px solid #f06292;"  />
+				</a>
 			</div>
 		</nav>
 	</div>
