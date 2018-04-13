@@ -2,6 +2,8 @@ package com.niit.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -10,8 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.dao.CartDAO;
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.ProductDAO;
+import com.niit.model.CartItem;
 import com.niit.model.Product;
 import com.niit.model.User;
 
@@ -22,6 +26,10 @@ public class PageController {
 	CategoryDAO categoryDAO;
 	@Autowired
 	ProductDAO productDAO;
+	
+	@Autowired
+	CartDAO cartDAO;
+	
 	@RequestMapping("/")
 	public String showHomePage() {
 		
@@ -64,10 +72,7 @@ public class PageController {
 		return "Register";
 	}
 
-	@RequestMapping("/cart")
-	public String showCart() {
-		return "Cart";
-	}
+	
 
 	@RequestMapping("/perform_logout")
 	public String showLogout() {
@@ -84,7 +89,6 @@ public class PageController {
 		m.addAttribute("role", auth.getAuthorities().toString());
 
 		return "ProductPage";
-
 	}
 	
 	@RequestMapping("/filterBy")
@@ -97,6 +101,28 @@ public class PageController {
 
 		return "ProductPage";
 
+	}
+	
+	@RequestMapping("cart")
+	public String myCart(Model m,HttpSession session)
+	{
+		String username=(String)session.getAttribute("username");
+		List<CartItem> listCartItems=cartDAO.getcartItems(username);
+		m.addAttribute("cartList",listCartItems);
+		m.addAttribute("grandTotal",this.grandTotal(listCartItems));
+		m.addAttribute("cartList",cartDAO.getcartItems(username));
+		return "Cart";
+	}
+	public int grandTotal(List<CartItem> listCartItems)
+	{
+		int grandTotal=0;
+		for(CartItem cartItem:listCartItems)
+		{
+			grandTotal=grandTotal+cartItem.getQuantity()*(productDAO.getProduct(cartItem.getProductId()).getproductPrice());
+		}
+		System.out.println(grandTotal);
+		return grandTotal;
+		
 	}
 	
 	
