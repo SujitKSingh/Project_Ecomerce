@@ -25,7 +25,7 @@ context.refresh();
 userDAO=(UserDAO)context.getBean("userDAO");
 }
 
-
+@Ignore
 @Test
 public void registerUser()
 {
@@ -49,5 +49,12 @@ public void updateDetail()
 User ud=new User();
 ud.setCustomerName("Singh");
 
+}
+
+@Test
+public void emailUser()
+{
+	assertNotNull("user not fetched",userDAO.getUserByUsername("Sujit"));
+	System.out.println("User email address="+userDAO.getUserByUsername("Sujit").getEmailId());
 }
 }

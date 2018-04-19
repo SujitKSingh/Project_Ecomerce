@@ -12,7 +12,7 @@
 
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js"/>"></script>
 
-
+<script type="text/javascript" src="http://arrow.scrolltotop.com/arrow13.js"></script>
 
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -98,6 +98,7 @@
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
 					<li><a href="${pageContext.request.contextPath}/register">Register</a></li>
 					<li><a href="${pageContext.request.contextPath}/login" >Login</a></li>
+					
 					
 				</c:if>
 				

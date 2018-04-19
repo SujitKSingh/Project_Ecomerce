@@ -71,9 +71,7 @@ public class PageController {
 
 		return "Register";
 	}
-
-	
-
+    
 	@RequestMapping("/perform_logout")
 	public String showLogout() {
 		return "Logout";
@@ -111,6 +109,8 @@ public class PageController {
 		m.addAttribute("cartList",listCartItems);
 		m.addAttribute("grandTotal",this.grandTotal(listCartItems));
 		m.addAttribute("cartList",cartDAO.getcartItems(username));
+		
+		
 		return "Cart";
 	}
 	public int grandTotal(List<CartItem> listCartItems)

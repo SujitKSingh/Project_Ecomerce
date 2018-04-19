@@ -3,6 +3,7 @@ package com.niit.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -64,4 +65,13 @@ public class CartItem
 		this.subTotal = subTotal;
 		}
 	
+	@OneToOne
+	Product product;
+
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 	}

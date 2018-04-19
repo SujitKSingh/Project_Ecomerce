@@ -12,14 +12,20 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.dao.OrderDetailDAO;
+import com.niit.dao.UserDAO;
+import com.niit.emailsend.App;
+import com.niit.model.User;
 
 @Controller
 public class UserController {
 	
 	@Autowired
 	OrderDetailDAO orderDetailDAO;
+	@Autowired
+	UserDAO userDAO;
 	
 	@SuppressWarnings({ "unchecked", "unused" })
 	@RequestMapping("/login_success")
@@ -52,7 +58,6 @@ public class UserController {
 				session.setAttribute("username", username);
 			}
 		}
-
 		return "redirect:/";
 
 	}
@@ -67,5 +72,17 @@ public class UserController {
 		m.addAttribute("username", username);
 		return "UserHome";
 
+	}
+	
+	@RequestMapping("/getemail")
+	public String getEmail(@RequestParam("username")String uname,@RequestParam("email")String to,@RequestParam("mobileNo")String mobileNo,@RequestParam("comment")String comment, HttpSession session,Model m)
+	{
+		SecurityContext securityContext = SecurityContextHolder.getContext();
+		Authentication authentication = securityContext.getAuthentication();
+		String username = authentication.getName();
+		User from=userDAO.getUserByUsername(username);
+		App.sendmail(to, from.getEmailId(),"contact me",comment+"\nMobile Number:-"+mobileNo+"\nUser Name:-"+uname);
+		m.addAttribute("message", "Congrtatulations Your mail has been sent Our Team Will Contact You Soon");
+		return "ContactUs";
 	}
 }

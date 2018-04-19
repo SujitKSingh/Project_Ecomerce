@@ -34,9 +34,10 @@
 			<tr>
 				<c:set var="i" value="1" />
 				<c:forEach items="${listProducts}" var="product">
-					<td align="center" bgcolor="#eeeeee "><img
-						src="<c:url value="/resources/images/${product.productId}.jpg"/>"
-						width="250" height="250" /> <br /> <a
+					<td align="center" bgcolor="#eeeeee ">
+						<a href="<c:url value="/productDesc/${product.productId}"/>">
+						<img src="<c:url value="/resources/images/${product.productId}.jpg"/>"
+						width="250" height="250" /></a> <br /> <a
 						href="<c:url value="/productDesc/${product.productId}"/>">${product.productName}</a>
 						<br />INR. ${product.productPrice} /-</td>
 					<c:if test="${i%4==0}">

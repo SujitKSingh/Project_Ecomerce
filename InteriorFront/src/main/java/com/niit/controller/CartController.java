@@ -40,10 +40,12 @@ public class CartController
 		cartItem.setUserName(username);
 		cartItem.setPaymentStatus("NP");
 		cartItem.setSubTotal(quantity * product.getproductPrice());
+		cartItem.setProduct(product);
 
 		cartDAO.addcartItem(cartItem);
 
 		List<CartItem> listCartItems = cartDAO.getcartItems(username);
+		
 		m.addAttribute("cartList", listCartItems);
 		m.addAttribute("grandTotal", this.grandTotal(listCartItems));
 		m.addAttribute("cartList", cartDAO.getcartItems(username));

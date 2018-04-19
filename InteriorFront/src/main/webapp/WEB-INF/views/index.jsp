@@ -4,10 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 	<div class="container-fluid" style="width:100%" >
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div id="myCarousel" class="carousel slide " data-ride="carousel">
 
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -22,7 +23,7 @@
 				<a href="/InteriorFront/productDesc/133">
 					<img class="img-fluid"
 						src="<c:url value="/resources/images/133.jpg"/>" alt="Lava"
-						style="width: 100%; height: 500px" >
+						style="width:100%; height: 500px" >
 						</a>
 					<div class="carousel-caption">
 						<h3>LAVA IRIS</h3>

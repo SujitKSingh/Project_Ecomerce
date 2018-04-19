@@ -9,5 +9,6 @@ public interface UserDAO
   public boolean registerUser(User user);
   public boolean updateDetail(User user);
   public List<User> getAllUser();
+  public User getUserByUsername(String username);
  
 }

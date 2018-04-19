@@ -36,28 +36,29 @@
 				<i class="fa fa-home"></i> <b>Mon - Fri 9.00 -18.00</b><br> Saturday - Sunday CLOSED
 				</div>
 		<div class="col-md-9 col-sm-8">
-			<form method="post" id="contactform" name="contactform" class="contact-form clearfix" action="mail/contact.php">
+			<form method="post" id="contactform" name="contactform" class="contact-form clearfix" action="getemail">
 				<div class="row">
 					<div class="col-md-5">
 						<div class="form-group">
-							<input id="fname" name="First Name" class="form-control input-lg" placeholder="First name*" type="text">
+						<input id="username" required="required" name="username" class="form-control input-lg" placeholder="User Name" type="text">
 						</div>
 						<div class="form-group">
-								<input id="lname" name="Last Name" class="form-control input-lg" placeholder="Last name" type="email">
+						<input id="email" name="email" required="required" class="form-control input-lg" placeholder="Email*" type="email">
 						</div>
 						<div class="form-group">
-								<input id="email" name="email" class="form-control input-lg" placeholder="Email*" type="email">
+						<input id="mobileNo" name="mobileNo" required="required" class="form-control input-lg" placeholder="mobileNo" type="text">
 						</div>
-						<div class="form-group">
-								<input id="phone" name="phone" class="form-control input-lg" placeholder="Phone" type="text">
-					</div>
 					</div>
 					<div class="col-md-7">
 						<div class="form-group">
-								<textarea cols="6" rows="8" id="comments" name="comments" class="form-control input-lg" placeholder="Message"></textarea>
+						 	<textarea cols="6" rows="8" id="comment" name="comment" required="required" class="form-control input-lg" placeholder="Message"></textarea>
 						</div>
-						<input id="submit" name="submit" class="btn btn-primary btn-lg  site-btn pull-right" value="Submit now!" type="submit">
+							<input id="submit" name="submit" class="btn btn-primary btn-lg  site-btn pull-right" value="Submit now!" type="submit">
+					
 					</div>
+					<div class="col-sm-12" style="color:blue;"><center><h3>${message}</h3></center></div>
+					
+					
 				</div>
 			</form>
 		</div>
@@ -67,7 +68,7 @@
 				<div class="row">
 					<div class="col-md-9 col-sm-9 col-xs-12 " align="center">
 						<h3><span class="glyphicon glyphicon-cog "></span> <b>Products for sale?</b> Explore products like a pro. &nbsp;&nbsp;&nbsp;
-							<button type="button" class="btn btn-primary site-btn">Start Right Now</button> </h3>
+							<a href="${pageContext.request.contextPath}/productPage"><button type="button"  class="btn btn-primary site-btn">Start Right Now</button></a> </h3>
 					</div>
 				</div>
 			</div>

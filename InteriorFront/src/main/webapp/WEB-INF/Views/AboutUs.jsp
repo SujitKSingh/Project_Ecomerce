@@ -121,8 +121,8 @@
 							<h3>
 								<span class="glyphicon glyphicon-cog "></span><strong>Products
 									for sale?</strong> Explore products like a pro.&nbsp;&nbsp;&nbsp;
-								<button type="button" class="btn btn-primary site-btn">Start
-									Right Now</button>
+								<a href="${pageContext.request.contextPath}/productPage"><button type="button" class="btn btn-primary site-btn">Start
+									Right Now</button></a>
 							</h3>
 						</div>
 						</div>
