@@ -31,7 +31,6 @@ context.refresh();
 orderDetailDAO=(OrderDetailDAO)context.getBean("orderDetailDAO");
 }
 
-@Ignore
 @Test
 
 public void confirmorderDetailTest()
@@ -44,7 +43,8 @@ orderDetail.setUsername("Vicky");
 orderDetail.setTotalAmount(1000);
 orderDetail.setShippingAddress("Rajajipuram");
 orderDetail.setTransactionType("CC");
-
+orderDetail.setProductName("MObile");
+orderDetail.setProductPrice(1200);
 
 
 assertTrue("has some error", orderDetailDAO.confirmOrderDetail(orderDetail));

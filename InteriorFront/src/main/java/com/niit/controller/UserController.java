@@ -13,10 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.OrderDetailDAO;
 import com.niit.dao.UserDAO;
 import com.niit.emailsend.App;
+import com.niit.model.OrderDetail;
 import com.niit.model.User;
 
 @Controller
@@ -26,6 +28,10 @@ public class UserController {
 	OrderDetailDAO orderDetailDAO;
 	@Autowired
 	UserDAO userDAO;
+	
+	@Autowired
+	HttpSession httpsession;
+	
 	
 	@SuppressWarnings({ "unchecked", "unused" })
 	@RequestMapping("/login_success")
@@ -85,4 +91,7 @@ public class UserController {
 		m.addAttribute("message", "Congrtatulations Your mail has been sent Our Team Will Contact You Soon");
 		return "ContactUs";
 	}
+	
+	
+	
 }

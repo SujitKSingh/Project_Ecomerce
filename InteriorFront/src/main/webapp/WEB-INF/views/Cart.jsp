@@ -13,12 +13,12 @@
 </head>
 
 <div>
-<table align="center" class="table table-striped table-hover">
-	<tr class="danger">
-		<td colspan="6"><center>Your Cart</center></td>
+<table align="center" class="table table-striped table-hover table-responsive">
+	<tr class="well">
+		<center><strong>Your Cart</strong></center>
 	</tr>
 	<c:if test="${grandTotal!=0}">
-		<tr class="Success">
+		<tr class="Success" align="center">
 			<td>ProductImage</td>
 			<td>Product Name</td>
 			<td>Product ID</td>
@@ -36,7 +36,7 @@
 	<c:forEach items="${cartList}" var="cartItem">
 		<form action="<c:url value="/updateCartItem/${cartItem.cartItemId}"/>"
 			method="get">
-			<tr class="Info ">
+			<tr class="Info " align="center">
 				<td><img src="<c:url value="/resources/images/${cartItem.productId}.jpg"/>"
 					width="150" height="150" /></td>
 				<td style="padding-top: 70px !important;">${cartItem.product.productName}</td>
@@ -54,7 +54,7 @@
 	</c:forEach>
 	<c:if test="${grandTotal!=0}">
 		<tr align="center" class="Success">
-			<td colspan="6"><strong>Grand Total - </strong>
+			<td colspan="8"><strong>Grand Total - </strong>
 				Rs.${grandTotal}/-</b></td>
 		</tr>
 	</c:if>

@@ -66,7 +66,7 @@
 </style>
 </head>
 
-<body style="background-image: url('/InteriorFront/resources/images/backgroundcr.jpg');" >
+<body>
 	<div id="upperLabel" class="container-fluid">
 		<div class="container-fluid" style="padding-left: 15px">
 			<i class="fa fa-shopping-cart"></i><label>Just Order</label>

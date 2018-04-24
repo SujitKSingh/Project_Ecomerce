@@ -2,6 +2,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
+
+
 <%@include file="Header.jsp"%>
 
 <div class="container-fluid">
