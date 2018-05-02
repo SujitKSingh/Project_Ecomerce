@@ -90,13 +90,13 @@ public class OrderController {
 		order.setCartId(cartid);
 		orderDAO.confirmOrderDetail(order);
 		cartDAO.deleteCartItem(cartDAO.getCartItem(cartItemId));
-		
-		App.sendmail(userDAO.getUserByUsername(session.getAttribute("username").toString()).getEmailId(),
-				"sujitksingh18@gmail.com","Order Details","\nOrderId:- "+order.getOderid()+"\nProducts You buy:-\n"+prod+
+		String desc="\nOrderId:- "+order.getOderid()+"\nProducts You buy:-\n"+prod+
 				"\nTransactionType:-"+order.getTransactionType()+"\n Amount:-"+order.getTotalAmount()
-				+"\n Shipping Address:-"+order.getShippingAddress());
-		orderpdfcontroller.create();
-		return "ThankYou";
+				+"\n Shipping Address:-"+order.getShippingAddress();
+		/*App.sendmail(userDAO.getUserByUsername(session.getAttribute("username").toString()).getEmailId(),
+				"sujitksingh18@gmail.com","Order Details",desc);
+		*/orderpdfcontroller.create(desc,session.getAttribute("username").toString());
+		return "redirect:/sendfile/"+session.getAttribute("username").toString();
 		}
 		else {
 			String username = (String) session.getAttribute("username");

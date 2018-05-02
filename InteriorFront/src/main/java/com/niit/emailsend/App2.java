@@ -3,6 +3,7 @@ package com.niit.emailsend;
 import java.util.Properties;
 
 import javax.activation.DataHandler;
+import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 import javax.mail.BodyPart;
 import javax.mail.Message;
@@ -16,28 +17,48 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.niit.dao.UserDAO;
+
+@Controller
 public class App2 {
-	public static void sendmail(String to,String from)
-    {
-    	ApplicationContext context = 
-             new ClassPathXmlApplicationContext("web1.xml");
-    	Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "587");
-        props.put("mail.smtp.port", "smtp.gmail.com");
+  @Autowired
+  UserDAO userDao;
+	
+  @RequestMapping("/sendfile/{username}")
+   public String requestorderpdf(@PathVariable("username")String uname) {
+      // Recipient's email ID needs to be mentioned.
+      String to = userDao.getUserByUsername(uname).getEmailId();
 
-        Session session = Session.getInstance(props,
-                new javax.mail.Authenticator() {
-                   protected PasswordAuthentication getPasswordAuthentication() {
-                      return new PasswordAuthentication("sujitksingh18@gmail.com", "sujitksingh");
-                   }
-                });
-    
-	 try {
+      // Sender's email ID needs to be mentioned
+      String from = "sujitksingh18@gmail.com";
+
+      final String username = "sujitksingh18";//change accordingly
+      final String password = "sujit@945";//change accordingly
+
+      // Assuming you are sending email through relay.jangosmtp.net
+      String host = "smtp.gmail.com";
+
+      Properties props = new Properties();
+      props.put("mail.smtp.auth", "true");
+      props.put("mail.smtp.starttls.enable", "true");
+      props.put("mail.smtp.host", host);
+      props.put("mail.smtp.port", "587");
+      props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
+      // Get the Session object.
+      Session session = Session.getInstance(props,
+         new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+               return new PasswordAuthentication(username, password);
+            }
+         });
+
+      try {
          // Create a default MimeMessage object.
          Message message = new MimeMessage(session);
 
@@ -65,8 +86,8 @@ public class App2 {
 
          // Part two is attachment
          messageBodyPart = new MimeBodyPart();
-         String filename = "D:\\eclipse-jee-oxygen-2-win32-x86_64\\oxy workspace\\Project_Ecomerce\\InteriorFront\\src\\main\\webapp\\resources\\file\\orderpdf.pdf";
-         FileDataSource source = new FileDataSource(filename);
+         String filename = "D:\\eclipse-jee-oxygen-2-win32-x86_64\\oxy workspace\\Project_Ecomerce\\InteriorFront\\src\\main\\webapp\\resources\\file\\"+uname+".pdf";
+         DataSource source = new FileDataSource(filename);
          messageBodyPart.setDataHandler(new DataHandler(source));
          messageBodyPart.setFileName(filename);
          multipart.addBodyPart(messageBodyPart);
@@ -82,5 +103,6 @@ public class App2 {
       } catch (MessagingException e) {
          throw new RuntimeException(e);
       }
+      return "ThankYou";
    }
 }
