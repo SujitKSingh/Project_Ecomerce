@@ -4,11 +4,13 @@
 
 <body>
 	<div class="container-fluid well">
+		<div class="row">
 		<h3 align="center" background-color="#81d4fa"
 			class="container-fluid well">Product Page</h3>
-		<table align="center" border="4" style="width: 100%" class="table-responsive">
-			<tr bgcolor="#81d4fa">
-				<td colspan="4" align="center">Product Detail</td>
+		</div>
+		<table align="center" style="width: 100%;border:5px solid white;border-radius:5px;" class="table-responsive">
+			<tr bgcolor="#bcaaa4;">
+				<td colspan="4" align="center" style="color:white;"><strong>Product Detail</strong></td>
 			</tr>
 			<tr>
 				<form style="margin-top:10px;" action="${pageContext.request.contextPath}/filterBy">
@@ -30,11 +32,11 @@
 					</select>&nbsp;&nbsp;&nbsp;<input type="submit" value="Go" style="height:35px;width:80px;" class="btn btn-success" />
 				</form>
 			</tr>
-			<br><br>
+			<br/><br/>
 			<tr>
 				<c:set var="i" value="1" />
 				<c:forEach items="${listProducts}" var="product">
-					<td align="center" bgcolor="#eeeeee ">
+					<td align="center" bgcolor="white" >
 						<a href="<c:url value="/productDesc/${product.productId}"/>">
 						<img src="<c:url value="/resources/images/${product.productId}.jpg"/>"
 						width="250" height="250" /></a> <br /> <a

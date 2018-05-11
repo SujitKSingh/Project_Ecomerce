@@ -1,8 +1,5 @@
 package com.niit.controller;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.List;
 
@@ -13,22 +10,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.dao.CartDAO;
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.OrderDetailDAO;
+import com.niit.dao.OrderItemDAO;
 import com.niit.dao.ProductDAO;
+import com.niit.dao.SuplierDAO;
 import com.niit.dao.UserDAO;
-import com.niit.emailsend.App;
 import com.niit.model.CartItem;
 import com.niit.model.OrderDetail;
+import com.niit.model.OrderItem;
 
 @Controller
 public class OrderController {
 	@Autowired
 	CategoryDAO categoryDAO;
-
+	@Autowired
+	SuplierDAO suplierDAO;
 	@Autowired
 	ProductDAO productDAO;
 
@@ -40,6 +39,9 @@ public class OrderController {
 	
 	@Autowired
 	OrderDetailDAO orderDAO;
+	
+	@Autowired
+	OrderItemDAO orderItemDAO; 
 
 	@RequestMapping("/ConfirmOrder")
 	public String confirmOrder(HttpSession session, Model m) {
@@ -69,14 +71,25 @@ public class OrderController {
 		String products[][]=new String[cartlist.size()][2];
 		
 		int row=0;
+		OrderItem orderItem=new OrderItem();
+		order.setCartId(cartid);	
+		orderDAO.confirmOrderDetail(order);
 		
 		for (CartItem cart : cartlist) {
 			cartid = cart.getCartId();
 			cartItemId = cart.getCartItemId();
 			products[row][0]=cart.getProduct().getproductName();
 			products[row][1]=cart.getProduct().getproductPrice()+"";
+			
+			orderItem.setOderId(order.getOderid());
+			orderItem.setProductId(cart.getProductId());
+			orderItemDAO.addorderItem(orderItem);
+			
 			row++;	
 		}
+		
+		
+		
 		
 		String prod="";
 		for(int i=0;i<row;i++)
@@ -87,15 +100,12 @@ public class OrderController {
 			prod+="\n";
 		}
 		
-		order.setCartId(cartid);
-		orderDAO.confirmOrderDetail(order);
+	
 		cartDAO.deleteCartItem(cartDAO.getCartItem(cartItemId));
 		String desc="\nOrderId:- "+order.getOderid()+"\nProducts You buy:-\n"+prod+
 				"\nTransactionType:-"+order.getTransactionType()+"\n Amount:-"+order.getTotalAmount()
 				+"\n Shipping Address:-"+order.getShippingAddress();
-		/*App.sendmail(userDAO.getUserByUsername(session.getAttribute("username").toString()).getEmailId(),
-				"sujitksingh18@gmail.com","Order Details",desc);
-		*/orderpdfcontroller.create(desc,session.getAttribute("username").toString());
+		orderpdfcontroller.create(desc,session.getAttribute("username").toString());
 		return "redirect:/sendfile/"+session.getAttribute("username").toString();
 		}
 		else {
@@ -117,6 +127,7 @@ public class OrderController {
 		System.out.println(grandTotal);
 		return grandTotal;
 	}
+	
 	
 	
 

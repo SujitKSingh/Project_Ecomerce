@@ -16,13 +16,14 @@
 	<c:if test="${updateClicked==true}">
 		<c:set var="url" value="/InteriorFront/UpdateProduct/${pid}"/>
 	</c:if>
-	<form:form method="post" action="${url}"
+	<form:form method="post" action="${url}" 
 		modelAttribute="product" enctype="multipart/form-data" class="container-fluid well">
 		<h3 align="center" class="container-fluid well" style="background-color:#81d4fa;">Product Page</h3>
-		<table align="center" border="5" class="table table-striped table-hover" >
+		<table align="center" border="5px" class="table table-striped table-hover" >
 			<tr >
 				<td>Product Image</td>
 				<td><form:input type="file" path="pimage" class="form-control-file"/></td>
+				<td></td>
 			</tr>
 			
 			<tr bgcolor="#81d4fa">
@@ -34,6 +35,7 @@
 			<tr >
 				<td>Product Price</td>
 				<td><form:input path="productPrice" placeholder="Enter Price" /></td>
+				<td></td>
 				
 			</tr>
 			
@@ -41,10 +43,12 @@
 				<td>Product Desc</td>
 				<td><form:input path="productDesc" placeholder="Enter Description" /></td>
 				<td><form:errors path="productDesc" style="color:red;"/></td>
+				
 			</tr>
 			<tr >
 				<td>Product stock</td>
 				<td><form:input path="stock" placeholder="Enter stock" /></td>
+				<td></td>
 			</tr>
 			<tr >
 				<td>Category</td>
@@ -55,6 +59,7 @@
 				  	</c:forEach>
 				</select>
 				</td>
+				<td></td>
 			</tr>
 			
 			<tr bgcolor="#81d4fa">
@@ -65,7 +70,8 @@
 				  	<option value="${supl.suplierId}">${supl.suplierName}</option>
 				  	</c:forEach>
 				 
-  			 	</select>
+  			 	</select></td>
+  			 	<td></td>
   			 	 	 
 			</tr>
 
@@ -74,7 +80,7 @@
 					<td colspan="2">
 					<input type="submit" value="SUBMIT" class="btn btn-info" style="height:35;width:100;" /> 
 					<a href="<c:url value="/product"/>" class="btn btn-info" style="height:35;width:100;">Reset</a></td>
-				
+				<td></td>
 				</td>
 				</div>
 			</tr>

@@ -1,5 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html"%>
+
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -24,14 +25,22 @@
 	rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Roboto'
 	rel='stylesheet'>
-
 <script >
  window.menu ='${title}';
  window.contextRoot='${contextRoot}';
 </script>
+
 <style type="text/css">
 #upperLabel {
-	background-color:#81d4fa;;
+	background-color:#d7ccc8;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+
+#new
+{
+	background-color:#d7ccc8;
 	padding: 0px;
 	margin: 0px;
 	width: 100%;
@@ -72,32 +81,42 @@
 			<i class="fa fa-shopping-cart"></i><label>Just Order</label>
 		</div>
 	</div>
-	<div id="upperLabel" class="container-fluid" >
-		<nav class="navbar navbar-inverse ">
+	<div id="new" class="container-fluid" >
+		<nav class="navbar navbar-inverse" style="background-color: #757575;">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="${pageContext.request.contextPath}/#">Just
 						Order</a>
 				</div>
 			<ul class="nav navbar-nav">
-				
+				<c:if test="${pageContext.request.userPrincipal.name!=null}">
+						<c:if test="${pageContext.request.userPrincipal.name!='Sumit'}">
+					
 				<c:forEach items="${categories}" var="category" end="4">
 					<li><a href="<c:url value='/Products/${category.categoryId}'/>">${category.categoryName}</a></li>
 				</c:forEach>
+				</c:if>
+				</c:if>
 					<li><form style="margin-top:10px;" action="${pageContext.request.contextPath}/searchBy">
 						<input type="text" name="search" placeholder="Search.." event.keyCode === 13 class="searchinput" >
 					</form></li>
+					<c:if test="${pageContext.request.userPrincipal.name!=null}">
+						<c:if test="${pageContext.request.userPrincipal.name!='Sumit'}">
 					<li><a href="${pageContext.request.contextPath}/aboutus" >About Us</a></li>
 					<li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
+					</c:if>
+					</c:if>
 				<c:if test="${pageContext.request.userPrincipal.name=='Sumit'}">
 					<li><a href="${pageContext.request.contextPath}/category">Category</a></li>
 					<li><a href="${pageContext.request.contextPath}/product">Product</a></li>
 					<li><a href="${pageContext.request.contextPath}/suplier">Suplier</a></li>
 				</c:if>
 					<li><a href="${pageContext.request.contextPath}/productPage">All Products</a></li>
+					<li><a href="${pageContext.request.contextPath}/myProfile">My Profile</a></li>
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
 					<li><a href="${pageContext.request.contextPath}/register">Register</a></li>
 					<li><a href="${pageContext.request.contextPath}/login" >Login</a></li>
+					
 					
 					
 				</c:if>
@@ -108,9 +127,15 @@
 				</c:if>
 			
 			</ul>
+		<c:if test="${pageContext.request.userPrincipal.name!=null}">
+						<c:if test="${pageContext.request.userPrincipal.name!='Sumit'}">
+					
 			<a style="float:right;margin-top:12px;" href="${pageContext.request.contextPath}/cart">
 					<img  src="<c:url value="/resources/images/Shopingcart.jpg"/>" alt="ShoppingCart" style="height:35px;width:50px;border:3px solid #f06292;"  />
 				</a>
+				</c:if>
+				</c:if>
 			</div>
 		</nav>
 	</div>
+	</body>

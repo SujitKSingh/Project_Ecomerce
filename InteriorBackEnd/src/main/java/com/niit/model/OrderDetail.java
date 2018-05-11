@@ -1,5 +1,7 @@
 package com.niit.model;
 
+
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -7,39 +9,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table
-public class OrderDetail
+public class OrderDetail implements Serializable
 
 {
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int oderid;
 	int cartId;
 	String Username;
+	@Temporal(TemporalType.DATE)
 	Date orderDate;
 	int totalAmount;
-	String shippingAddress;
+		
 	String transactionType;
-	String productName;
-	int productPrice;
-
-	public String getProductName() {
-		return productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-	public int getProductPrice() {
-		return productPrice;
-	}
-
-	public void setProductPrice(int productPrice) {
-		this.productPrice = productPrice;
-	}
+	
+	
 
 	public int getCartId() {
 		return cartId;
@@ -65,6 +55,7 @@ public class OrderDetail
 		this.totalAmount = totalAmount;
 	}
 
+	String shippingAddress;
 	public String getShippingAddress() {
 		return shippingAddress;
 	}
@@ -96,4 +87,7 @@ public class OrderDetail
 	public void setOderid(int oderid) {
 		this.oderid = oderid;
 	}
+	
+	
+	
 }

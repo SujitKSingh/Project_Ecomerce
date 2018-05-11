@@ -99,6 +99,7 @@ public class ProductUnitTest
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void filterTest()
 	{

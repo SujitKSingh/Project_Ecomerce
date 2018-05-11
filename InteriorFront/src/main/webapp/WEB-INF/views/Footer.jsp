@@ -2,6 +2,10 @@
 
 <%@ page language="java" contentType="text/html"%>
 
+<head>
+<title>Footer</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -14,6 +18,7 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
 
+</head>
 <div>
 	<footer class="footer-bs container-fluid">
 		<div class="row ">
@@ -39,7 +44,7 @@
 						<li><a href="${pageContext.request.contextPath}/aboutus">About
 								Us</a></li>
 						<li><a href="${pageContext.request.contextPath}/contactus">Contacts</a></li>
-						<li><a href="${pageContext.request.contextPath}/termsandconditions">Terms & Condition</a></li>
+						<li><a href="${pageContext.request.contextPath}/termsandconditions">Terms And Condition</a></li>
 						<li><a href="${pageContext.request.contextPath}/privacy">Privacy Policy</a></li>
 					</ul>
 				</div>
@@ -54,22 +59,22 @@
 				</ul>
 			</div>
 			<div class="col-md-3 footer-ns animated fadeInRight">
-				<!-- <h4>Newsletter</h4>
+				<h4>Newsletter</h4>
 				<p>Get the latest updates on your mail</p>
 				<div class="input-group">
 					<input type="text" class="form-control" placeholder="Search for...">
 					<span class="input-group-btn">
-						<button class="btn btn-default" type="button">
+						<button class="btn btn-default" type="button" style="height:34px;">
 							<span class="glyphicon glyphicon-envelope"></span>
 						</button>
-					</span> -->
+					</span>
 				</div>
 			</div>
 		</div>
 	</footer>
 </div>
-<div class="copy container-fluid well" >
-	<strong>CopyRight @ 2018 Designed by Sujit K.Singh</strong>
+<div class="copy container-fluid" style="background-color:#bcaaa4;" >
+	<strong style="color:white;">CopyRight @ 2018 Designed by Sujit K.Singh</strong>
 </div>
 </body>
 

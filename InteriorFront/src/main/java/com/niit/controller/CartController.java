@@ -33,7 +33,22 @@ public class CartController
 		Product product = productDAO.getProduct(productId);
 
 		String username = (String) session.getAttribute("username");
-
+		List<CartItem> listCartItems = cartDAO.getcartItems(username);
+		boolean f=false;
+		for(CartItem cart:listCartItems) {
+			if(cart.getProductId()==productId) {
+				f=true;
+			}
+		}
+		if(f) {
+			for(CartItem cart:listCartItems) {
+				if(cart.getProductId()==productId) {
+					cart.setQuantity(cart.getQuantity()+1);
+					cartDAO.updateCartItem(cart);
+				}
+			}	
+		}
+		else {
 		cartItem.setProductId(productId);
 		cartItem.setCartId(1001);
 		cartItem.setQuantity(quantity);
@@ -43,8 +58,8 @@ public class CartController
 		cartItem.setProduct(product);
 
 		cartDAO.addcartItem(cartItem);
-
-		List<CartItem> listCartItems = cartDAO.getcartItems(username);
+		}
+		
 		
 		m.addAttribute("cartList", listCartItems);
 		m.addAttribute("grandTotal", this.grandTotal(listCartItems));

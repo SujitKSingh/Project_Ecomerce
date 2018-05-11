@@ -1,11 +1,16 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<head>
 
+<title>Index</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
 
 <%@include file="Header.jsp"%>
-
+<body>
 <div class="container-fluid">
 	<div class="row main jumbotron">
 		<div class="main-login main-center">
@@ -118,5 +123,5 @@
 		</div>
 	</div>
 </div>
-
+</body>
 <%@include file="Footer.jsp"%>

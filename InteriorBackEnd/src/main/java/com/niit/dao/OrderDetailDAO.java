@@ -8,6 +8,7 @@ public interface OrderDetailDAO {
 
 public boolean confirmOrderDetail(OrderDetail orderDetail);
 public List<OrderDetail> getAll(String UserName);
+public boolean updateOrderDetail(OrderDetail orderDetail);
 
 
 }

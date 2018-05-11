@@ -13,8 +13,14 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.dao.CartDAO;
+import com.niit.dao.CartDAOImpl;
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.CategoryDAOImpl;
+import com.niit.dao.OrderDetailDAO;
+import com.niit.dao.OrderDetailDAOImpl;
+import com.niit.dao.OrderItemDAO;
+import com.niit.dao.OrderItemDAOImpl;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.ProductDAOImpl;
 import com.niit.dao.SuplierDAO;
@@ -24,6 +30,7 @@ import com.niit.dao.UserDAOImpl;
 import com.niit.model.CartItem;
 import com.niit.model.Category;
 import com.niit.model.OrderDetail;
+import com.niit.model.OrderItem;
 import com.niit.model.Product;
 import com.niit.model.Suplier;
 import com.niit.model.User;
@@ -65,6 +72,7 @@ public class DBConfig
 		factoryBuilder.addAnnotatedClass(User.class);
 		factoryBuilder.addAnnotatedClass(OrderDetail.class);
 		factoryBuilder.addAnnotatedClass(CartItem.class);
+		factoryBuilder.addAnnotatedClass(OrderItem.class);
 		factoryBuilder.addProperties(hibernateProp);
 		
 		System.out.println("Creating SessionFactory Bean");
@@ -98,6 +106,30 @@ public class DBConfig
 	{
 		System.out.println("----DAO Implementation---");
 		return new UserDAOImpl();
+	}
+	
+	@Bean(name="cartDAO")
+	public CartDAO getCartDAO()
+	{
+		System.out.println("----DAO Implementation---");
+		return new CartDAOImpl();
+	}
+	
+	@Bean(name="orderDetailDAO")
+	public OrderDetailDAO getOrderDetailDAO()
+	{
+		System.out.println("----DAO Implementation---");
+		return new OrderDetailDAOImpl();
+		
+	}
+	
+	
+	@Bean(name="orderItemDAO")
+	public OrderItemDAO getOrderItemDAO()
+	{
+		System.out.println("----DAO Implementation---");
+		return new OrderItemDAOImpl();
+		
 	}
 	@Bean(name="txManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)

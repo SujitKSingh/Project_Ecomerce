@@ -1,6 +1,9 @@
 <%@include file="/WEB-INF/views/Header.jsp"%>
 
 <head>
+<title>About Us</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <!------ Include the above in your HEAD tag ---------->
@@ -13,7 +16,7 @@
 				<h1 class="lg-text strong"
 					style="background-color: #81d4fa; text-align: center;">About
 					Us</h1>
-				<p class="lead">Just Order is something a bit different from
+				<p class="lead" align="justify">Just Order is something a bit different from
 					other e-commerce sites,which focuses on consumers experience.As an
 					eCommerce domain is developing rapidly with the advancement in
 					technology, tailored enterprise eCommerce solutions play a vital
@@ -39,7 +42,7 @@
 					<h1 class="strong" align="center"
 						style="background-color: #81d4fa; text-align: center;">Our
 						Team</h1>
-					<p class="lead">We are bunch of members working for making the
+					<p class="lead"  align="justify">We are bunch of members working for making the
 						shopping easier and convenient Meet our team members.Michael
 						Jordan once said: Talent wins games, but teamwork and intelligence
 						wins championships.I guess we can all agree on that. Teamwork is

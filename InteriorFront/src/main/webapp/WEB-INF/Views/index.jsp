@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<div class="container-fluid" style="width:100%" >
+	<div class="" style="width:100%;" >
 		<div id="myCarousel" class="carousel slide " data-ride="carousel">
 
 			<!-- Indicators -->

@@ -1,11 +1,17 @@
 <%@include file="Header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<head>
+<title>UpdateProduct</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <div class="cont">
 	<h3 align="center" class="container-fluid well" style="background-color:#81d4fa;">Product Page</h3>
 	<form:form action="${pageContext.request.contextPath}/UpdateProduct"
 		method="post" modelAttribute="productInfo" enctype="multipart/form-data">
-		<table align="center"  border="5" class="table table-striped table-hover well">
+		<table align="center"  style="border:5px;" class="table table-striped table-hover well">
 			<tr>
 				<td colspan="2" align="center"  style="background-color:#81d4fa;">Update Product</td>
 			</tr>

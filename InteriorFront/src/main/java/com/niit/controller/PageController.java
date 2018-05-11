@@ -1,5 +1,7 @@
 package com.niit.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -14,8 +16,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.dao.CartDAO;
 import com.niit.dao.CategoryDAO;
+import com.niit.dao.OrderDetailDAO;
+import com.niit.dao.OrderItemDAO;
 import com.niit.dao.ProductDAO;
+import com.niit.dao.SuplierDAO;
+import com.niit.dao.UserDAO;
 import com.niit.model.CartItem;
+import com.niit.model.OrderDetail;
+import com.niit.model.OrderItem;
 import com.niit.model.Product;
 import com.niit.model.User;
 
@@ -29,6 +37,15 @@ public class PageController {
 	
 	@Autowired
 	CartDAO cartDAO;
+	
+	@Autowired
+	UserDAO userDAO;
+	
+	@Autowired
+	OrderDetailDAO orderDAO;
+	
+	@Autowired
+	OrderItemDAO orderItemDAO;
 	
 	@RequestMapping("/")
 	public String showHomePage() {
@@ -116,6 +133,7 @@ public class PageController {
 	public int grandTotal(List<CartItem> listCartItems)
 	{
 		int grandTotal=0;
+		
 		for(CartItem cartItem:listCartItems)
 		{
 			grandTotal=grandTotal+cartItem.getQuantity()*(productDAO.getProduct(cartItem.getProductId()).getproductPrice());
@@ -125,5 +143,27 @@ public class PageController {
 		
 	}
 	
-	
+	@RequestMapping("/myProfile")
+	public String myProfile(Model m,HttpSession session)
+	{
+		List<OrderDetail> oderList=orderDAO.getAll(session.getAttribute("username").toString());
+		m.addAttribute("user",userDAO.getUserByUsername(session.getAttribute("username").toString()));
+		
+		
+		HashMap<OrderDetail, List<Product>> collect=new HashMap<>();
+		List<Product> prodList=null;
+		for(OrderDetail orderDetail:oderList) {
+			prodList=new ArrayList<>();
+			for(OrderItem orderItem:orderItemDAO.getorderItems(orderDetail.getOderid())) {
+				prodList.add(productDAO.getProduct((orderItemDAO.getProductforlistorder(orderItem.getId()))));
+				System.out.println("line 158-->"+productDAO.getProduct((orderItemDAO.getProductforlistorder(orderItem.getId()))).getproductName());
+				System.out.println(orderDetail.getOderid());
+			}
+			
+			collect.put(orderDetail, prodList);
+		}
+		m.addAttribute("mapList", collect);
+		
+		return "myProfile";
+	}
 }

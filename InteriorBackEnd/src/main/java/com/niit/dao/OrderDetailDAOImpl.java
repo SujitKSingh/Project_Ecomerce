@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.model.OrderDetail;
-import com.niit.model.Product;
 
 @Repository("orderDetailDAO")
 
@@ -19,33 +18,51 @@ public class OrderDetailDAOImpl implements OrderDetailDAO
 
 {
 
-@Autowired
-SessionFactory sessionFactory;
+	@Autowired
+	SessionFactory sessionFactory;
 
-@Transactional
-@Override
-public boolean confirmOrderDetail(OrderDetail orderDetail)
+	@Transactional
+	@Override
+	public boolean confirmOrderDetail(OrderDetail orderDetail)
 
-{
-try
+	{
+		try
 
-{
-sessionFactory.getCurrentSession().save(orderDetail);
-return true;
-}
+		{
+			sessionFactory.getCurrentSession().save(orderDetail);
+			return true;
+		}
 
-catch (Exception E) {
-System.out.println(E);
-return false;
-}
+		catch (Exception E) {
+			System.out.println(E);
+			E.printStackTrace();
+			return false;
+		}
 
-}
+	}
 
-@Override
-public List<OrderDetail> getAll(String UserName) {
-	Session session=sessionFactory.openSession();
-	Query query=session.createQuery("from OrderDetail where Username=:UserName").setParameter("UserName", UserName);
-	List<OrderDetail> listOrderDetail=(List<OrderDetail>)query.list();
-	return listOrderDetail;
-}
+	@Override
+	public List<OrderDetail> getAll(String UserName) {
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from OrderDetail where Username=:UserName").setParameter("UserName",
+				UserName);
+		List<OrderDetail> listOrderDetail = (List<OrderDetail>) query.list();
+		return listOrderDetail;
+	}
+
+	@Transactional
+	@Override
+	public boolean updateOrderDetail(OrderDetail orderDetail) {
+		try {
+
+			sessionFactory.getCurrentSession().update(orderDetail);
+			System.out.println("test");
+			return true;
+		} catch (Exception e) {
+			System.out.println("failtest");
+			System.out.println("Exception Arised:" + e);
+			return false;
+		}
+	}
+
 }

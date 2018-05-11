@@ -1,7 +1,14 @@
 <%@include file="Header.jsp"%>
+
+<head>
+
+<title>Privacy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <div class="container-fluid well" >
 <h1>Privacy Policy</h1>
-
+<p align="justify" >
 We value the trust you place in us. That's why we insist upon the highest standards for secure transactions and customer information privacy. Please read the following statement to learn about our information gathering and dissemination practices.
 
 Note:
@@ -104,7 +111,7 @@ Time: Mon - Sat (9:00 - 18:00)
 10. Questions?
 
 Please contact us regarding any questions regarding this statement.
-
+</p>
 </div>
 
 <%@include file="/WEB-INF/views/Footer.jsp"%>

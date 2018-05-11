@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.Date;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -43,9 +42,6 @@ orderDetail.setUsername("Vicky");
 orderDetail.setTotalAmount(1000);
 orderDetail.setShippingAddress("Rajajipuram");
 orderDetail.setTransactionType("CC");
-orderDetail.setProductName("MObile");
-orderDetail.setProductPrice(1200);
-
 
 assertTrue("has some error", orderDetailDAO.confirmOrderDetail(orderDetail));
 }

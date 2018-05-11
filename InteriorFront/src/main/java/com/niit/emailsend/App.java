@@ -7,7 +7,8 @@ import com.niit.controller.EmailUtility;
 
 public class App 
 {
-    public static void sendmail(String to,String from,String subject, String desc)
+    @SuppressWarnings("resource")
+	public static void sendmail(String to,String from,String subject, String desc)
     {
     	ApplicationContext context = 
              new ClassPathXmlApplicationContext("web1.xml");
@@ -17,7 +18,6 @@ public class App
     		   to,
     		   subject, 
     		   desc);
-        
     }
 }
 

@@ -14,17 +14,18 @@
 	<table align="center" border="5" class="table table-striped table-hover" >
 		<tr >
 			<td>Suplier Name</td>
-			<td><form:input type="text" id="suplname" path="suplierName" name="suplname" placeholder="Enter Supplier Name" /></td>
+			<td><form:input type="text" id="suplname" path="suplierName" name="suplname" placeholder="Enter Supplier Name" required="required" /></td>
 			<td><form:errors path="suplierName" style="color:red;"/></td>
 		</tr>
 		<tr bgcolor="#81d4fa">
 		<td>Suplier Desc</td>
-		<td><form:input type="text" id="supldesc" path="suplierDesc" name="supldesc" placeholder="Enter Supplier Desc" /></td>
+		<td><form:input type="text" id="supldesc" path="suplierDesc" name="supldesc" placeholder="Enter Supplier Desc" required="required" /></td>
 		<td><form:errors path="suplierDesc" style="color:red;"/></td>
 		</tr>
 		<tr >
 			<td colspan="2" align="center" ><input type="submit" value="SUBMIT" class="btn btn-info" style="height:35;width:100;" />&nbsp;&nbsp;
 				<a href="<c:url value="/suplier"/>" class="btn btn-info" style="height:35;width:100;">Reset</a></td>
+			<td></td>
 		</tr>
 	</table>
 

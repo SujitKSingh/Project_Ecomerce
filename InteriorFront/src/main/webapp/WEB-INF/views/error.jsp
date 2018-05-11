@@ -54,7 +54,12 @@
 
  --%>
 
+<head>
 
+<title>Error Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <div class="content">
 	<div class="container">
 		<div class="row">

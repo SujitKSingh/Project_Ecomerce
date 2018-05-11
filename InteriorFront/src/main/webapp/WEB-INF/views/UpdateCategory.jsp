@@ -11,7 +11,7 @@
 
 <form action="<c:url value="/updateCategory"/>" class="container-fluid well" method="post">
 <h3 align="center" style="background-color:#81d4fa;" >Update Category Detail</h3>
-	<table align="center" border="5" class="table table-striped table-hover">
+	<table align="center" style="border:5px;" class="table table-striped table-hover">
 		<tr >
 			<td>Category ID</td>
 			<td><input type="text" readonly id="catid" name="catid"
