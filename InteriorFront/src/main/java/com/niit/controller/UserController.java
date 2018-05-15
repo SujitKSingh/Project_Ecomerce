@@ -27,8 +27,6 @@ public class UserController {
 	@Autowired
 	UserDAO userDAO;
 	
-	@Autowired
-	HttpSession httpsession;
 	
 	
 	@SuppressWarnings({ "unchecked", "unused" })
