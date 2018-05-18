@@ -16,10 +16,17 @@
 		<tr align="center" bgcolor="#7e57c2">
 			<td colspan="2">Product Details</td>
 		</tr>
-		<tr>
-			<td colspan="2"><img
-				src="<c:url value="/resources/images/${ProductInfo.productId}.jpg"/>"
-				width="100%" height="100%" /></td>
+		<tr align="center">
+			<td colspan="2">
+				<img src="<c:url value="/resources/images/${ProductInfo.productId}/1.jpg"/>"
+				width="150" height="150" />
+				<img src="<c:url value="/resources/images/${ProductInfo.productId}/2.jpg"/>"
+				width="150" height="150" />
+				<img src="<c:url value="/resources/images/${ProductInfo.productId}/3.jpg"/>"
+				width="150" height="150" />
+				<img src="<c:url value="/resources/images/${ProductInfo.productId}/4.jpg"/>"
+				width="150" height="150" />
+			</td>
 		</tr>
 		<tr bgcolor="cyan">
 			<td>Price</td>

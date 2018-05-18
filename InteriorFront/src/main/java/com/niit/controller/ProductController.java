@@ -3,6 +3,7 @@ package com.niit.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -63,7 +64,10 @@ public class ProductController {
 
 	@RequestMapping(value = "/InsertProduct", method = RequestMethod.POST)
 	public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result,
-			@RequestParam("pimage") MultipartFile filedet, Model m) {
+			@RequestParam("pimage1") MultipartFile filedet1,
+			@RequestParam("pimage2") MultipartFile filedet2,
+			@RequestParam("pimage3") MultipartFile filedet3,
+			@RequestParam("pimage4") MultipartFile filedet4, Model m) throws IOException {
 
 		if (result.hasErrors()) {
 			m.addAttribute("product", product);
@@ -80,14 +84,56 @@ public class ProductController {
 		productDAO.addProduct(product);
 
 		// ===> Image Uploading
-		String imagePath = "D:\\eclipse-jee-oxygen-2-win32-x86_64\\oxy workspace\\Project_Ecomerce\\InteriorFront\\src\\main\\webapp\\resources\\images\\";
-		imagePath = imagePath + String.valueOf(product.getproductId()) + ".jpg";
-		File image = new File(imagePath);
+		MultipartFile filedet[]=new MultipartFile[4];
+		for(int i=0;i<4;i++) {
+			if(i==0) {
+				filedet[i]=filedet1;
+			}
+			if(i==1) {
+				filedet[i]=filedet2;
+			}
+			if(i==2) {
+				filedet[i]=filedet3;
+			}
+			if(i==3) {
+				filedet[i]=filedet4;
+			}
+		}
+		
+		for(int i=1;i<=4;i++)
+		{
+			String imagePath = "D:\\eclipse-jee-oxygen-2-win32-x86_64\\oxy workspace\\Project_Ecomerce\\InteriorFront\\src\\main\\webapp\\resources\\images\\"+product.getproductId()+"\\";
+		    if(!new File(imagePath).exists()) {
+			
+			imagePath = imagePath + i + ".jpg";
+			File image = new File(imagePath);
+			
+			image.getParentFile().mkdir();
+			image.createNewFile();
+			if (!filedet[i-1].isEmpty()) {
 
-		if (!filedet.isEmpty()) {
+				try {
+					
+					byte[] fileBuffer = filedet[i-1].getBytes();
+					FileOutputStream fos = new FileOutputStream(image);
+					BufferedOutputStream bs = new BufferedOutputStream(fos);
+					bs.write(fileBuffer);
+					bs.close();
+				} catch (Exception e) {
+					System.out.println("Exception Arised:" + e);
+					e.printStackTrace();
+				}
+			}
+		
+		}
+		else {
+			imagePath = imagePath + i + ".jpg";
+			File image = new File(imagePath);
+		if (!filedet[i-1].isEmpty()) {
 
 			try {
-				byte[] fileBuffer = filedet.getBytes();
+				
+				byte[] fileBuffer = filedet[i-1].getBytes();
 				FileOutputStream fos = new FileOutputStream(image);
 				BufferedOutputStream bs = new BufferedOutputStream(fos);
 				bs.write(fileBuffer);
@@ -96,10 +142,12 @@ public class ProductController {
 				System.out.println("Exception Arised:" + e);
 				e.printStackTrace();
 			}
-
+			
 		} else {
 			System.out.println("Problem Occured in File Uploading");
 		}
+		}
+	}
 
 		// ==>End of Image Uploading
 		m.addAttribute("product", product);
@@ -143,9 +191,8 @@ public class ProductController {
 		return "ProductPage";
 	}
 
-	@RequestMapping(value="/Products/{catId}")
-	public String productByCategoryId(@PathVariable("catId")int catId,Model m)
-	{
+	@RequestMapping(value = "/Products/{catId}")
+	public String productByCategoryId(@PathVariable("catId") int catId, Model m) {
 		m.addAttribute("listProducts", productDAO.getProductByCategory(catId));
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -153,6 +200,7 @@ public class ProductController {
 
 		return "ProductPage";
 	}
+
 	/*
 	 * @RequestMapping(value="/{categoryId}/Trending",method=RequestMethod.GET)
 	 * public String showProductsTrending(@PathVariable("categoryId")int

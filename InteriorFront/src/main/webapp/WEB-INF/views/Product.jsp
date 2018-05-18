@@ -21,11 +21,25 @@
 		<h3 align="center" class="container-fluid well" style="background-color:#81d4fa;">Product Page</h3>
 		<table align="center" border="5px" class="table table-striped table-hover" >
 			<tr >
-				<td>Product Image</td>
-				<td><form:input type="file" path="pimage" class="form-control-file"/></td>
+				<td>Product Image 1</td>
+				<td><input type="file" name="pimage1"  class="form-control-file" required="required"/></td>
 				<td></td>
 			</tr>
-			
+			<tr >
+				<td>Product Image 2</td>
+				<td><input type="file" name="pimage2"  class="form-control-file" required="required"/></td>
+				<td></td>
+			</tr>
+			<tr >
+				<td>Product Image 3</td>
+				<td><input type="file" name="pimage3"  class="form-control-file" required="required"/></td>
+				<td></td>
+			</tr>
+			<tr >
+				<td>Product Image 4</td>
+				<td><input type="file" name="pimage4"  class="form-control-file" required="required"/></td>
+				<td></td>
+			</tr>
 			<tr bgcolor="#81d4fa">
 				<td>Product Name</td>
 				<td><form:input path="productName" placeholder="Enter Product Name" /></td>

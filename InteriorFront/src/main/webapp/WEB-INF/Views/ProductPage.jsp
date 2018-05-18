@@ -38,7 +38,7 @@
 				<c:forEach items="${listProducts}" var="product">
 					<td align="center" bgcolor="white" >
 						<a href="<c:url value="/productDesc/${product.productId}"/>">
-						<img src="<c:url value="/resources/images/${product.productId}.jpg"/>"
+						<img src="<c:url value="/resources/images/${product.productId}/1.jpg"/>"
 						width="250" height="250" /></a> <br /> <a
 						href="<c:url value="/productDesc/${product.productId}"/>">${product.productName}</a>
 						<br />INR. ${product.productPrice} /-</td>

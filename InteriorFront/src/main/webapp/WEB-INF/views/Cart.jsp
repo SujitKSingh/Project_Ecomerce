@@ -38,7 +38,7 @@
 		<form action="<c:url value="/updateCartItem/${cartItem.cartItemId}"/>"
 			method="get">
 			<tr class="Info " align="center">
-				<td><img src="<c:url value="/resources/images/${cartItem.productId}.jpg"/>"
+				<td><img src="<c:url value="/resources/images/${cartItem.productId}/1.jpg"/>"
 					width="150" height="150" /></td>
 				<td style="padding-top: 70px !important;">${cartItem.product.productName}</td>
 				<td style="padding-top: 70px !important;">${cartItem.productId}</td>
