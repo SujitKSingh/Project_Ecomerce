@@ -1,13 +1,16 @@
 package com.niit.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.Range;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -18,6 +21,16 @@ public class Product {
 	@GeneratedValue
 
 	private int productId;
+	
+	@Temporal(TemporalType.TIME)
+	Date offerTime;
+	public Date getOfferTime() {
+		return offerTime;
+	}
+
+	public void setOfferTime(Date offerTime) {
+		this.offerTime = offerTime;
+	}
 
 	private int productPrice;
 

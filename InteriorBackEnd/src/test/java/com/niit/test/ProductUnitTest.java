@@ -2,6 +2,7 @@ package com.niit.test;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,7 +30,6 @@ public class ProductUnitTest
 		productDAO=(ProductDAO)context.getBean("productDAO");
 	}
 	
-	@Ignore
 	@Test
 	public void addProductTest()
 	{
@@ -41,6 +41,8 @@ public class ProductUnitTest
 		product.setSuplierId(44);
 		product.setproductPrice(100);
 		product.setStock(4);
+		product.setOfferTime(new Date());
+
 		assertTrue("Problem in Product Insertion",productDAO.addProduct(product));
 	}
 	

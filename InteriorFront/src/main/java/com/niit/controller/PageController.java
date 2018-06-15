@@ -148,7 +148,8 @@ public class PageController {
 	{
 		List<OrderDetail> oderList=orderDAO.getAll(session.getAttribute("username").toString());
 		m.addAttribute("user",userDAO.getUserByUsername(session.getAttribute("username").toString()));
-		
+		m.addAttribute("message","Please purchase some products your cart is empty");
+
 		
 		HashMap<OrderDetail, List<Product>> collect=new HashMap<>();
 		List<Product> prodList=null;
@@ -156,8 +157,7 @@ public class PageController {
 			prodList=new ArrayList<>();
 			for(OrderItem orderItem:orderItemDAO.getorderItems(orderDetail.getOderid())) {
 				prodList.add(productDAO.getProduct((orderItemDAO.getProductforlistorder(orderItem.getId()))));
-				System.out.println("line 158-->"+productDAO.getProduct((orderItemDAO.getProductforlistorder(orderItem.getId()))).getproductName());
-				System.out.println(orderDetail.getOderid());
+				
 			}
 			
 			collect.put(orderDetail, prodList);

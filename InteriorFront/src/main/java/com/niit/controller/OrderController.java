@@ -100,11 +100,7 @@ public class OrderController {
 			prod+="\n";
 		}
 		
-	/*
-		cartDAO.deleteCartItem(cartDAO.getCartItem(cartItemId));
-		String desc="\nOrderId:- "+order.getOderid()+"\nProducts You buy:-\n"+prod+
-				"\nTransactionType:-"+order.getTransactionType()+"\n Amount:-"+order.getTotalAmount()
-				+"\n Shipping Address:-"+order.getShippingAddress();*/
+	
 		String username=session.getAttribute("username").toString();
 		orderpdfcontroller.create(order,cartlist,userDAO.getUserByUsername(username));
 		return "redirect:/sendfile/"+session.getAttribute("username").toString();

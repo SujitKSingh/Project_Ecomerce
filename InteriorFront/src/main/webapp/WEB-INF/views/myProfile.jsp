@@ -53,23 +53,26 @@
 		<h3 align="center" style="background-color:red;border: 2px solid pink; border-radius: 15px;font-family: cursive;color:white;">Your Order Summary</h3>
 		</div>
 		
-		<div class="row" style="border: 2px solid pink; border-radius: 15px; background-color: #a5d6a7; font-family: cursive;" align="center">
+	<c:set var="i" value="0"/>
+	  <div class="row" style="border: 2px solid pink; border-radius: 15px; background-color: #a5d6a7; font-family: cursive;" align="center">
 				<div class="col-sm-3" style="border-right:2px solid pink;"><label>Order ID</label></div>
 					<div class="col-sm-3" style="border-right:2px solid pink;"><label>Order Date</label></div>
 					<div class="col-sm-3" style="border-right:2px solid pink;"><label>Ship Address</label></div>
 					<div class="col-sm-3" style="border-right:2px solid pink;"><label>Total Amount</label>
 				</div>
-		</div>
-		<c:forEach items="${mapList}" var="map">
+	 </div>
+	
+	<c:forEach items="${mapList}" var="map">
+	  <c:set var="i" value="${i+1}"/>
 		<div class="row" style="border: 2px solid pink; border-radius: 15px; background-color: #ffe082; font-family: cursive;" align="center">
 			<div class="col-sm-3" style="border-right:2px solid pink;"><label>${map.key.oderid}</label></div>
 			<div class="col-sm-3" style="border-right:2px solid pink;"><label>${map.key.orderDate}</label></div>
 			<div class="col-sm-3" style="border-right:2px solid pink;"><label>${map.key.shippingAddress}</label></div>
 			<div class="col-sm-3" style="border-right:2px solid pink;"><label>${map.key.totalAmount}</label></div>
 		</div>
-					
+						
 		<div class="row">
-			<h2 class="sub-head-w3ls" style="font-family: cursive;background-color: cyan;border: 2px solid pink; border-radius: 15px;">See
+		    <h2 class="sub-head-w3ls" style="font-family: cursive;background-color: cyan;border: 2px solid pink; border-radius: 15px;">See
 						What You Purchased</h2>
 		</div>
 					
@@ -84,19 +87,26 @@
 		</div>
 					
 		<div class="row" align="center" style="background-color:white;border:2px solid pink; border-radius: 15px;">
-			<div class="col-sm-2"><img style="width:100px;height:100px;" src="<c:url value="/resources/images/${prod.productId}.jpg" />"/></div>
+			<div class="col-sm-2"><img style="width:100px;height:100px;" src="<c:url value="/resources/images/${prod.productId}/1.jpg" />"/></div>
 			<div class="col-sm-2" ><label>${prod.productName}</label> </div>
 			<div class="col-sm-2" ><label>${fn:length(map.value)}</label></div>
 			<div class="col-sm-2" ><label>${prod.productPrice}</label></div>
 			<div class="col-sm-2" ><label>${prod.suplierId}</label></div>
 			<div class="col-sm-2" ><label>${prod.productDesc}</label></div>	
 		</div>
-					
+			
 		<div class="row">
 			<hr>
 		</div>
+	
 		</c:forEach>
 		</c:forEach>
+	
+	<c:if test="${i==0}" >
+		<div class="row" style="background-color:white;color:black;font-family:sans-serif;font-size: 18px;border:2px solid pink; border-radius: 15px;" align="center">${message}</div>
+		
+	</c:if>	
+		
 	</div>
 </body>
 <%@include file="/WEB-INF/views/Footer.jsp"%>
