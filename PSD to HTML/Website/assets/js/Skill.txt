@@ -1,0 +1,18 @@
+Eclipse Oxygen
+Hibernate (v5.2.13)
+Spring Framework 4.3 
+Apache Maven 
+Bootstrap 
+JQuery
+CSS3
+JavaScript 
+HTML5
+H2/ HQL /(SQL) Commands
+JUnit
+Core Java, Advanced Java, Database.
+Wordstream, Copyscape, Robots.txt Generator, Image SEO
+Tool
+Evernote, Storify, PowToon, BuzzSumo, Twitter Counter
+Facebook, Twitter, LinkedIn, Digg. Wellversed in using mail chimp and survey monkey platforms.
+
+Adobe Illustrator, Photoshop, Wacom art pad integration, Inkscape, PIXLR

@@ -1,0 +1,308 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" ></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<! ---Top Button />
+<script type="text/javascript" src="http://arrow.scrolltotop.com/arrow13.js"></script>
+
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script src="style.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });	
+</script>
+
+</head>
+
+<body background="assets/images/back1.png">
+<div class="container">
+	<div class="row">
+    	<table>
+        <tr>
+        <td><a href="http://sihfw.up.nic.in/" ><img src="assets/images/banner.jpg" id="banner" /></a></td>
+		<td><img src="assets/images/bannercenter.jpg" id="banner-center"/></td>
+        <td><a href="http://up.gov.in/" ><img src="assets/images/upgovt.jpg" id="upgovt"/></a></td>
+        </tr>
+        </table>
+    </div>
+    
+    <div class="row" style="background-image:url(assets/images/row.png)" >
+    	<div>
+    	<ul class="nav nav-pills">
+              	<li class="active"><a href="#">Home</a></li>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">About Us <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="#">About SIHFW</a></li>
+                          <li><a href="#">Organisation Chart </a></li>
+                          <li><a href="#">Facilities </a></li>
+                       </ul>
+                  </li>
+                  <li><a href="#">Departments</a></li>
+                  <li><a href="#">Activities</a></li>
+                  <li><a href="#">Training</a></li>
+                  <li><a href="#">Research Studies</a></li>
+                  <li><a href="#">Partnership</a></li>
+                  <li><a href="#">Photo Gallery</a></li>
+                  <li><a href="#">Publication</a></li>
+                  <li><a href="#">Contact Us </a></li>
+                  <li><a href="#">Feedback</a></li>
+           </ul>
+           </div>
+        </div>
+    
+    <div class="row" id="nav-vertical-div">
+    	<div class="col-sm-3">
+        	<ul class="nav nav-pills nav-stacked">
+              <li><a href="#">Training Calendar</a></li>
+              <li><a href="#">Meeings/Workshops</a></li>
+              <li ><a href="#">Center for HMIS & MCTS</a></li>
+              <li ><a href="#">Awards and Recognition</a></li>
+              <li ><a href="#">Vacancies</a></li>
+              <li ><a href="#">Tenders</a></li>
+              <li ><a href="#">Directory</a></li>
+              <li ><a href="#">Downloads</a></li>
+              <li><a href="#">Emergency Numbers</a></li>
+     		</ul>
+        </div>
+        
+        <div class="col-sm-6" id="WelcomeToSIHFW" > 
+            <h2>Welcome To SIHFW</h2>
+            <p align="justify">State Institute of Health & Family Welfare (SIHFW), Uttar Pradesh, 
+            Lucknow is an govt. apex institute of State for Training and Research
+            in the area of Medical, Health and Family Welfare. The Institute was
+            previously known as Population Centre and was established in the year
+            1973 - 74 under IndiaPopulation Project - 1 with objectives to conduct
+            evaluation studies, base line and end line surveys, to develop MIES for
+            project districts and to plan and implement operation research (OR)
+            projects.                              
+                     In the year 1980 - 81 under IPP-2.Management Training Cell was
+            added to the Population Centre with additional responsibility of organizing
+            Management Development Programme for PHC and District level Senior Medical
+            Officers. During the year 1990 - 91, IPP - 6 was implemented in the state
+            with a major emphasis on training component. In IPP - 6 Population Centre 
+            including Management Training Cell, was upgrading.In IPP-6 Population Centre
+            including Management Training Cell, was upgraded and renamed as State 
+            Institute of Health and Family Welfare, U.P.The mission of the Institute is to improvement in health care services through Human Resources Devlopment, In-service training of health personnel of various categories, undertaking research studies. 
+            </p>
+         </div>
+       
+        <div class="col-sm-3" >
+            <ul class="nav nav-pills nav-stacked" >
+               <li><a href="#"><img src="assets/images/gmail.png" id="nav-horizontal-div-icon" />&nbsp;&nbsp;Check Mail</a></li>
+               <li class="divider"></li>
+               <li><a href="#"><img src="assets/images/budget.png" id="nav-horizontal-div-icon"   />&nbsp;&nbsp;Budget</a></li>
+               <li><a href="#"><img src="assets/images/clinic.png" id="nav-horizontal-div-icon"  />&nbsp; Clinic </a></li>
+               <li><a href="#"><img src="assets/images/research.png" id="nav-horizontal-div-icon"  />
+               &nbsp;Research Studies</a></li>
+               <li><a href="#"><img src="assets/images/goingon.png" id="nav-horizontal-div-icon"  />
+               &nbsp;On Going Research</a></li>
+               <li><a href="#"><img src="assets/images/special.png" id="nav-horizontal-div-icon"  />
+               &nbsp;Special Activity</a></li>
+               <li><a href="#"><img src="assets/images/checklist.png" id="nav-horizontal-div-icon"  />
+               Completed reasarch Studies</a> </li>
+            </ul>
+          </div>
+  </div>
+  
+   <div class="row" >
+        <div class="col-sm-3" id="map-div-heading">
+            <h3>Maps</h3>
+            <a href="assets/images/mapup.JPG"><img src="assets/images/mapup.JPG"  style="width:198px;height:165px;margin-bottom:8px;" /></a>
+            
+        </div>
+       
+        <div class="col-sm-6" id="map-div-image">
+            <div class="col-sm-4">
+              <h4>Director's Message</h4><a href="assets/images/director_imdirector.jpg"><img src="assets/images/director_imdirector.jpg" id="director-msg-heading"/></a>
+            </div>
+            <div class="col-sm-8" id="director-msg">
+            <p align="justify"  >Welcome To Website Of State Institute of Health and Family Welfare (SIHFW). 
+              State Institute of Health and Family Welfare is an govt. apex Institute, 
+              funded by Ministry of Health and Family Welfare Government of Uttar Pradesh
+              for promotion of health and family welfare programmes in the state through training.The mission of the Institute is to improvement in 			              health care services through Human Resources Devlopment, In-service training of health personnel of various categories, undertaking               research studies. </p>
+             </div>
+          </div>
+        
+        <div class="col-sm-3" id="PhysicalProgress">
+            <h2>Physical Progress</h2>
+            <ul class="nav nav-pills nav-stacked">
+              <li><a href="#">1995-96</a></li>
+              <li><a href="#">1996-97</a></li>
+              <li ><a href="#">1997-98</a></li>
+              <li ><a href="#">1998-99</a></li>
+            </ul>
+        </div>
+    </div> 
+    
+    <div class="row">
+    	<div class="col-sm-3" id="notice-marquee-div"><h4 id="noticeheading">Notice Board</h4><br /><br />
+    		<marquee direction="up" scrollamount="2" onmousemove="this.stop();" onmouseout="this.start();" id="notice-marquee">
+            Welcome to the website of State Institute of Health &amp; Family Welfare (SIHFW). </marquee>
+        </div>
+        
+        <div class="col-sm-6" id="impmarqueediv">
+   			<div><h2>Important Notifications </h2></div>
+        	<div><marquee direction="right" scrollamount="2" onmousemove="this.stop();" onmouseout="this.start();" id="impmaruee">
+            Welcome to the website of State Institute of Health &amp; Family Welfare (SIHFW). </marquee></div>
+            <div><img src="assets/images/sampurn.png"/></div>
+         </div>
+        <div  class="col-sm-3" id="photogallery-div">
+            <div><h2>Photo Gallery</h2></div>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel"  style="margin-top:0px;margin-bottom:27px; id="carouselslide">
+    
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+    
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                    <a href="assets/images/photo1.jpg"> 
+                    <img class="img-fluid" src="assets/images/photo1.jpg" alt="photo1" id="carouselimage" > </a>
+                        <div class="carousel-caption">
+                            <h4>Rita Bahuguna</h4>
+                            <p>In Public</p>
+                        </div>
+                     </div>
+    
+                    <div class="item">
+                    <a href="assets/images/photo4.jpg"> 
+                    <img class="img-fluid" src="assets/images/photo4.jpg" alt="photo4" id="carouselimage" > </a>
+                        <div class="carousel-caption">
+                            <h4>Meeting Delegates</h4>
+                            <p>In Public View!</p>
+                        </div>
+                    </div>
+    
+                    <div class="item">
+                    <a href="assets/images/photo5.jpg"> 
+                    <img class="img-fluid" src="assets/images/photo5.jpg" alt="photo5" id="carouselimage" > </a>
+                        <div class="carousel-caption">
+                            <h4>Paying Attention</h4>
+                            <p>For our better future future!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <a href="assets/images/photo1.jpg"> 
+                        <img class="img-fluid" src="assets/images/photo1.jpg" alt="photo1" id="carouselimage" > </a>
+                        <div class="carousel-caption">
+                            <h4>Must Attend</h4>
+                            <p>Read and Enjoy!</p>
+                        </div>
+                    </div>
+                    
+                </div>
+    
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span> <span
+                    class="sr-only">Previous</span>
+                </a> <a class="right carousel-control" href="#myCarousel"
+                    data-slide="next"> <span
+                    class="glyphicon glyphicon-chevron-right"></span> <span
+                    class="sr-only">Next</span>
+                </a>
+            </div>
+    </div>
+    </div>
+    <div class="row">
+     	<div class="col-sm-3" id="connectwith">
+       
+        <h2 align="center">Connect With Us</h2>
+                    <div align="center">
+                       <a href="https://www.facebook.com/"><img src="assets/images/facebook.png" id="connectwithicon" /></a>
+                       <a href="http://twitter.com/"><img src="assets/images/twitter.png" id="connectwithicon" /></a>
+                       <a href="https://plus.google.com/"><img src="assets/images/google-plus.png" id="connectwithicon" /></a><br />
+                       <a href="https://instagram.com/"><img src="assets/images/instagram-new.png" id="connectwithicon" /></a>
+                       <a href="https://www.youtube.com/watch?v=fjC5SDHszXw/"><img src="assets/images/youtube-play.png" 
+                       			id="connectwithicon"/></a>
+                       <a href="https://up.gov.in/"><img src="assets/images/government.png" id="connectwithicon" /></a>
+                     </div>	
+                     <h3 align="center">Happy to connect </h3>
+                     <div>
+                      
+                     </div>
+        </div>
+        <div class="container col-sm-6" id="importnatsearch">
+            <div ><h2 align="center">Search Important Contacts</h2>
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+	            <table class="table table-bordered table-striped" Style="border-collapse:collapse;" >
+                    <thead><tr><th>Name</th> <th>Contact Number</th> <th>Email</th></tr></thead>
+                    <tbody id="myTable">
+                      <tr><td>Sumit</td><td>09452146347</td><td>sumit@example.com</td></tr>
+                      <tr><td>Mahesh</td><td>09452145623</td><td>mahesh@mail.com</td></tr>
+                      <tr><td>Jhulan</td><td>08004999207</td><td>jhulan@greatstuff.com</td></tr>
+                      <tr><td>Anjali</td><td>09878945212</td><td>anjali_r@test.com</td></tr>
+                    </tbody>
+                 </table>
+            </div>
+        </div>
+        
+        <div class="col-sm-3"  id="importantplaces-row" >
+        <div><h2>Important Cities</h2></div>
+            <div id="myCarousel1" class="carousel slide" data-ride="carousel1"  style="height:250px;margin-bottom:5px;">
+    
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel1" data-slide-to="1"></li>
+                    <li data-target="#myCarousel1" data-slide-to="2"></li>
+                </ol>
+    
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                    <a href="assets/images/lucknow.jpg"> 
+                    <img class="img-fluid" src="assets/images/lucknow.jpg" alt="lucknow" id="importantplaces-img" > </a>
+                    </div>
+    
+                    <div class="item">
+                    <a href="assets/images/varanasi.jpg"> 
+                    <img class="img-fluid" src="assets/images/varanasi.jpg" alt="varanasi" id="importantplaces-img" > </a>
+                    </div>
+    
+                    <div class="item">
+                    <a href="assets/images/kanpur.jpg"> 
+                    <img class="img-fluid" src="assets/images/kanpur.jpg" alt="kanpur" id="importantplaces-img" > </a>
+                    </div>
+                    
+                    <div class="item">
+                        <a href="assets/images/noida.jpg"> 
+                        <img class="img-fluid" src="assets/images/noida.jpg" alt="noida" id="importantplaces-img" > </a>
+                     </div>
+                    
+                </div>
+    
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span> <span
+                    class="sr-only">Previous</span>
+                </a> <a class="right carousel-control" href="#myCarousel1"
+                    data-slide="next"> <span
+                    class="glyphicon glyphicon-chevron-right"></span> <span
+                    class="sr-only">Next</span>
+                </a>
+            </div>
+        	
+      </div>
+    <div  class="col-sm-12 container" id="copyright" align="center" >
+         <a href="http://www.previewtechnologies.com/" ><img src="assets/images/copyright.png"  />
+        </div>
+   </div>
+</div>
+</body>
